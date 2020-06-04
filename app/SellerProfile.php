@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class SellerProfile extends Model
 {
-    //
     public function user(){
         return $this->belongsTo('App\User');
     }
