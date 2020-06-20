@@ -20,7 +20,11 @@ Auth::routes();
 Route::get('/index', 'HomeController@index')->name('home');
 Route::get('/seller/products/create','seller\ProductsController@create');
 Route::post('/seller/products', 'seller\productscontroller@store')->name('products.create');
-
+Route::get('/seller/products/{id}', 'seller\productscontroller@edit')->name('products.edit');
+Route::put('/seller/products/{id}', 'seller\productscontroller@update')->name('products.update');
+Route::get('/seller/products', 'seller\productscontroller@all')->name('products.all');
+Route::put('/seller/profile', 'seller\profilecontroller@update')->name('profile.update');
+Route::get('/seller/profile/edit', 'seller\profilecontroller@edit')->name('profile.edit');
 Route::get('/admin', function (){
     return view('admin.index');
 });

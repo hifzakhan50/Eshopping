@@ -15,20 +15,19 @@ class CreateOrderDetails extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('Order_id');
-            $table->unsignedBigInteger('Product_id');
-            $table->string('OrderNumber');
-            $table->float('Price');
-            $table->integer('Quantity');
-            $table->integer('Discount');
-            $table->float('Total');
-            $table->unsignedBigInteger('IDSKU');
-            $table->string('Size');
-            $table->string('Color');
-            $table->string('Fullfilled');
-            $table->date('ShipDate');
-            $table->unsignedBigInteger('OrderDetailID');
-            $table->date('BillDate');
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('product_id');
+            $table->string('order_number');
+            $table->float('price');
+            $table->integer('quantity');
+            $table->integer('discount');
+            $table->float('total');
+            $table->string('size');
+            $table->string('color');
+            $table->string('fullfilled');
+            $table->date('shipping_date');
+            $table->unsignedBigInteger('order_detail_id');
+            $table->date('bill_date');
 
             $table->timestamps();
         });

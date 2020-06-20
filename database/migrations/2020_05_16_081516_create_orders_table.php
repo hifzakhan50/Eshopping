@@ -15,20 +15,20 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('Customer_id');
-            $table->string('OrderNumber');
-            $table->unsignedBigInteger('PaymentID');
-            $table->date('OrderDate');
-            $table->date('ShipDate');
-            $table->date('RequiredDate');
-            $table->unsignedBigInteger('ShipperID');
-            $table->string('Freight');
-            $table->unsignedBigInteger('SalesTax');
-            $table->string('TransactStatus');
-            $table->string('Fullfilled');
-            $table->string('Deleted');
-            $table->string('Paid');
-            $table->date('PaymentDate');
+            $table->unsignedBigInteger('customer_profile_id');
+            $table->string('order_number');
+            $table->unsignedBigInteger('payment_id');
+            $table->date('order_date');
+            $table->date('ship_date');
+            $table->date('required_date');
+            $table->unsignedBigInteger('shipper_id');
+            $table->string('freight');
+            $table->unsignedBigInteger('sales_tax');
+            $table->string('transact_status');
+            $table->string('fullfilled');
+            $table->string('deleted');
+            $table->string('paid');
+            $table->date('payment_date');
             $table->timestamps();
         });
     }
