@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->float('weight');
             $table->string('image');
             $table->unsignedInteger('quantity');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }

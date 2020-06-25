@@ -16,11 +16,12 @@ class CreateSellerProfilesTable extends Migration
         Schema::create('seller_profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->string('name')->nullable();;
-            $table->text('address')->nullable();;
-            $table->string('country')->nullable();;
-            $table->text('about')->nullable();;
-            $table->string('image')->nullable();;
+            $table->string('name')->nullable();
+            $table->text('address')->nullable();
+            $table->string('country')->nullable();
+            $table->text('about')->nullable();
+            $table->string('image')->nullable();
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }

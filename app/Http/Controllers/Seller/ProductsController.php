@@ -6,6 +6,8 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\Facades\DataTables;
 
 class ProductsController extends Controller
 {
@@ -97,4 +99,32 @@ return redirect('index');
         $products = Product::where('seller_profile_id', '=', auth()->user()->sellerProfile->id)->get();
         return view('seller.product.all', compact('products'));
     }
+
+
+    public function data()
+    {
+
+        $products = DB::table('products')
+            ->select(['id', 'name', 'description', 'sku','image','color']);
+
+        return Datatables::of($products)
+            ->addColumn('action', function ($products) {
+
+                $editBtn = '<a href="products/' . $products->id . '/edit" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+                $suspendBtn = '<a href="products/' . $products->id . '/suspend" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Suspend</a>';
+                $activeBtn = '<a href="products/' . $products->id . '/active" class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
+
+//                if($products->is_active)
+//                    return $editBtn.' '.$suspendBtn;
+//                else
+//                    return $editBtn.' '.$activeBtn;
+            })
+            ->editColumn('image', function($products){
+                $imagePath = asset('/storage/'.$products->image);
+                return '<img src="'.$imagePath.'" class="w-25">';
+            })
+            ->rawColumns(['image', 'action'])
+            ->make(true);
+    }
+
 }

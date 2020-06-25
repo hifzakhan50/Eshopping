@@ -312,7 +312,11 @@
 <!-- BEGIN: Page JS-->
 <script src="{{ asset('/app-assets/js/scripts/pages/dashboard-analytics.js') }}"></script>
 <!-- END: Page JS-->
+<link href="{{ asset('assets/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
+<script src="{{ asset('assets/datatatables/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ asset('assets/datatatables/jquery.dataTables.js') }}"></script>
 
+@stack('script')
 </body>
 <!-- END: Body-->
 

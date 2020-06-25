@@ -17,12 +17,13 @@ class CreateCustomerProfilesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('name')->nullable();
-            $table->text('address')->nullable();;
-            $table->date('dob')->nullable();;
-            $table->string('gender')->nullable();;
-            $table->string('country')->nullable();;
-            $table->string('city')->nullable();;
-            $table->string('image')->nullable();;
+            $table->text('address')->nullable();
+            $table->date('dob')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
+            $table->string('image')->nullable();
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }

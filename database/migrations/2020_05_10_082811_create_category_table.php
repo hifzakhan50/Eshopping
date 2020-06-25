@@ -18,6 +18,7 @@ class CreateCategoryTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('image');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }
