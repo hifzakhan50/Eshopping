@@ -75,12 +75,12 @@ class ProductsController extends Controller
             'quantity' => 'required',
             'weight' => 'required',
         ]);
-        $product=Product::find($id);
-        if (request()->has('image')){
-        $imagePath = request('image')->store('uploads', 'public');
-        $product->update(['image' => $imagePath]);
+        $product = Product::find($id);
+        if (request()->has('image')) {
+            $imagePath = request('image')->store('uploads', 'public');
+            $product->update(['image' => $imagePath]);
 
-    }
+        }
         $product->update([
             'name' => $data['name'],
             'category_id' => $data['category-id'],
@@ -92,8 +92,9 @@ class ProductsController extends Controller
             'quantity' => $data['quantity'],
             'weight' => $data['weight'],
         ]);
-return redirect('index');
+        return redirect()->back()->with('success', 'Product has been updated Successfully');
     }
+
     public function all()
     {
         $products = Product::where('seller_profile_id', '=', auth()->user()->sellerProfile->id)->get();
@@ -105,26 +106,46 @@ return redirect('index');
     {
 
         $products = DB::table('products')
-            ->select(['id', 'name', 'description', 'sku','image','color']);
+            ->select(['id', 'name', 'description', 'sku', 'image', 'color', 'is_active']);
 
         return Datatables::of($products)
             ->addColumn('action', function ($products) {
 
-                $editBtn = '<a href="products/' . $products->id . '/edit" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
-                $suspendBtn = '<a href="products/' . $products->id . '/suspend" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Suspend</a>';
-                $activeBtn = '<a href="products/' . $products->id . '/active" class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
+                $suspendRoute = route('products.suspend', $products->id);
+                $activeRoute = route('products.active', $products->id);
+                $editRoute = route('products.edit', $products->id);
 
-//                if($products->is_active)
-//                    return $editBtn.' '.$suspendBtn;
-//                else
-//                    return $editBtn.' '.$activeBtn;
+                $editBtn = '<a href="' . $editRoute . '" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+                $suspendBtn = '<a href="' . $suspendRoute . '" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Suspend</a>';
+                $activeBtn = '<a href="' . $activeRoute . '" class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
+
+                if ($products->is_active)
+                    return $editBtn . ' ' . $suspendBtn;
+                else
+                    return $editBtn . ' ' . $activeBtn;
             })
-            ->editColumn('image', function($products){
-                $imagePath = asset('/storage/'.$products->image);
-                return '<img src="'.$imagePath.'" class="w-25">';
+            ->editColumn('image', function ($products) {
+                $imagePath = asset('/storage/' . $products->image);
+                return '<img src="' . $imagePath . '" class="w-25">';
             })
             ->rawColumns(['image', 'action'])
             ->make(true);
+    }
+
+    public function active($id)
+    {
+        $product = Product::find($id);
+        $product->update(['is_active' => 1]);
+
+        return redirect()->back()->with('success', 'Product has been activated.');
+    }
+
+    public function suspend($id)
+    {
+        $product = Product::find($id);
+        $product->update(['is_active' => 0]);
+
+        return redirect()->back()->with('success', 'Product has been suspended.');
     }
 
 }

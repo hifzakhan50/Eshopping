@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\SellerProfile;
 use Illuminate\Http\Request;
 
-class profilecontroller extends Controller
+class ProfileController extends Controller
 {
     public function edit()
     {
@@ -18,7 +18,6 @@ class profilecontroller extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'image' => ['image'],
             'adress' => 'required',
             'about' => 'required',
             'country' => 'required',
@@ -33,7 +32,8 @@ class profilecontroller extends Controller
             'address' => $data['adress'],
             'country' => $data['country'],
             'about' => $data['about'],
-
         ]);
+
+        return redirect()->back()->with('success', 'Profile updated successfully.');
     }
 }

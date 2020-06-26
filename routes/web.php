@@ -18,15 +18,24 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/index', 'HomeController@index')->name('home');
-Route::get('/seller/products/create','seller\ProductsController@create');
-Route::post('/seller/products', 'seller\productscontroller@store')->name('products.create');
 
-Route::get('/seller/products/all', 'seller\productscontroller@all')->name('products.all');
-Route::put('/seller/profile', 'seller\profilecontroller@update')->name('profile.update');
-Route::get('/seller/profile/edit', 'seller\profilecontroller@edit')->name('profile.edit');
-Route::get('/seller/products/data', 'seller\ProductsController@data')->name('products.data');
-Route::get('/seller/products/{id}', 'seller\productscontroller@edit')->name('products.edit');
-Route::put('/seller/products/{id}', 'seller\productscontroller@update')->name('products.update');
+// Profile Routes
+Route::put('seller/profile', 'Seller\ProfileController@update')->name('profile.update');
+Route::get('seller/profile/edit', 'Seller\ProfileController@edit')->name('profile.edit');
+
+// Product Routes
+Route::get('seller/products/create','Seller\ProductsController@create');
+Route::post('seller/products', 'Seller\ProductsController@store')->name('products.create');
+Route::get('seller/products/all', 'Seller\ProductsController@all')->name('products.all');
+Route::get('seller/products/data', 'Seller\ProductsController@data')->name('products.data');
+Route::get('seller/products/{id}/edit', 'Seller\ProductsController@edit')->name('products.edit');
+Route::put('seller/products/{id}', 'Seller\ProductsController@update')->name('products.update');
+Route::get('seller/products/{id}/suspend', 'Seller\ProductsController@suspend')->name('products.suspend');
+Route::get('seller/products/{id}/active', 'Seller\ProductsController@active')->name('products.active');
+
+// Frontend Routes
+Route::get('/home', 'Frontend\HomeController@index');
+Route::get('/product/{name}', 'Frontend\HomeController@product');
 
 Route::get('/admin', function (){
     return view('admin.index');

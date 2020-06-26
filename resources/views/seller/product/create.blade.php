@@ -1,16 +1,19 @@
 @extends('layouts.seller')
 @section('content')
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-12">
             @if(session()->has('success'))
-                <div class="alert alert-success">
+                <div class="alert alert-success text-white">
                     <strong>Success!</strong> {{ session('success')  }}
                 </div>
             @endif
         </div>
     </div>
-    <h2>Add product</h2>
+
     <div class="card">
+        <div class="card-header">
+            <h2>Add product</h2>
+        </div>
 
         <div class="card-body">
             <form method="POST" action="{{ route('products.create') }}" enctype="multipart/form-data">
@@ -159,7 +162,7 @@
                     <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
 
                     <div class="col-md-6">
-                        <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="image" autofocus>
+                        <input id="images-upload" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="image" autofocus>
 
                         @error('image')
                         <span class="invalid-feedback" role="alert">
@@ -167,6 +170,8 @@
                                     </span>
                         @enderror
                     </div>
+
+                    <div class="images-preview col-md-6 offset-4"></div>
                 </div>
 
                 <div class="form-group row mb-0">
