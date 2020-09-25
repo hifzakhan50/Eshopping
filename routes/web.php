@@ -36,13 +36,18 @@ Route::get('seller/products/{id}/active', 'Seller\ProductsController@active')->n
 // Frontend Routes
 Route::get('/home', 'Frontend\HomeController@index');
 Route::get('/product/{name}', 'Frontend\HomeController@product');
+// Checkout Route
+Route::get('/checkout', 'Customer\CustomerController@checkout');
 
 Route::get('/admin', function (){
     return view('admin.index');
 });
-Route::get('/buyer', function (){
-    return view('buyer.index');
+Route::get('/customer', function (){
+    return view('customer.index');
 });
 Route::get('/seller', function (){
     return view('seller.index');
+});
+Route::get('/test', function (){
+
 });

@@ -33,7 +33,7 @@ class HomeController extends Controller
         if($role->name == 'Admin'){
             return view('admin.index');
         }else if($role->name == 'Customer'){
-            return view('buyer.index');
+            return view('customer.index');
         }else if($role->name == 'Seller'){
             return view('seller.index');
         }return view('home');

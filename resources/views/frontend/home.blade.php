@@ -96,7 +96,7 @@
                         <div class="card-content">
                             <div class="item-img text-center">
                                 <a href="{{ url('product/'.$product->name) }}">
-                                    <img class="img-fluid" src="{{ getImageSrc($product->image) }}"
+                                    <img class="img-flui" style="width:350px;height:350px" src="{{ getImageSrc($product->image) }}"
                                          alt="img-placeholder"></a>
                             </div>
                             <div class="card-body">

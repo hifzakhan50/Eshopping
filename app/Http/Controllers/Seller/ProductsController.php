@@ -27,7 +27,6 @@ class ProductsController extends Controller
     public function store()
     {
 
-
         $data = request()->validate([
             'name' => 'required',
             'category-id' => 'required',
