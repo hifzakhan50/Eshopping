@@ -19,9 +19,16 @@ Auth::routes();
 
 Route::get('/index', 'HomeController@index')->name('home');
 
+
 // Profile Routes
 Route::put('seller/profile', 'Seller\ProfileController@update')->name('profile.update');
 Route::get('seller/profile/edit', 'Seller\ProfileController@edit')->name('profile.edit');
+//Shoppingcart Route
+Route::post('/addToCart', 'shoppingCartController@addToCart')->name("addToCart");
+// Checkout Route
+Route::get('/checkout', 'Customer\CheckoutController@checkout');
+
+
 
 // Product Routes
 Route::get('seller/products/create','Seller\ProductsController@create');
@@ -36,8 +43,6 @@ Route::get('seller/products/{id}/active', 'Seller\ProductsController@active')->n
 // Frontend Routes
 Route::get('/home', 'Frontend\HomeController@index');
 Route::get('/product/{name}', 'Frontend\HomeController@product');
-// Checkout Route
-Route::get('/checkout', 'Customer\CheckoutController@checkout');
 
 Route::get('/admin', function (){
     return view('admin.index');

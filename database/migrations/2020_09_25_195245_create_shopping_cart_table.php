@@ -15,9 +15,10 @@ class CreateShoppingCartTable extends Migration
     {
         Schema::create('shopping_cart', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('customer_profile_id');
-            $table->unsignedInteger('quantity');
+            $table->bigInteger('fkSegmentId');
+            $table->bigInteger('product_id');
+            $table->bigInteger('customer_profile_id');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }
