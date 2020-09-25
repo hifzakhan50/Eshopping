@@ -139,7 +139,7 @@
                                 <div class="cart">
                                     <i class="feather icon-shopping-cart"></i> <span
                                         class="add-to-cart">Add to cart</span>
-                                    <a href="app-ecommerce-checkout.html" class="view-in-cart d-none">View In Cart</a>
+                                    <a href='{{ url('checkout') }}' class="view-in-cart d-none">View In Cart</a>
                                 </div>
                             </div>
                         </div>

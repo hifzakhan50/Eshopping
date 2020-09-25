@@ -37,7 +37,7 @@ Route::get('seller/products/{id}/active', 'Seller\ProductsController@active')->n
 Route::get('/home', 'Frontend\HomeController@index');
 Route::get('/product/{name}', 'Frontend\HomeController@product');
 // Checkout Route
-Route::get('/checkout', 'Customer\CustomerController@checkout');
+Route::get('/checkout', 'Customer\CheckoutController@checkout');
 
 Route::get('/admin', function (){
     return view('admin.index');

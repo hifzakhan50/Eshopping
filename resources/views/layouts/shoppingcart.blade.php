@@ -47,7 +47,6 @@
 
 <body class="horizontal-layout horizontal-menu 2-columns ecommerce-application navbar-floating footer-static  " data-open="hover" data-menu="horizontal-menu" data-col="2-columns">
 
-
 <!-- BEGIN: Content-->
 <div class="app-content content mt-0 pt-0">
     <div class="content-wrapper mt-0">
