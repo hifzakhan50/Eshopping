@@ -151,7 +151,7 @@ $(document).ready(function () {
   // checkout quantity counter
   var quantityCounter = $(".quantity-counter"),
     CounterMin = 1,
-    CounterMax = 10;
+    CounterMax = 1000000;
   if (quantityCounter.length > 0) {
     quantityCounter.TouchSpin({
       min: CounterMin,

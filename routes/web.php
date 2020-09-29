@@ -24,7 +24,8 @@ Route::get('/index', 'HomeController@index')->name('home');
 Route::put('seller/profile', 'Seller\ProfileController@update')->name('profile.update');
 Route::get('seller/profile/edit', 'Seller\ProfileController@edit')->name('profile.edit');
 //Shoppingcart Route
-Route::post('/addToCart', 'shoppingCartController@addToCart')->name("addToCart");
+Route::post('addToCart', 'Frontend\shoppigCartController@addToCart')->name("addToCart");
+Route::post('remove/{index}', 'Frontend\shoppigCartController@remove');
 // Checkout Route
 Route::get('/checkout', 'Customer\CheckoutController@checkout');
 

@@ -26,12 +26,12 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <h5>{{ $product->name }}
+                                <h5 id="name">  {{ $product->name }}
                                 </h5>
                                 <p class="text-muted">by {{ $product->sellerProfile->name }}</p>
                                 <div class="ecommerce-details-price d-flex flex-wrap">
 
-                                    <p class="text-primary font-medium-3 mr-1 mb-0">RS.{{ $product->price }}</p>
+                                    <p id="price" class="text-primary font-medium-3 mr-1 mb-0">RS.{{ $product->price }}</p>
                                     <span class="pl-1 font-medium-3 border-left">
                                             <i class="feather icon-star text-warning"></i>
                                             <i class="feather icon-star text-warning"></i>
@@ -42,14 +42,20 @@
                                     <span class="ml-50 text-dark font-medium-1">424 ratings</span>
                                 </div>
                                 <hr>
-                                <p>{{ $product->description }}</p>
+                                <div class="form-group d-flex align-items-baseline">
+                                    <p class="text-primary font-medium-3 mr-1 mb-0">Quantity : </p>
+
+                                    <input type="number" value="1" min="1" name="quantity" id="quantity" style="width: 50px">
+                                </div>
+                                <hr>
+                                <p> {{ $product->description }}</p>
 {{--                                <p class="font-weight-bold mb-25"> <i class="feather icon-truck mr-50 font-medium-2"></i>Free Shipping--}}
 {{--                                </p>--}}
 {{--                                <p class="font-weight-bold"> <i class="feather icon-dollar-sign mr-50 font-medium-2"></i>EMI options available--}}
 {{--                                </p>--}}
                                 <hr>
                                 <div class="form-group">
-                                    <label class="font-weight-bold">Color: {{ $product->color }}</label>
+                                    <label id="color" class="font-weight-bold">Color: {{ $product->color }}</label>
                                     <ul class="list-unstyled mb-0 product-color-options">
                                         <li class="d-inline-block selected">
                                             <div class="color-option b-primary">
@@ -82,7 +88,7 @@
                                 <p>Available - <span class="text-success">In stock</span></p>
 
                                 <div class="d-flex flex-column flex-sm-row">
-                                    <button  class="btn btn-primary mr-0 mr-sm-1 mb-1 mb-sm-0" onclick="location.href='{{ url('checkout') }}'"><i class="feather icon-shopping-cart mr-25"></i>ADD TO CART</button>
+                                    <button id="addToCartBtn"  class="btn btn-primary mr-0 mr-sm-1 mb-1 mb-sm-0" ><i class="feather icon-shopping-cart mr-25"></i>ADD TO CART</button>
                                 </div>
                                 <hr>
                                 <button type="button" class="btn btn-icon rounded-circle btn-outline-primary mr-1 mb-1"><i class="feather icon-facebook"></i></button>
@@ -125,5 +131,16 @@
 
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        const productId = '{{ $product->id }}';
+        const urlPath = '{{ url("") }}';
+    </script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{{ asset('js/frontend/product-detail.js') }}" type="text/javascript"></script>
 
 @endsection
+
+
+
