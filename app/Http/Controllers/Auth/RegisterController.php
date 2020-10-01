@@ -79,8 +79,12 @@ class RegisterController extends Controller
         $user->roles()->attach($role);
         if($role->id == 2){
             $user->customerProfile()->create();
-        }else if($role->id == 3){
+        }
+        else if($role->id == 3){
             $user->sellerProfile()->create();
+        }
+        else if($role->id == 4){
+            $user->fulNetProfile()->create();
         }
         return $user;
     }

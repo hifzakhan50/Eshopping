@@ -47,4 +47,7 @@ class User extends Authenticatable
     public function customerProfile(){
         return $this->hasOne('App\CustomerProfile');
     }
+    public function fulNetProfile(){
+        return $this->hasOne('App\fulNetProfile');
+    }
 }
