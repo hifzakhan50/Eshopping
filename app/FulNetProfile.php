@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class fulNetProfile extends Model
+class FulNetProfile extends Model
 {
     //
     public function user(){

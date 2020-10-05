@@ -13,7 +13,7 @@ class CreateFulNetProfileTable extends Migration
      */
     public function up()
     {
-        Schema::create('ful_net_profile', function (Blueprint $table) {
+        Schema::create('ful_net_profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('name')->nullable();
@@ -35,6 +35,6 @@ class CreateFulNetProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ful_net_profile');
+        Schema::dropIfExists('ful_net_profiles');
     }
 }

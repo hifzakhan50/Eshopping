@@ -18,5 +18,6 @@ class UserTableSeeder extends Seeder
             'password' => password_hash('password123', PASSWORD_DEFAULT)
         ]);
 
+
     }
 }

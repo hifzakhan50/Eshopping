@@ -77,6 +77,7 @@
                     </li>
                     <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon feather icon-maximize"></i></a></li>
                     <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon feather icon-search"></i></a>
+                        <!--Search icon-->
                         <div class="search-input">
                             <div class="search-input-icon"><i class="feather icon-search primary"></i></div>
                             <input class="input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="template-list">
@@ -136,17 +137,29 @@
                         </ul>
                     </li>
 
-                    <!--Edit profile-->
-                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                            <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">John Doe</span><span class="user-status">Available</span></div><span><img class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
+                    <!--Profile: Dropdown-->
+                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"
+                                                                   href="#" data-toggle="dropdown">
+                            @isset(auth()->user()->fulNetProfile->name)
+                            <div class="user-nav d-sm-flex d-none"><span
+                                    class="user-name text-bold-600">{{ auth()->user()->fulNetProfile->name}}</span><span
+                                    class="user-status">Available</span></div>
+                            @endisset
+                            @isset(auth()->user()->fulNetProfile->name)
+                            <span><img class="round" src="{{ getImageSrc(auth()->user()->fulNetProfile->image)}}"
+                                       alt="avatar" height="40" width="40"></span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="page-user-profile.html"><i class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="app-email.html"><i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="feather icon-message-square"></i> Chats</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}"
-                                                                   onclick="event.preventDefault();
+                        @endisset
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="{{ url('fulNet/profile/edit') }}">
+                                <i class="feather icon-user"></i> Edit Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                    <!--End-->
+
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
@@ -258,7 +271,7 @@
                     </li>
                     <li><a href="dashboard-ecommerce.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="eCommerce">eCommerce</span></a>
                     </li>
-
+<!--
                     <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Products</span>
                             <span class="badge badge badge-warning badge-pill float-right mr-2">2</span></a>
                         <ul class="menu-content">
@@ -266,6 +279,8 @@
                             </li>
                         </ul>
                 </ul>
+            </li> -->
+        </ul>
             </li>
         </ul>
     </div>
