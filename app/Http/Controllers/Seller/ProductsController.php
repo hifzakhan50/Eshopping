@@ -8,13 +8,16 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
+use App\ShipMan;
+
 
 class ProductsController extends Controller
 {
     //
     public function create()
     {
-        return view('seller.product.create');
+        $shippingMethods = ShipMan::all();
+        return view('seller.product.create', compact('shippingMethods'));
     }
 
     public function edit($id)
@@ -26,8 +29,6 @@ class ProductsController extends Controller
 
     public function store()
     {
-
-
         $data = request()->validate([
             'name' => 'required',
             'category-id' => 'required',

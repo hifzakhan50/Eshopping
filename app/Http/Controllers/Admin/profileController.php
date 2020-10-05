@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\AdminProfile;
 use App\Http\Controllers\Controller;
@@ -59,8 +59,7 @@ class profileController extends Controller
 
     public function edit()
     {
-        $profile= AdminProfile::admin/profile::where('user_id', '=', auth()->id())->first();
-
+        $profile= AdminProfile::where('user_id', '=', auth()->id())->first();
         return view('admin.profile.edit',compact('profile'));
     }
 
@@ -73,12 +72,12 @@ class profileController extends Controller
      */
 
 
-    public function update(Request $request, $id)
+    public function update()
     {
         $data = request()->validate([
             'name' => 'required',
             'image' => ['image'],
-            'adress' => 'required',
+            'address' => 'required',
             'about' => 'required',
             'country' => 'required',
         ]);
@@ -89,11 +88,12 @@ class profileController extends Controller
         }
         auth()->user()->adminProfile->update([
             'name' => $data['name'],
-            'address' => $data['adress'],
+            'address' => $data['address'],
             'country' => $data['country'],
             'about' => $data['about'],
 
         ]);
+        return redirect()->back()->with('success', 'Profile updated successfully.');
     }
 
     /**

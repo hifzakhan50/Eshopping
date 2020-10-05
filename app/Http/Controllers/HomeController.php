@@ -30,12 +30,20 @@ class HomeController extends Controller
 
         $role = $user->roles()->orderBy('name')->first();
 
+
         if($role->name == 'Admin'){
             return view('admin.index');
-        }else if($role->name == 'Customer'){
-            return view('buyer.index');
-        }else if($role->name == 'Seller'){
+        }
+        else if($role->name == 'Customer'){
+            return view('customer.index');
+        }
+        else if($role->name == 'Seller') {
+            //dd($role);
             return view('seller.index');
-        }return view('home');
+        }
+        else if($role->name == 'Fulfillment Net User'){
+                return view('fulNet.index');
+        }
+        return view('home');
     }
 }

@@ -1,9 +1,8 @@
-@extends('layouts.seller')
+@extends('layouts.admin')
 @section('content')
 
-
     <div class="card">
-        <div class="card-header"><h2>Products</h2></div>
+        <div class="card-header"><h2>Shipping Methods</h2></div>
 
 
         <div class="card-body">
@@ -14,10 +13,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        <th>Description</th>
-                        <th>Sku</th>
-                        <th>Image</th>
-                        <th>Color</th>
+                        <th>Price</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -26,26 +22,32 @@
         </div>
     </div>
 
+    <!--View HTML--->
 
 @endsection
+
+<!---VIew Script-->
 @push('script')
     <script>
-        $(function () {
-            $('#dataTable').dataTable({
+        let routeName = '{{url('/admin/shipping-management/data')}}';
+        $(function()
+        {
+            $('#dataTable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{{url('/seller/products/data')}}',
+                ajax: routeName,
                 columns: [
-                    {data: 'id', name: 'id'},
-                    {data: 'name', name: 'name'},
-                    {data: 'description', name: 'description'},
-                    {data: 'sku', name: 'sku'},
-                    {data: 'image', name: 'image'},
-                    {data: 'color', name: 'color'},
+                    { data: 'id', name: 'id' },
+                    { data: 'name', name: 'name' },
+                    { data: 'price', name: 'price' },
                     {data: 'action', name: 'action', orderable: false, searchable: false}
                 ]
             });
         });
 
+
     </script>
+
+
 @endpush
+

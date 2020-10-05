@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\customer;
+namespace App\Http\Controllers\fulNet;
 
-use App\CustomerProfile;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -23,12 +22,43 @@ class profileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function create()
+    {
+        //
+    }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id)
     {
-        $profile= CustomerProfile::where('user_id', '=', auth()->id())->first();
-
-        return view('customer.profile.edit',compact('profile'));
+        $profile= FulNetProfile::where('user_id', '=', auth()->id())->first();
+        return view('fulNet.profile.edit',compact('profile'));
     }
 
     /**
@@ -42,24 +72,26 @@ class profileController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
+            'image' => ['image'],
             'address' => 'required',
             'about' => 'required',
             'country' => 'required',
         ]);
         if (request()->has('image')){
             $imagePath = request('image')->store('uploads', 'public');
-            auth()->user()->customerProfile->update(['image' => $imagePath]);
+            auth()->user()->fulNetProfile->update(['image' => $imagePath]);
 
         }
-        auth()->user()->customerProfile->update([
+        auth()->user()->fulNetProfile->update([
             'name' => $data['name'],
             'address' => $data['address'],
             'country' => $data['country'],
             'about' => $data['about'],
-        ]);
 
+        ]);
         return redirect()->back()->with('success', 'Profile updated successfully.');
     }
+
 
     /**
      * Remove the specified resource from storage.

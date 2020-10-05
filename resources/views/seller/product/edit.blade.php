@@ -150,10 +150,11 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="sku" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+                    <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
 
                     <div class="col-md-6">
-                        <input id="price" type="text" class="form-control @error('price') not found @enderror" name="price" value="{{ $product->price }}" required autocomplete="price" autofocus>
+                        <input id="price" type="number" min="0" max="100000" class="form-control @error('price') not found @enderror"
+                               name="price" value="{{ $product->price }}" required autocomplete="price" autofocus>
 
                         @error('price')
                         <span class="invalid-feedback" role="alert">

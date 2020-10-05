@@ -147,7 +147,7 @@
                     <label for="sku" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
 
                     <div class="col-md-6">
-                        <input id="price" type="text" class="form-control @error('price') not found @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
+                        <input id="price" type="number" min="0" max="100000" class="form-control @error('price') not found @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
 
                         @error('price')
                         <span class="invalid-feedback" role="alert">
@@ -157,7 +157,30 @@
                     </div>
                 </div>
 
+                <div class="form-group row">
+                    <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Shipping') }}</label>
 
+                    <div class="col-md-6">
+                        <select name="shippingmethod" id="shipping-id" type="text"
+                                class="form-control input-group-lg " @error('shipping-id') is-invalid @enderror" name="shipping-id"
+                                value="{{ old('shipping-id') }}" required autocomplete="shipping-id" autofocus data-dependent="name">
+                            <option value="">Select Shipping Method</option>
+
+                        @foreach($shippingMethods as $shippingMethod)
+                                <option selected value="{{$shippingMethod->id}}">{{$shippingMethod->name.'('.$shippingMethod->price.')'}}</option>
+
+                                @endforeach
+
+
+                                </select>
+
+                        @error('shipping-id')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
 

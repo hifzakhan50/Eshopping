@@ -1,12 +1,22 @@
 @extends('layouts.admin')
 @section('content')
-    <h2>Add Catagory</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            @if(session()->has('success'))
+                <div class="alert alert-success text-white">
+                    <strong>Success!</strong> {{ session('success')  }}
+                </div>
+            @endif
+        </div>
+    </div>
+
     <div class="card">
+        <div class="card-header">
+            <h2>Add Shipping-Method</h2>
+        </div>
 
         <div class="card-body">
-
-            <!-- BEGIN: Create Form-->
-            <form method="POST" action="{{ route('category.create') }}"enctype="multipart/form-data">
+            <form method="POST" name="addShipmentMethod" action="{{ route('storeShipping') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group row">
@@ -24,33 +34,18 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+                    <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
 
                     <div class="col-md-6">
-                        <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description" autofocus>
+                        <input id="price" type="number" min="0" max="100000" class="form-control @error('price') not found @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
 
-                        @error('description')
+                        @error('price')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                         @enderror
                     </div>
                 </div>
-
-                <div class="form-group row">
-                    <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="image" autofocus>
-
-                        @error('image')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
-                </div>
-
 
 
                 <div class="form-group row mb-0">

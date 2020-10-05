@@ -38,10 +38,10 @@ class CategoriesController extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect()->back()->with('success', 'Categary has been added Successfully');
+        return redirect()->back()->with('success', 'Category has been added Successfully');
     }
 
-        public function edit($id)
+    public function edit($id)
         {
             $cat = Category::find($id);
 
@@ -68,7 +68,7 @@ class CategoriesController extends Controller
             'category_id' => $data['category-id'],
             'description' => $data['description'],
         ]);
-        return redirect('index');
+        return redirect('index')->with('success', 'Category has been updated Successfully');;
     }
 
     public function all()
@@ -76,8 +76,6 @@ class CategoriesController extends Controller
 
         return view('admin.category.all');
     }
-
-
 
     public function data()
     {
@@ -102,8 +100,5 @@ class CategoriesController extends Controller
             })
             ->make(true);
     }
-
-
-
 
 }

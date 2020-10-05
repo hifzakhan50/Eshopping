@@ -48,6 +48,7 @@
     <!-- END: Custom CSS-->
 
 </head>
+
 <body class="vertical-layout vertical-menu-modern 2-columns  navbar-floating footer-static " data-open="click"
       data-menu="vertical-menu-modern" data-col="2-columns">
 
@@ -146,6 +147,8 @@
                             </li>
                         </ul>
                     </li>
+
+                    <!--profile: Dropdown-->
                     <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"
                                                                    href="#" data-toggle="dropdown">
                             <div class="user-nav d-sm-flex d-none"><span
@@ -196,6 +199,7 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
 
+            <!--Side Bar: options-->
             <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title"
                                                                                               data-i18n="Dashboard">Products</span>
                     <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
