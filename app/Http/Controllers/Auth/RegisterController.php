@@ -77,9 +77,9 @@ class RegisterController extends Controller
         $role = Role::find($data['role']);
 
         $user->roles()->attach($role);
-        if($role->id == 2){
+        if($role['id'] == 2){
             $user->customerProfile()->create();
-        }else if($role->id == 3){
+        }else if($role['id'] == 3){
             $user->sellerProfile()->create();
         }
         return $user;

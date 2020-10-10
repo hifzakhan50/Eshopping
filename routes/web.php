@@ -28,7 +28,25 @@ Route::post('addToCart', 'Frontend\shoppigCartController@addToCart')->name("addT
 Route::post('remove/{index}', 'Frontend\shoppigCartController@remove');
 // Checkout Route
 Route::get('/checkout', 'Customer\CheckoutController@checkout');
+// View shopping Cart
+Route::get('/shoppingcart', 'Frontend\ShoppingCart\shoppingCart@viewCart');
 
+// Billing address route
+Route::get('/billing-address', 'Frontend\BillingAdress\billingAdress@addBilling')->name('addBilling');
+
+//Route payment Adress
+Route::get('/payment-address', 'Frontend\PaymentAddress\paymentAddress@addPaymentAddress')->name('addPayment');
+Route::post('/order-confirmation-detail', 'Frontend\PaymentAddress\paymentAddress@store')->name('paymentAddress.store');
+//
+Route::get('/test-route', 'Frontend\testController\testing@test');
+//order storing  routes
+Route::post('order', 'Frontend\Orders\order@store')->name('order.store');
+
+// OrderConfirmationDetail Route
+Route::get('/order-confirmation-detail', 'Frontend\OrderConfirmationDetail\orderConfirmationDetail@confirmOrder')->name('placeOrder');
+
+//Order Success Message Route
+Route::get('/order-success', 'OrderuSuccess\orderSuccess@orderSuccessMsg');
 
 
 // Product Routes

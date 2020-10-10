@@ -39,7 +39,7 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
-
+    <link href="{{ asset('css/payment.css') }}" rel="stylesheet">
 </head>
 <!-- END: Head-->
 

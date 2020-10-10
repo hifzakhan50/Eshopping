@@ -7,7 +7,16 @@ use Illuminate\Http\Request;
 
 class shoppigCartController extends Controller
 {
+    public function store()
+    {
+        dd(request()->all());
+        $data = request()->validate([
+            'quantity' => 'required',
+            'product_id' => 'required',
+        ]);}
+
     public function addToCart(){
+        echo 'testing';
         session()->push('products', request()->all());
     }
 
@@ -22,4 +31,5 @@ class shoppigCartController extends Controller
         }
 
     }
+
 }

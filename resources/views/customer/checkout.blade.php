@@ -34,6 +34,7 @@
         </div>
         <div class="content-body">
             <form action="#" class="icons-tab-steps checkout-tab-steps wizard-circle">
+
                 <!-- Checkout Place order starts -->
                 <h6><i class="step-icon step feather icon-shopping-cart"></i>Cart</h6>
                 <fieldset class="checkout-step-1 px-0">
@@ -55,7 +56,7 @@
                                         <div class="item-name">
                                             <a href="app-ecommerce-details.html">{{ $product['name'] }}</a>
                                             <span></span>
-                                            <p class="item-company">Color <span class="company-name">{{ $product['color'] }}</span></p>
+                                            <a href="app-ecommerce-details.html">{{ $product['color'] }}</a>
                                             <p class="stock-status-in">In Stock</p>
                                         </div>
                                         <div class="item-quantity">
@@ -64,8 +65,6 @@
                                                 <input type="number" class="quantity-counter" value="{{ $product['quantity'] }}">
                                             </div>
                                         </div>
-                                        <p class="delivery-date">Delivery by, Wed Apr 25</p>
-                                        <p class="offers">17% off 4 offers Available</p>
                                     </div>
                                     <div class="item-options text-center">
                                         <div class="item-wrapper">
@@ -78,9 +77,6 @@
                                                 <h6 class="item-price">
                                                     {{ $product['price'] }}
                                                 </h6>
-                                                <p class="shipping">
-                                                    <i class="feather icon-shopping-cart"></i> Free Shipping
-                                                </p>
                                             </div>
                                         </div>
 
@@ -170,17 +166,23 @@
                                             <div class="detail-title detail-total">Total</div>
                                             <div class="detail-amt total-amt">$574</div>
                                         </div>
-                                        <div class="btn btn-primary btn-block place-order">PLACE ORDER</div>
-                                    </div>
+                                        <div class="form-group row mb-0">
+                                            <div style="min-width: 500px;" class="col-md-6 offset-md-4">
+                                                <a style="min-width: 300px; background-color: #7367f0; color: white;
+padding: 10px;border-radius: 5px" href=" {{route('addBilling')}}" class="btn-btn-primary">
+
+                                                 <strong>{{ __('PROCEED TO CHECKOUT') }}</strong>
+                                                </a>
+
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
+                            </div>                        </div></section>
                 </fieldset>
                 <!-- Checkout Place order Ends -->
 
-                <!-- Checkout Customer Address Starts -->
-                <h6><i class="step-icon step feather icon-home"></i>Address</h6>
+                <!-- Checkout Customer Address Starts -->   <h6><i class="step-icon step feather icon-home"></i>Address</h6>
                 <fieldset class="checkout-step-2 px-0">
                     <section id="checkout-address" class="list-view product-checkout">
                         <div class="card">

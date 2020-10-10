@@ -88,7 +88,7 @@
                                 <p>Available - <span class="text-success">In stock</span></p>
 
                                 <div class="d-flex flex-column flex-sm-row">
-                                    <button id="addToCartBtn"  class="btn btn-primary mr-0 mr-sm-1 mb-1 mb-sm-0" ><i class="feather icon-shopping-cart mr-25"></i>ADD TO CART</button>
+                                    <button id="addToCartBtn" type="submit" class="btn btn-primary mr-0 mr-sm-1 mb-1 mb-sm-0" ><i class="feather icon-shopping-cart mr-25"></i>ADD TO CART</button>
                                 </div>
                                 <hr>
                                 <button type="button" class="btn btn-icon rounded-circle btn-outline-primary mr-1 mb-1"><i class="feather icon-facebook"></i></button>

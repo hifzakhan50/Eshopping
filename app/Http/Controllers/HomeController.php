@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -30,11 +31,14 @@ class HomeController extends Controller
 
         $role = $user->roles()->orderBy('name')->first();
 
-        if($role->name == 'Admin'){
+        //get role of current user [$user->id]
+        $current_role = DB::table('role_user')->select(['role_id'])->where('user_id','=',$user->id)->first();
+
+        if($current_role->role_id == 1){
             return view('admin.index');
-        }else if($role->name == 'Customer'){
+        }else if($current_role->role_id == 2){
             return view('customer.index');
-        }else if($role->name == 'Seller'){
+        }else if($current_role->role_id == 3){
             return view('seller.index');
         }return view('home');
     }
