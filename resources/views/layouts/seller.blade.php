@@ -3,6 +3,7 @@
 <!-- BEGIN: Head-->
 
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -211,6 +212,22 @@
                     <li class=""><a href="{{ url('seller/products/all') }}"><i class="feather icon-circle"></i><span
                                 class="menu-item"
                                 data-i18n="Analytics">All Products</span></a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title"
+                                                                                              data-i18n="Dashboard">Advertisement Management</span>
+                    <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+                <ul class="menu-content">
+                    <li class=""><a href="{{url('seller/adMan/create')}}"><i class="feather icon-circle"></i><span
+                                class="menu-item" data-i18n="Analytics">Create Campaign</span></a>
+                    </li>
+
+                    <li class=""><a href="{{ url('seller/adMan/all') }}"><i class="feather icon-circle"></i><span
+                                class="menu-item"
+                                data-i18n="Analytics">All Campaigns</span></a>
                     </li>
 
                 </ul>

@@ -3,13 +3,14 @@
 <!-- BEGIN: Head-->
 
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Dashboard analytics - Mega Shoppy - Bootstrap HTML admin template</title>
+    <title>Shipping Management - Mega Shoppy </title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -293,6 +294,10 @@
                             <li class="active"><a href="{{url('admin/category/create')}}"><i class="feather icon-circle"></i>
                                  <span class="menu-item" data-i18n="Analytics">Add Category</span></a>
                             </li>
+
+                            <li class="active"><a href="{{url('admin/category/all')}}"><i class="feather icon-circle"></i>
+                                    <span class="menu-item" data-i18n="Analytics">All Categories</span></a>
+                            </li>
                         </ul>
                 </ul>
             </li>
@@ -302,6 +307,9 @@
                 <ul class="menu-content">
                     <li class="active"><a href="{{url('admin/shipping-management/create')}}"><i class="feather icon-circle"></i>
                             <span class="menu-item" data-i18n="Analytics">Add Shipping Method </span></a>
+                    </li>
+                    <li class="active"><a href="{{url('admin/shipping-management/all')}}"><i class="feather icon-circle"></i>
+                            <span class="menu-item" data-i18n="Analytics">All Shipping Methods </span></a>
                     </li>
                 </ul>
         </ul>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\ShipMan;
 use Illuminate\Http\Request;
@@ -38,14 +39,13 @@ class shipMans extends Controller
     }
     public function edit($id)
     {
-        $met = ShipMan::find($id);
+        $method = ShipMan::find($id);
 
-        return view('admin.shipping-management.edit', compact('met'));
+        return view('admin.shipping-management.edit', compact('method'));
     }
 
     public function update($id, $method)
     {
-
         $data = request()->validate([
             'name' => 'required',
             'price' => 'required',
@@ -87,6 +87,22 @@ class shipMans extends Controller
                 return $editBtn.' '.$activeBtn;
         })
             ->make(true);
+    }
+
+    public function active($id)
+    {
+        $method = ShipMan::find($id);
+        $method->update(['is_active' => 1]);
+
+        return redirect()->back()->with('success', 'Product has been activated.');
+    }
+
+    public function suspend($id)
+    {
+        $method = ShipMan::find($id);
+        $method->update(['is_active' => 0]);
+
+        return redirect()->back()->with('success', 'Product has been suspended.');
     }
 
 }

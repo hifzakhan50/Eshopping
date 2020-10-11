@@ -43,8 +43,16 @@ Route::put('seller/products/{id}', 'Seller\ProductsController@update')->name('pr
 Route::get('seller/products/{id}/suspend', 'Seller\ProductsController@suspend')->name('products.suspend');
 Route::get('seller/products/{id}/active', 'Seller\ProductsController@active')->name('products.active');
 
+//Ad-management Routes
+Route::get('seller/adMan/create','Seller/CampaignsController@create');
+Route::post('seller/adMan', 'Seller\CampaignsController@store')->name('adManCreate');
+
+Route::get('seller/adMan/all', 'Seller\CampaignsController@all')->name('adManAll');
+Route::get('seller/adMan/data', 'Seller\CampaignsController@data')->name('adManData');
+
+
 /*Category Routes*/
-Route::get('/admin/category', 'admin\Categoriescontroller@all')->name('category.all');
+Route::get('/admin/category/all', 'admin\Categoriescontroller@all')->name('category.all');
 Route::get('admin/category/data', 'admin\CategoriesController@data')->name('category.data');
 
 Route::get('/admin/category/create','admin\CategoriesController@create');
@@ -52,7 +60,7 @@ Route::post('/admin/category', 'admin\categoriesController@store')->name('catego
 Route::get('/admin/category/{id}/edit', 'admin\categoriescontroller@edit')->name('category.edit');
 Route::put('/admin/category/{id}', 'admin\Categoriescontroller@update')->name('category.update');
 
-Route::get('admin/category/{id}/suspend', 'admin\CategoriesController@suspend')->name('category.suspend');
+Route::get('admin/category/{id}/suspend', 'admin\CategoriesController@suspend')->name('categorySuspend');
 Route::get('admin/category/{id}/active', 'admin\categoriesController@active')->name('category.active');
 
 Route::get('admin/displayData/customer', 'admin\customersController@all');
@@ -72,13 +80,12 @@ Route::put('/admin/shipping-management/{id}/update', 'admin\shipMans@update')->n
 Route::get('admin/shipping-management/{id}/suspend', 'admin\shipMans@suspend')->name('shipManSuspend');
 Route::get('admin/shipping-management/{id}/active', 'admin\shipMans@active')->name('shipManActive');
 
-
 // Frontend Routes
 Route::get('/home', 'Frontend\HomeController@index');
 Route::get('/product/{name}', 'Frontend\HomeController@product');
 
 //Dashboard routes
-Route::get('/admin', 'admin\adminController@adminDashoard');
-Route::get('/seller', 'admin\sellerController@sellerDashoard');
-Route::get('/customer', 'admin\customerController@customerDashoard');
-Route::get('/fulNet', 'admin\fulNetController@fulNetDashoard');
+Route::get('/admin', 'admin\adminController@adminDashboard');
+Route::get('/seller', 'Seller\sellerController@sellerDashboard');
+Route::get('/customer', 'Customer\customerController@customerDashboard');
+Route::get('/fulNet', 'fulNet\fulNetController@fulNetDashboard');

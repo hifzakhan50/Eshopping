@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShippingMethodTable extends Migration
+class CreateCampaignsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateShippingMethodTable extends Migration
      */
     public function up()
     {
-        Schema::create('shipping_method', function (Blueprint $table) {
+        Schema::create('campaigns', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('seller_profile_id');
             $table->string('name');
-            $table->float('price');
+            $table->date('Starting Date');
+            $table->date('Ending Date');
+            $table->float('Budget');
             $table->boolean('is_active')->default(1);
-            $table->timestamps();
+            $table->timestamp();
         });
     }
 
@@ -29,6 +32,6 @@ class CreateShippingMethodTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shipping_method');
+        Schema::dropIfExists('campaigns');
     }
 }

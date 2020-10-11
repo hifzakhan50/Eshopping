@@ -101,4 +101,22 @@ class CategoriesController extends Controller
             ->make(true);
     }
 
+    public function active($id)
+    {
+        $cat = Category::find($id);
+        $cat->update(['is_active' => 1]);
+
+        return redirect()->back()->with('success', 'Product has been activated.');
+    }
+
+    public function suspend($id)
+    {
+       // dd($id);
+        $cat= Category::find($id);
+        $cat->update(['is_active' => 0]);
+        //dd($cat);
+
+        return redirect()->back()->with('success', 'Product has been suspended.');
+    }
+
 }

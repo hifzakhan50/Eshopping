@@ -17,7 +17,7 @@
         </div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('shipManUpdate',$cat->id) }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('shipManUpdate',$method->id) }}" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="form-group row">
