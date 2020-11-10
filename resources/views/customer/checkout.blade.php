@@ -42,27 +42,31 @@
                         <div class="checkout-items">
                             <!--CART OBJECT LOOP WILL START HERE
                             //single product-->
-                            @if(session('products') != null)
-                                @foreach(session('products') as $index => $product)
+                            @if(!empty($products))
+                                @foreach($products as $index => $product)
 
                             <div class="card ecommerce-card">
                                 <div class="card-content">
                                     <div class="item-img text-center">
                                         <a href="app-ecommerce-details.html">
-                                            <img src="../../../app-assets/images/pages/eCommerce/9.png" alt="img-placeholder">
+                                            <img  style="width:100px;height:100px" src=" {{ getImageSrc($product->shoppingCart_products->image) }}" alt="img-placeholder">
                                         </a>
                                     </div>
+
                                     <div class="card-body">
                                         <div class="item-name">
-                                            <a href="app-ecommerce-details.html">{{ $product['name'] }}</a>
-                                            <span></span>
-                                            <a href="app-ecommerce-details.html">{{ $product['color'] }}</a>
+                                            {{ $product->shoppingCart_products->name }}</a><br>
+                                            {{ $product->shoppingCart_products->description }}</a>
                                             <p class="stock-status-in">In Stock</p>
+                                            <div class="stock-status-in">
+                                                <p class="quantity-title">Color</p>
+                                                {{ $product->shoppingCart_products->color }}
+                                                <span></span></div>
                                         </div>
                                         <div class="item-quantity">
                                             <p class="quantity-title">Quantity</p>
                                             <div class="input-group quantity-counter-wrapper">
-                                                <input type="number" class="quantity-counter" value="{{ $product['quantity'] }}">
+                                                <input type="number" class="quantity-counter" value="{{ $product->shoppingCart_products->quantity }}">
                                             </div>
                                         </div>
                                     </div>
@@ -74,8 +78,7 @@
                                                 </div>
                                             </div>
                                             <div class="item-cost">
-                                                <h6 class="item-price">
-                                                    {{ $product['price'] }}
+                                                <h6 class="item-price">{{ $product->shoppingCart_products->price }}
                                                 </h6>
                                             </div>
                                         </div>

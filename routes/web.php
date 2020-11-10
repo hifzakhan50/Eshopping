@@ -60,7 +60,7 @@ Route::get('seller/products/{id}/suspend', 'Seller\ProductsController@suspend')-
 Route::get('seller/products/{id}/active', 'Seller\ProductsController@active')->name('products.active');
 
 // Frontend Routes
-Route::get('/home', 'Frontend\HomeController@index');
+Route::get('/home', 'Frontend\HomeController@index')->name('homePage');
 Route::get('/product/{name}', 'Frontend\HomeController@product');
 
 Route::get('/admin', function (){

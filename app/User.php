@@ -47,4 +47,9 @@ class User extends Authenticatable
     public function customerProfile(){
         return $this->hasOne('App\CustomerProfile');
     }
+    // *************relationship of cart and products************//
+    public function cart_products()
+    {
+        return $this->hasMany('App\shoppingCart','customer_profile_id');
+    }//end function
 }
