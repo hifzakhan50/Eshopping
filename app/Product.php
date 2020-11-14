@@ -8,7 +8,13 @@ class Product extends Model
 {
     //
     protected $guarded=[];
+
     public function sellerProfile(){
         return $this-> belongsTo('App\SellerProfile');
+    }
+
+    public function category()
+    {
+        return $this-> belongsTo('App\Category');
     }
 }

@@ -30,6 +30,7 @@
 @endsection
 @push('script')
     <script>
+
         $(function () {
             $('#dataTable').dataTable({
                 processing: true,

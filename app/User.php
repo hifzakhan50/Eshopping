@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\App;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -25,6 +26,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    /*public function hasAnyRoles($roles)  //for dealing user having multiple roles
+    {
+        return null !== $this->roles()->whereIn('tbl_roles.id', $roles)->first();
+    }  */
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -39,14 +45,23 @@ class User extends Authenticatable
     ];
     public function roles()
     {
-        return $this->belongsToMany('App\Role');
+        //return $this->belongsToMany('App\Role');
+        return $this->belongsToMany('App\Role', 'role_user', 'role_id', 'user_id');
     }
+
+    public function hasAnyRole($role) //has one role assigned to one user
+    {
+        return null !== $this->roles()->where('roles.id', $role)->first();
+    }
+
     public function sellerProfile(){
         return $this->hasOne('App\SellerProfile');
     }
+
     public function customerProfile(){
         return $this->hasOne('App\CustomerProfile');
     }
+
     public function fulNetProfile(){
         return $this->hasOne('App\fulNetProfile');
     }

@@ -28,14 +28,11 @@ class CategoriesController extends Controller
         $data = request()->validate([
             'name' => 'required',
             'description' => 'required',
-            'image' => ['required', 'image'],
         ]);
 
-        $imagePath = request('image')->store('uploads', 'public');
         $product = Category::create([
             'name' => $data['name'],
             'description' => $data['description'],
-            'image' => $imagePath,
         ]);
 
         return redirect()->back()->with('success', 'Category has been added Successfully');
@@ -55,14 +52,8 @@ class CategoriesController extends Controller
             'name' => 'required',
             //'category-id' => 'required',
             'description' => 'required',
-            'image' => ['image'],
         ]);
         $cat=Category::find($id);
-        if (request()->has('image')){
-            $imagePath = request('image')->store('uploads', 'public');
-            $cat->update(['image' => $imagePath]);
-
-        }
         $cat->update([
             'name' => $data['name'],
             'category_id' => $data['category-id'],
@@ -111,7 +102,7 @@ class CategoriesController extends Controller
 
     public function suspend($id)
     {
-       // dd($id);
+       //dd($id);
         $cat= Category::find($id);
         $cat->update(['is_active' => 0]);
         //dd($cat);

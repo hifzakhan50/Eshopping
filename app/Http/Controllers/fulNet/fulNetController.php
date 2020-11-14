@@ -14,6 +14,8 @@ class fulNetController extends Controller
      */
     public function fulNetDashboard()
     {
+//        echo 'controllerside';
+//        exit;
         return view('fulNet.index');
     }
 

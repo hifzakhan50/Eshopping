@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCampaignsTable extends Migration
+class CreateCampaignTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,8 +20,9 @@ class CreateCampaignsTable extends Migration
             $table->date('Starting Date');
             $table->date('Ending Date');
             $table->float('Budget');
+            $table->enum('Products');
             $table->boolean('is_active')->default(1);
-            $table->timestamp();
+            $table->timestamps();
         });
     }
 

@@ -10,7 +10,7 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Shipping Management - Mega Shoppy </title>
+    <title>Admin - Mega Shoppy </title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -299,21 +299,21 @@
                                     <span class="menu-item" data-i18n="Analytics">All Categories</span></a>
                             </li>
                         </ul>
+
+                    <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Shipping Management </span>
+                            <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+                        <ul class="menu-content">
+                            <li class="active"><a href="{{url('admin/shipping-management/create')}}"><i class="feather icon-circle"></i>
+                                    <span class="menu-item" data-i18n="Analytics">Add Shipping Method </span></a>
+                            </li>
+                            <li class="active"><a href="{{url('admin/shipping-management/all')}}"><i class="feather icon-circle"></i>
+                                    <span class="menu-item" data-i18n="Analytics">All Shipping Methods </span></a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
-            <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Shipping Management </span>
-                    <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
-                <ul class="menu-content">
-                    <li class="active"><a href="{{url('admin/shipping-management/create')}}"><i class="feather icon-circle"></i>
-                            <span class="menu-item" data-i18n="Analytics">Add Shipping Method </span></a>
-                    </li>
-                    <li class="active"><a href="{{url('admin/shipping-management/all')}}"><i class="feather icon-circle"></i>
-                            <span class="menu-item" data-i18n="Analytics">All Shipping Methods </span></a>
-                    </li>
-                </ul>
-        </ul>
-        </li>
         </ul>
     </div>
 </div>
@@ -335,7 +335,7 @@
 
 <!-- BEGIN: Footer-->
 <footer class="footer footer-static footer-light">
-    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2019<a class="text-bold-800 grey darken-2" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent,</a>All rights Reserved</span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i class="feather icon-heart pink"></i></span>
+    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020<a class="text-bold-800 grey darken-2" href="#" target="_blank">Mega Shoppy,</a>All rights Reserved</span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i class="feather icon-heart pink"></i></span>
         <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
     </p>
 </footer>

@@ -14,6 +14,8 @@ class sellerController extends Controller
      */
     public function sellerDashboard()
     {
+        //echo 'test';
+        //exit;
         return view('seller.index');
     }
 

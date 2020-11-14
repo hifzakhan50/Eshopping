@@ -11,9 +11,7 @@ class shippingMethod extends Seeder
      */
     public function run()
     {
-        //
         DB::table('shipping_method')->insert([
-            'id' => 1,
             'name' => 'TCS',
             'price'=>  250,
         ]);

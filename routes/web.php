@@ -44,15 +44,22 @@ Route::get('seller/products/{id}/suspend', 'Seller\ProductsController@suspend')-
 Route::get('seller/products/{id}/active', 'Seller\ProductsController@active')->name('products.active');
 
 //Ad-management Routes
-Route::get('seller/adMan/create','Seller/CampaignsController@create');
+Route::get('seller/adMan/create','Seller\CampaignsController@create');
 Route::post('seller/adMan', 'Seller\CampaignsController@store')->name('adManCreate');
+Route::post('seller/adMan/fetch', 'Seller\CampaignsController@fetch')->name('adMan.fetch');
+
 
 Route::get('seller/adMan/all', 'Seller\CampaignsController@all')->name('adManAll');
 Route::get('seller/adMan/data', 'Seller\CampaignsController@data')->name('adManData');
 
+Route::get('/seller/adMan/{id}/edit', 'Seller\CampaignsController@edit')->name('adManEdit');
+Route::put('/seller/adMan/{id}/update', 'Seller\CampaignsController@update')->name('adManUpdate');
+
+Route::get('seller/adMan/{id}/suspend', 'Seller\CampaignsController@suspend')->name('adManSuspend');
+Route::get('seller/adMan/{id}/active', 'Seller\CampaignsController@active')->name('adManActive');
 
 /*Category Routes*/
-Route::get('/admin/category/all', 'admin\Categoriescontroller@all')->name('category.all');
+Route::get('/admin/category/all', 'admin\Categoriescontroller@all')->name('category.all')->middleware('auth');
 Route::get('admin/category/data', 'admin\CategoriesController@data')->name('category.data');
 
 Route::get('/admin/category/create','admin\CategoriesController@create');
@@ -85,7 +92,11 @@ Route::get('/home', 'Frontend\HomeController@index');
 Route::get('/product/{name}', 'Frontend\HomeController@product');
 
 //Dashboard routes
-Route::get('/admin', 'admin\adminController@adminDashboard');
-Route::get('/seller', 'Seller\sellerController@sellerDashboard');
+Route::get('/admin', 'admin\adminController@adminDashboard')->name('admin.dashboard')->middleware('auth');
+Route::get('/seller', 'Seller\sellerController@sellerDashboard')->name('seller.dashboard')->middleware('auth');
 Route::get('/customer', 'Customer\customerController@customerDashboard');
 Route::get('/fulNet', 'fulNet\fulNetController@fulNetDashboard');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

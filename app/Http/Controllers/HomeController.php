@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,7 +16,6 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-
     /**
      * Show the application dashboard.
      *
@@ -25,25 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $user = User::find(auth()->id());
-
-        $role = $user->roles()->orderBy('name')->first();
-
-
-        if($role->name == 'Admin'){
-            return view('admin.index');
-        }
-        else if($role->name == 'Customer'){
-            return view('customer.index');
-        }
-        else if($role->name == 'Seller') {
-            //dd($role);
-            return view('seller.index');
-        }
-        else if($role->name == 'Fulfillment Net User'){
-                return view('fulNet.index');
-        }
         return view('home');
     }
 }

@@ -12,7 +12,7 @@
     <meta name="keywords"
           content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Dashboard analytics - Vuexy - Bootstrap HTML admin template</title>
+    <title>Seller - Mega Shoppy</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -153,9 +153,9 @@
                     <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"
                                                                    href="#" data-toggle="dropdown">
                             <div class="user-nav d-sm-flex d-none"><span
-                                    class="user-name text-bold-600">{{ auth()->user()->sellerProfile->name}}</span><span
+                                    class="user-name text-bold-600">{{ auth()->user()->name}}</span><span
                                     class="user-status">Available</span></div>
-                            <span><img class="round" src="{{ getImageSrc(auth()->user()->sellerProfile->image)}}"
+                            <span><img class="round" src="{{ getImageSrc(auth()->user()->image)}}"
                                        alt="avatar" height="40" width="40"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item"

@@ -17,9 +17,9 @@
                         <th>Starting Date</th>
                         <th>Ending date</th>
                         <th>Budget</th>
-                        <th>Active<input data-id="{{$posts[$i]->id}}" class="toggle-class" type=""
-                                         data-onstyle="success" data-offstyle="danger" data-toggle="toggle"
-                                         data-on="Active" data-off="InActive" {{ $posts[$i]->status ? 'checked' : '' }}></th>
+{{--                        <th>Active<input data-id="{{$posts[$i]->id}}" class="toggle-class" type=""--}}
+{{--                                         data-onstyle="success" data-offstyle="danger" data-toggle="toggle"--}}
+{{--                                         data-on="Active" data-off="InActive" {{ $posts[$i]->status ? 'checked' : '' }}></th>--}}
                         <th>Action</th>
                     </tr>
                     </thead>
