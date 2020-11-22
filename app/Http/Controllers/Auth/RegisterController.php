@@ -71,16 +71,19 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-
-
         $role = Role::find($data['role']);
-
         $user->roles()->attach($role);
-        if($role['id'] == 2){
+        if($role->id == 2){
             $user->customerProfile()->create();
-        }else if($role['id'] == 3){
+            return '/customer';
+        }
+        else if($role->id == 3){
             $user->sellerProfile()->create();
+            return '/seller';
+        }
+        else if($role->id == 4){
+            $user->fulNetProfile()->create();
+            return '/fulNet';
         }
         return $user;
     }

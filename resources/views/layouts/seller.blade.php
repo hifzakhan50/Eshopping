@@ -3,6 +3,7 @@
 <!-- BEGIN: Head-->
 
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -11,7 +12,7 @@
     <meta name="keywords"
           content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Dashboard analytics - Vuexy - Bootstrap HTML admin template</title>
+    <title>Seller - Mega Shoppy</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -48,6 +49,7 @@
     <!-- END: Custom CSS-->
 
 </head>
+
 <body class="vertical-layout vertical-menu-modern 2-columns  navbar-floating footer-static " data-open="click"
       data-menu="vertical-menu-modern" data-col="2-columns">
 
@@ -146,12 +148,14 @@
                             </li>
                         </ul>
                     </li>
+
+                    <!--profile: Dropdown-->
                     <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"
                                                                    href="#" data-toggle="dropdown">
                             <div class="user-nav d-sm-flex d-none"><span
-                                    class="user-name text-bold-600">{{ auth()->user()->sellerProfile->name}}</span><span
+                                    class="user-name text-bold-600">{{ auth()->user()->name}}</span><span
                                     class="user-status">Available</span></div>
-                            <span><img class="round" src="{{ getImageSrc(auth()->user()->sellerProfile->image)}}"
+                            <span><img class="round" src="{{ getImageSrc(auth()->user()->image)}}"
                                        alt="avatar" height="40" width="40"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item"
@@ -196,6 +200,7 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
 
+            <!--Side Bar: options-->
             <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title"
                                                                                               data-i18n="Dashboard">Products</span>
                     <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
@@ -207,6 +212,22 @@
                     <li class=""><a href="{{ url('seller/products/all') }}"><i class="feather icon-circle"></i><span
                                 class="menu-item"
                                 data-i18n="Analytics">All Products</span></a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title"
+                                                                                              data-i18n="Dashboard">Advertisement Management</span>
+                    <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+                <ul class="menu-content">
+                    <li class=""><a href="{{url('seller/adMan/create')}}"><i class="feather icon-circle"></i><span
+                                class="menu-item" data-i18n="Analytics">Create Campaign</span></a>
+                    </li>
+
+                    <li class=""><a href="{{ url('seller/adMan/all') }}"><i class="feather icon-circle"></i><span
+                                class="menu-item"
+                                data-i18n="Analytics">All Campaigns</span></a>
                     </li>
 
                 </ul>

@@ -32,8 +32,9 @@
                                         class="form-control @error('role') is-invalid @enderror" name="role"
                                         value="{{ old('role') }}" required autocomplete="role" autofocus>
 
-                                    <option value="2">Buyer</option>
+                                    <option value="2">Customer</option>
                                     <option value="3">Seller</option>
+                                    <option value="4">Fullfilment Network</option>
                                 </select>
 
                                 @error('role')

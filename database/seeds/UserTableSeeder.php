@@ -11,12 +11,13 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //insert user in database
         DB::table('users')->insert([
             'name' => 'Admin',
-            'email' => 'admin@ebooking.com',
-            'password' => password_hash('password', PASSWORD_DEFAULT)
+            'email' => 'admin@eshopping.com',
+            'password' => password_hash('password123', PASSWORD_DEFAULT)
         ]);
+
 
     }
 }

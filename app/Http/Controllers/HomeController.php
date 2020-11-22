@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,7 +17,6 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-
     /**
      * Show the application dashboard.
      *
@@ -26,14 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $user = User::find(auth()->id());
-
         $role = $user->roles()->orderBy('name')->first();
-
         //get role of current user [$user->id]
         $current_role = DB::table('role_user')->select(['role_id'])->where('user_id','=',$user->id)->first();
-
         if($current_role->role_id == 1){
             return view('admin.index');
         }else if($current_role->role_id == 2){

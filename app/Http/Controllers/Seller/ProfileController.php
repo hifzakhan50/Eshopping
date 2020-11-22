@@ -18,7 +18,7 @@ class ProfileController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'adress' => 'required',
+            'address' => 'required',
             'about' => 'required',
             'country' => 'required',
         ]);
@@ -29,7 +29,7 @@ class ProfileController extends Controller
         }
         auth()->user()->sellerProfile->update([
             'name' => $data['name'],
-            'address' => $data['adress'],
+            'address' => $data['address'],
             'country' => $data['country'],
             'about' => $data['about'],
         ]);

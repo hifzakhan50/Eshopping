@@ -8,13 +8,18 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
+use App\ShipMan;
+use Auth;
+
 
 class ProductsController extends Controller
 {
     //
     public function create()
     {
-        return view('seller.product.create');
+        $shippingMethods = ShipMan::all();
+        $categorys = Category::all();
+        return view('seller.product.create', compact('shippingMethods','categorys'));
     }
 
     public function edit($id)
@@ -26,7 +31,6 @@ class ProductsController extends Controller
 
     public function store()
     {
-
         $data = request()->validate([
             'name' => 'required',
             'category-id' => 'required',
@@ -39,9 +43,20 @@ class ProductsController extends Controller
             'quantity' => 'required',
             'weight' => 'required',
         ]);
-
+        /*if(\Auth::check()){
+            echo auth()->user()->id;
+            echo 'yes';
+            exit;
+        } else {
+            echo 'no';
+            exit;
+        }*/
+        /*echo auth()->user()->id;
+        exit;
+        dd($data);
+        */
         $imagePath = request('image')->store('uploads', 'public');
-        $product = auth()->user()->sellerProfile->products()->create([
+        $product = auth()->user()->SellerProfile->products()->create([
             'name' => $data['name'],
             'category_id' => $data['category-id'],
             'color' => $data['color'],
@@ -100,7 +115,6 @@ class ProductsController extends Controller
         return view('seller.product.all', compact('products'));
     }
 
-
     public function data()
     {
 
@@ -142,6 +156,7 @@ class ProductsController extends Controller
     public function suspend($id)
     {
         $product = Product::find($id);
+        dd($id);
         $product->update(['is_active' => 0]);
 
         return redirect()->back()->with('success', 'Product has been suspended.');

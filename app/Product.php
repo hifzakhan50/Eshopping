@@ -35,4 +35,8 @@ class Product extends Model
         //return $this->hasOne('App\shoppingCart','product_id');
     }
 
+    public function category()
+    {
+        return $this-> belongsTo('App\Category');
+    }
 }

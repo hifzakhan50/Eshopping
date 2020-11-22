@@ -3,7 +3,7 @@
 
 
     <div class="card">
-        <div class="card-header"><h2>Add product</h2></div>
+        <div class="card-header"><h2>Products</h2></div>
 
 
         <div class="card-body">
@@ -30,6 +30,7 @@
 @endsection
 @push('script')
     <script>
+
         $(function () {
             $('#dataTable').dataTable({
                 processing: true,
