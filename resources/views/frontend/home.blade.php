@@ -8,9 +8,7 @@
                     <h2 class="content-header-title float-left mb-0">Shop</h2>
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a>
-                            </li>
-                            <li class="breadcrumb-item"><a href="#">eCommerce</a>
+                            <li class="breadcrumb-item"><a href="{{'/home'}}">Home</a>
                             </li>
                             <li class="breadcrumb-item active">Shop
                             </li>
@@ -44,15 +42,12 @@
                                     <span class="navbar-toggler-icon d-block d-lg-none"><i
                                             class="feather icon-menu"></i></span>
                                 </button>
-                                <div class="search-results">
-                                    16285 results found
-                                </div>
                             </div>
                             <div class="view-options">
                                 <select class="price-options form-control" id="ecommerce-price-options">
                                     <option selected>Featured</option>
-                                    <option value="1">Lowest</option>
-                                    <option value="2">Highest</option>
+{{--                                    <option value="1">Lowest</option>--}}
+{{--                                    <option value="2">Highest</option>--}}
                                 </select>
                                 <div class="view-btn-option">
                                     <button class="btn btn-white view-btn grid-view-btn active">
@@ -209,7 +204,7 @@
                                                     <span class="vs-radio--border"></span>
                                                     <span class="vs-radio--circle"></span>
                                                 </span>
-                                                <span class="ml-50"> &lt;=$10</span>
+                                                <span class="ml-50"> &lt;=Rs200</span>
                                             </span>
                                 </li>
                                 <li>
@@ -219,7 +214,7 @@
                                                     <span class="vs-radio--border"></span>
                                                     <span class="vs-radio--circle"></span>
                                                 </span>
-                                                <span class="ml-50">$10 - $100</span>
+                                                <span class="ml-50">RS200 - Rs800</span>
                                             </span>
                                 </li>
                                 <li>
@@ -229,7 +224,7 @@
                                                     <span class="vs-radio--border"></span>
                                                     <span class="vs-radio--circle"></span>
                                                 </span>
-                                                <span class="ml-50">$100 - $500</span>
+                                                <span class="ml-50">Rs800 - Rs1500</span>
                                             </span>
                                 </li>
                                 <li>
@@ -239,7 +234,7 @@
                                                     <span class="vs-radio--border"></span>
                                                     <span class="vs-radio--circle"></span>
                                                 </span>
-                                                <span class="ml-50">&gt;= $500</span>
+                                                <span class="ml-50">&gt;= RS1500</span>
                                             </span>
                                 </li>
 
@@ -248,18 +243,18 @@
                         <!-- /Price Filter -->
                         <hr>
                         <!-- /Price Slider -->
-                        <div class="price-slider">
-                            <div class="price-slider-title mt-1">
-                                <h6 class="filter-title mb-0">Slider</h6>
-                            </div>
-                            <div class="price-slider">
-                                <div class="price_slider_amount mb-2">
-                                </div>
-                                <div class="form-group">
-                                    <div class="slider-sm my-1 range-slider" id="price-slider"></div>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="price-slider">--}}
+{{--                            <div class="price-slider-title mt-1">--}}
+{{--                                <h6 class="filter-title mb-0">Slider</h6>--}}
+{{--                            </div>--}}
+{{--                            <div class="price-slider">--}}
+{{--                                <div class="price_slider_amount mb-2">--}}
+{{--                                </div>--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <div class="slider-sm my-1 range-slider" id="price-slider"></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <!-- /Price Range -->
                         <hr>
                         <!-- Categories Starts -->
@@ -275,7 +270,7 @@
                                                     <span class="vs-radio--border"></span>
                                                     <span class="vs-radio--circle"></span>
                                                 </span>
-                                                <span class="ml-50">Appliances</span>
+                                                <span class="ml-50" >Appliances</span>
                                             </span>
                                 </li>
                                 <li>

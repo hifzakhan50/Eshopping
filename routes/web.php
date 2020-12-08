@@ -124,5 +124,5 @@ Route::get('/fulNet', 'fulNet\fulNetController@fulNetDashboard');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 

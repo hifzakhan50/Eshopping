@@ -30,7 +30,7 @@
 {{--                            <option value="2">Health&Beauty</option>--}}
 {{--                            <option value="3">Electronic Devices</option>--}}
 {{--                            <option value="4">Electronic Accessories</option>--}}
-                            <option value="">Select Category</option>
+                            <option value="0">Select Category</option>
 
                             @foreach($categorys as $category)
                                 <option selected value="{{$category->id}}">{{$category->name}}</option>
@@ -112,6 +112,7 @@
                                 class="form-control @error('size') is-invalid @enderror" name="size"
                                 value="{{ old('size') }}" required autocomplete="size" autofocus>
 
+
                             <option value="1">S</option>
                             <option value="2">M</option>
                             <option value="3">L</option>
@@ -145,7 +146,7 @@
                     <label for="quantity" class="col-md-4 col-form-label text-md-right">{{ __('Quantity') }}</label>
 
                     <div class="col-md-6">
-                        <input id="quantity" type="text" class="form-control @error('quantity') is-invalid @enderror" name="quantity" value="{{ old('quantity') }}" required autocomplete="quantity" autofocus>
+                        <input id="quantity" type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity" value="{{ old('quantity') }}" required autocomplete="quantity" autofocus>
 
                         @error('quantity')
                         <span class="invalid-feedback" role="alert">

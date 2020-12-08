@@ -118,13 +118,10 @@
                                 value="{{ old('product-id') }}" required autocomplete="product-id" autofocus>
 
                             @foreach($products as $product)
-                               `
                                 <option selected value="{{$product->id}}">{{$product->name}}</option>
-                                }
+
                             @endforeach
-
                             <option value="">Select Product</option>
-
                         </select>
 
                         @error('product-id')

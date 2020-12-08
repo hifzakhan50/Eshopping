@@ -43,6 +43,8 @@ class ProductsController extends Controller
             'quantity' => 'required',
             'weight' => 'required',
         ]);
+
+        //dd($data['category-id']);
         /*if(\Auth::check()){
             echo auth()->user()->id;
             echo 'yes';

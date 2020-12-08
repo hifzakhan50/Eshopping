@@ -26,7 +26,7 @@ $(document).ready(function () {
                     price: price,
                 },
             }).then(function (response) {
-               alert(response);
+               //alert(response);
                return false;
                 location.reload();
 
