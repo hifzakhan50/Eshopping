@@ -7,9 +7,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
     <title>Fullfillment Network  - Mega Shoppy</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
@@ -73,87 +70,109 @@
                     </ul>
                 </div>
                 <ul class="nav navbar-nav float-right">
-                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
-                    </li>
-                    <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon feather icon-maximize"></i></a></li>
-                    <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon feather icon-search"></i></a>
-                        <!--Search icon-->
-                        <div class="search-input">
-                            <div class="search-input-icon"><i class="feather icon-search primary"></i></div>
-                            <input class="input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="template-list">
-                            <div class="search-input-close"><i class="feather icon-x"></i></div>
-                            <ul class="search-list search-list-main"></ul>
-                        </div>
-                    </li>
-                    <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon feather icon-bell"></i><span class="badge badge-pill badge-primary badge-up">5</span></a>
+{{--                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>--}}
+{{--                        <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>--}}
+{{--                    </li>--}}
+
+{{--                    <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon feather icon-maximize"></i></a></li>--}}
+{{--                    <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon feather icon-search"></i></a>--}}
+{{--                        <!--Search icon-->--}}
+
+{{--                    </li>--}}
+
+                    <li class="dropdown dropdown-notification nav-item">
+                        <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon feather icon-bell"></i><span class="badge badge-pill badge-primary badge-up"></span></a>
                         <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                             <li class="dropdown-menu-header">
                                 <div class="dropdown-header m-0 p-2">
-                                    <h3 class="white">5 New</h3><span class="notification-title">App Notifications</span>
+                                    <h3 class="white"></h3><span class="notification-title">App Notifications</span>
                                 </div>
                             </li>
-                            <li class="scrollable-container media-list"><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                    <div class="media d-flex align-items-start">
-                                        <div class="media-left"><i class="feather icon-plus-square font-medium-5 primary"></i></div>
-                                        <div class="media-body">
-                                            <h6 class="primary media-heading">You have new order!</h6><small class="notification-text"> Are your going to meet me tonight?</small>
-                                        </div><small>
-                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">9 hours ago</time></small>
-                                    </div>
-                                </a><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                    <div class="media d-flex align-items-start">
-                                        <div class="media-left"><i class="feather icon-download-cloud font-medium-5 success"></i></div>
-                                        <div class="media-body">
-                                            <h6 class="success media-heading red darken-1">99% Server load</h6><small class="notification-text">You got new order of goods.</small>
-                                        </div><small>
-                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">5 hour ago</time></small>
-                                    </div>
-                                </a><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                    <div class="media d-flex align-items-start">
-                                        <div class="media-left"><i class="feather icon-alert-triangle font-medium-5 danger"></i></div>
-                                        <div class="media-body">
-                                            <h6 class="danger media-heading yellow darken-3">Warning notifixation</h6><small class="notification-text">Server have 99% CPU usage.</small>
-                                        </div><small>
-                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Today</time></small>
-                                    </div>
-                                </a><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                    <div class="media d-flex align-items-start">
-                                        <div class="media-left"><i class="feather icon-check-circle font-medium-5 info"></i></div>
-                                        <div class="media-body">
-                                            <h6 class="info media-heading">Complete the task</h6><small class="notification-text">Cake sesame snaps cupcake</small>
-                                        </div><small>
-                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Last week</time></small>
-                                    </div>
-                                </a><a class="d-flex justify-content-between" href="javascript:void(0)">
-                                    <div class="media d-flex align-items-start">
-                                        <div class="media-left"><i class="feather icon-file font-medium-5 warning"></i></div>
-                                        <div class="media-body">
-                                            <h6 class="warning media-heading">Generate monthly report</h6><small class="notification-text">Chocolate cake oat cake tiramisu marzipan</small>
-                                        </div><small>
-                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Last month</time></small>
-                                    </div>
-                                </a></li>
-                            <li class="dropdown-menu-footer"><a class="dropdown-item p-1 text-center" href="javascript:void(0)">Read all notifications</a></li>
+{{--                            <li class="scrollable-container media-list"><a class="d-flex justify-content-between" href="javascript:void(0)">--}}
+{{--                                    <div class="media d-flex align-items-start">--}}
+{{--                                        <div class="media-left"><i class="feather icon-plus-square font-medium-5 primary"></i></div>--}}
+{{--                                        <div class="media-body">--}}
+{{--                                            <h6 class="primary media-heading">You have new order!</h6><small class="notification-text"> Are your going to meet me tonight?</small>--}}
+{{--                                        </div><small>--}}
+{{--                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">9 hours ago</time></small>--}}
+{{--                                    </div>--}}
+{{--                                </a><a class="d-flex justify-content-between" href="javascript:void(0)">--}}
+{{--                                    <div class="media d-flex align-items-start">--}}
+{{--                                        <div class="media-left"><i class="feather icon-download-cloud font-medium-5 success"></i></div>--}}
+{{--                                        <div class="media-body">--}}
+{{--                                            <h6 class="success media-heading red darken-1">99% Server load</h6><small class="notification-text">You got new order of goods.</small>--}}
+{{--                                        </div><small>--}}
+{{--                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">5 hour ago</time></small>--}}
+{{--                                    </div>--}}
+{{--                                </a><a class="d-flex justify-content-between" href="javascript:void(0)">--}}
+{{--                                    <div class="media d-flex align-items-start">--}}
+{{--                                        <div class="media-left"><i class="feather icon-alert-triangle font-medium-5 danger"></i></div>--}}
+{{--                                        <div class="media-body">--}}
+{{--                                            <h6 class="danger media-heading yellow darken-3">Warning notifixation</h6><small class="notification-text">Server have 99% CPU usage.</small>--}}
+{{--                                        </div><small>--}}
+{{--                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Today</time></small>--}}
+{{--                                    </div>--}}
+{{--                                </a><a class="d-flex justify-content-between" href="javascript:void(0)">--}}
+{{--                                    <div class="media d-flex align-items-start">--}}
+{{--                                        <div class="media-left"><i class="feather icon-check-circle font-medium-5 info"></i></div>--}}
+{{--                                        <div class="media-body">--}}
+{{--                                            <h6 class="info media-heading">Complete the task</h6><small class="notification-text">Cake sesame snaps cupcake</small>--}}
+{{--                                        </div><small>--}}
+{{--                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Last week</time></small>--}}
+{{--                                    </div>--}}
+{{--                                </a><a class="d-flex justify-content-between" href="javascript:void(0)">--}}
+{{--                                    <div class="media d-flex align-items-start">--}}
+{{--                                        <div class="media-left"><i class="feather icon-file font-medium-5 warning"></i></div>--}}
+{{--                                        <div class="media-body">--}}
+{{--                                            <h6 class="warning media-heading">Generate monthly report</h6><small class="notification-text">Chocolate cake oat cake tiramisu marzipan</small>--}}
+{{--                                        </div><small>--}}
+{{--                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Last month</time></small>--}}
+{{--                                    </div>--}}
+{{--                                </a></li>--}}
+{{--                            <li class="dropdown-menu-footer"><a class="dropdown-item p-1 text-center" --}}
+{{--                                                                href="javascript:void(0)">Read all notifications</a></li>--}}
                         </ul>
                     </li>
 
                     <!--Profile: Dropdown-->
+{{--                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"--}}
+{{--                                                                   href="#" data-toggle="dropdown">--}}
+{{--                            @isset(auth()->user()->fulNetProfile->name)--}}
+{{--                            <div class="user-nav d-sm-flex d-none"><span--}}
+{{--                                    class="user-name text-bold-600">{{ auth()->user()->fulNetProfile->name}}</span><span--}}
+{{--                                    class="user-status">Available</span></div>--}}
+{{--                            @endisset--}}
+{{--                            @isset(auth()->user()->fulNetProfile->name)--}}
+{{--                            <span><img class="round" src="{{ getImageSrc(auth()->user()->fulNetProfile->image)}}"--}}
+{{--                                       alt="avatar" height="40" width="40"></span>--}}
+{{--                        </a>--}}
+{{--                        @endisset--}}
+{{--                        <div class="dropdown-menu dropdown-menu-right">--}}
+{{--                            <a class="dropdown-item" href="{{ url('fulNet/profile/edit') }}">--}}
+{{--                                <i class="feather icon-user"></i> Edit Profile</a>--}}
+{{--                            <div class="dropdown-divider"></div>--}}
+{{--                            <a class="dropdown-item" href="{{ route('logout') }}"--}}
+{{--                               onclick="event.preventDefault();--}}
+{{--                                                     document.getElementById('logout-form').submit();">--}}
+{{--                                {{ __('Logout') }}--}}
+{{--                            </a>--}}
+
+{{--                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
+{{--                                @csrf--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
                     <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"
                                                                    href="#" data-toggle="dropdown">
-                            @isset(auth()->user()->fulNetProfile->name)
                             <div class="user-nav d-sm-flex d-none"><span
-                                    class="user-name text-bold-600">{{ auth()->user()->fulNetProfile->name}}</span><span
+                                    class="user-name text-bold-600">{{ auth()->user()->name}}</span><span
                                     class="user-status">Available</span></div>
-                            @endisset
-                            @isset(auth()->user()->fulNetProfile->name)
-                            <span><img class="round" src="{{ getImageSrc(auth()->user()->fulNetProfile->image)}}"
+                            <span><img class="round" src="{{ getImageSrc(auth()->user()->image)}}"
                                        alt="avatar" height="40" width="40"></span>
                         </a>
-                        @endisset
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="{{ url('fulNet/profile/edit') }}">
-                                <i class="feather icon-user"></i> Edit Profile</a>
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item"
+                                                                          href="{{ url('fulNet/profile/edit') }}"><i
+                                    class="feather icon-user"></i> Edit Profile</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
@@ -268,10 +287,11 @@
             <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span>
                     <span class="badge badge badge-warning badge-pill float-right mr-2">2</span></a>
                 <ul class="menu-content">
-                    <li class="active"><a href="dashboard-analytics.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Analytics">Analytics</span></a>
+                    <li class="active"><a href="request.html"><i class="feather icon-circle">
+                            </i><span class="menu-item" data-i18n="Analytics">Requests</span></a>
                     </li>
-                    <li><a href="dashboard-ecommerce.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="eCommerce">eCommerce</span></a>
-                    </li>
+{{--                    <li><a href="dashboard-ecommerce.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="eCommerce">eCommerce</span></a>--}}
+{{--                    </li>--}}
 <!--
                     <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Products</span>
                             <span class="badge badge badge-warning badge-pill float-right mr-2">2</span></a>
@@ -303,8 +323,10 @@
 <div class="drag-target"></div>
 
 <!-- BEGIN: Footer-->
-<footer class="footer footer-static footer-light">
-    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2019<a class="text-bold-800 grey darken-2" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent,</a>All rights Reserved</span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i class="feather icon-heart pink"></i></span>
+<footer class="footer footer-static footer-light navbar-shadow">
+    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020
+            <a class="text-bold-800 grey darken-2" href="{{ url('/home') }}" target="_blank">Mega Shoppy,</a>All rights Reserved</span>
+        <span class="float-md-right d-none d-md-block">Your Shopping Partner<i class="feather icon-heart pink"></i></span>
         <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
     </p>
 </footer>

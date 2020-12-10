@@ -74,7 +74,8 @@ Route::post('seller/adMan', 'Seller\CampaignsController@store')->name('adManCrea
 Route::post('seller/adMan/fetch', 'Seller\CampaignsController@fetch')->name('adMan.fetch');
 
 
-Route::get('seller/adMan/all', 'Seller\CampaignsController@all')->name('adManAll');
+Route::get('seller/adMan/all', 'Seller\sellerController@sellerAds')->name('adManAll');
+Route::post('/addnewad', 'Seller\sellerController@saveAd');
 Route::get('seller/adMan/data', 'Seller\CampaignsController@data')->name('adManData');
 
 Route::get('/seller/adMan/{id}/edit', 'Seller\CampaignsController@edit')->name('adManEdit');
@@ -120,6 +121,7 @@ Route::get('/product/{name}', 'Frontend\HomeController@product');
 Route::get('/admin', 'admin\adminController@adminDashboard')->name('admin.dashboard')->middleware('auth');
 Route::get('/seller', 'Seller\sellerController@sellerDashboard')->name('seller.dashboard')->middleware('auth');
 Route::get('/customer', 'Customer\customerController@customerDashboard');
+Route::get('/customerads', 'Customer\customerController@customerAds');
 Route::get('/fulNet', 'fulNet\fulNetController@fulNetDashboard');
 
 Auth::routes();

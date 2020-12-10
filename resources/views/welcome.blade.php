@@ -9,11 +9,12 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
         <!-- Styles -->
+
         <style>
             html, body {
-                background-color: #fff;
+                background-image: url({{ url('/app-assets/images/h1.jpg') }});
+                background-size: cover;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -37,6 +38,7 @@
 
             .top-right {
                 position: absolute;
+                font-weight: bold;
                 right: 10px;
                 top: 18px;
             }
@@ -53,9 +55,9 @@
                 color: #636b6f;
                 padding: 0 25px;
                 font-size: 13px;
-                font-weight: 600;
+                font-weight: 800;
                 letter-spacing: .1rem;
-                text-decoration: none;
+                text-decoration: #0B5661;
                 text-transform: uppercase;
             }
 
@@ -65,12 +67,14 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height"  >
+
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a style="text:bold;" href="{{ url('/home') }}">Home</a>
                     @else
+                        <a href="{{ url('/home') }}">Home</a>
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
@@ -82,7 +86,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    E-shopping
+                    <span text="bold">Mega Shoppy </span>
                 </div>
 
             </div>

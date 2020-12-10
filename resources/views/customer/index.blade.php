@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.customer')
 @section('content')
-    <h2>Buyer dashboard</h2>
+    <h2>Customer dashboard</h2>
 @endsection

@@ -17,10 +17,13 @@ class CreateCampaignTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('seller_profile_id');
             $table->string('name');
-            $table->date('Starting Date');
-            $table->date('Ending Date');
-            $table->float('Budget');
-            $table->enum('Products');
+            $table->date('Starting_Date')->nullable();
+            $table->date('Ending_Date')->nullable();
+            $table->float('Budget')->nullable();
+            $table->integer('Product_Id')->nullable();
+            $table->integer('impressions')->nullable();
+            $table->integer('clicks')->nullable();
+            $table->integer('payment_id')->nullable();
             $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
