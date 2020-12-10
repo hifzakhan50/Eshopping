@@ -21,7 +21,7 @@ Route::get('/index', 'HomeController@index')->name('home');
 
 
 // Profile Routes
-Route::put('seller/profile', 'Seller\ProfileController@update')->name('profile.update');
+Route::post('/sellerprofileupdate', 'Seller\ProfileController@update');
 Route::get('seller/profile/edit', 'Seller\ProfileController@edit')->name('profile.edit');
 //Shoppingcart Route
 Route::post('addToCart', 'Frontend\shoppigCartController@addToCart')->name("addToCart");

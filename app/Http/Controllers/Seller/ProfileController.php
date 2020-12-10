@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Seller;
 use App\Http\Controllers\Controller;
 use App\SellerProfile;
 use Illuminate\Http\Request;
+use Illuminate\Http\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -14,25 +15,22 @@ class ProfileController extends Controller
 
         return view('seller.profile.edit',compact('profile'));
     }
-    public function update()
+    public function update(Request $request)
     {
-        $data = request()->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'about' => 'required',
-            'country' => 'required',
-        ]);
-        if (request()->has('image')){
+       /* $name = $request->input('name');
+        $address = $request->input('adress');
+        $about = $request->input('about');
+        $country = $request->input('country');
+        if ($request()->has('image')){
             $imagePath = request('image')->store('uploads', 'public');
-            auth()->user()->sellerProfile->update(['image' => $imagePath]);
+            $image = $imagePath;
 
+            DB::update('update seller_profile set votes = 100 where name = ?', ['John']);//image b update krain
         }
-        auth()->user()->sellerProfile->update([
-            'name' => $data['name'],
-            'address' => $data['address'],
-            'country' => $data['country'],
-            'about' => $data['about'],
-        ]);
+
+        else{
+        DB::update('update seller_profile set votes = 100 where name = ?', ['John']);//without image
+        }*/
 
         return redirect()->back()->with('success', 'Profile updated successfully.');
     }

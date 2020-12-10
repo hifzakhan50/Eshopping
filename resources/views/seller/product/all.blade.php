@@ -15,6 +15,7 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Price</th>
                         <th>Sku</th>
                         <th>Image</th>
                         <th>Color</th>
@@ -40,6 +41,7 @@
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
                     {data: 'description', name: 'description'},
+                    {data: 'price', name: 'price'},
                     {data: 'sku', name: 'sku'},
                     {data: 'image', name: 'image'},
                     {data: 'color', name: 'color'},
