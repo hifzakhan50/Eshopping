@@ -55,8 +55,6 @@
             <div class="navbar-collapse" id="navbar-mobile">
                 <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
 
-
-
                 </div>
                 <ul class="nav navbar-nav float-right">
 
@@ -195,7 +193,7 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
 
-            <!--Side Bar: options-->
+            <!--Side Bar: options UMAR-->
 
 
             <li class=" nav-item"><a href="{{ url('/home') }}"><i class="feather icon-home"></i><span class="menu-title"
@@ -203,6 +201,12 @@
                     <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
             </li>
+
+            <li class=" nav-item"><a href="{{ url('/home') }}"><i class="feather icon-home"></i><span class="menu-title"
+                data-i18n="Dashboard">Manage Ads</span>
+            <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+
+</li>
         </ul>
 
 

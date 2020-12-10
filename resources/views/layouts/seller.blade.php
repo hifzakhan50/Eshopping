@@ -46,7 +46,9 @@
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('../../../assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/styles.css') }}">
     <!-- END: Custom CSS-->
+
 
 </head>
 
@@ -217,20 +219,10 @@
                 </ul>
             </li>
 
-            <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title"
-                                                                                              data-i18n="Dashboard">Advertisement Management</span>
+            <li class=" nav-item"><a href="{{ url('seller/adMan/all') }}"><i class="feather icon-home"></i><span class="menu-title"
+                                                                                              data-i18n="Dashboard">My Ads</span>
                     <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
-                <ul class="menu-content">
-                    <li class=""><a href="{{url('seller/adMan/create')}}"><i class="feather icon-circle"></i><span
-                                class="menu-item" data-i18n="Analytics">Create Campaign</span></a>
-                    </li>
-
-                    <li class=""><a href="{{ url('seller/adMan/all') }}"><i class="feather icon-circle"></i><span
-                                class="menu-item"
-                                data-i18n="Analytics">All Campaigns</span></a>
-                    </li>
-
-                </ul>
+               
             </li>
 
 

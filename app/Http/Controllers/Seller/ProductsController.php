@@ -113,15 +113,15 @@ class ProductsController extends Controller
 
     public function all()
     {
-        $products = Product::where('seller_profile_id', '=', auth()->user()->sellerProfile->id)->get();
-        return view('seller.product.all', compact('products'));
+        //$products = Product::where('seller_profile_id', '=', auth()->user()->sellerProfile->id)->get();
+        return view('seller.product.all');
     }
 
     public function data()
     {
 
         $products = DB::table('products')
-            ->select(['id', 'name', 'description', 'sku', 'image', 'color', 'is_active']);
+            ->select(['id', 'name', 'description', 'sku', 'image', 'color', 'is_active'])->where('seller_profile_id', '=', auth()->user()->sellerProfile->id)->get();
 
         return Datatables::of($products)
             ->addColumn('action', function ($products) {

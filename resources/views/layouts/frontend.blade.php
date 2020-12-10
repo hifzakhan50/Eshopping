@@ -37,6 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
     <link href="{{ asset('css/payment.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
 </head>
 <!-- END: Head-->
 <!-- BEGIN: Body-->
@@ -139,6 +143,20 @@
 <!-- BEGIN: Page JS-->
 <script src="../../../app-assets/js/scripts/pages/app-ecommerce-shop.js"></script>
 <!-- END: Page JS-->
+
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.slider').bxSlider({
+            auto: true,
+            autoControls: true,
+            stopAutoOnClick: true,
+            speed: 800,
+            touchEnabled: false
+        });
+    });
+</script>
 
 </body>
 <!-- END: Body-->

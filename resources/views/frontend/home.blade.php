@@ -1,6 +1,35 @@
 @extends('layouts.frontend')
 @section('content')
-
+<script>
+    function incrementClicks(id)
+    {
+        $.ajax({
+            url: "/api/incrementClick/"+id
+        });
+    }
+</script>
+    @if(!$ads->isEmpty())
+    <div class="slider">
+        @foreach ($ads as $ad)
+            <div>
+                <a onclick="incrementClicks({{$ad->id}})" style="z-index: 1000" href="{{ url('product/'.$ad->name) }}">
+                    <div class="row">
+                        <div style="padding: 50px; margin-left: 20px" class="col-sm-5 col-lg-5">
+                            <h1 style="color: #7783f3; font-size: 3rem;">Our Top Pick</h1>
+                            <h1>{{$ad->name}}</h1>
+                            <h3 style="font-size: 2.3rem"><strong>Price: </strong>{{$ad->price}}</h3>
+                            <h4><strong>Size: </strong>{{$ad->size}}&nbsp;/  <strong>Color: </strong>{{$ad->color}} </h4>
+                        </div>
+                        <div class="col-sm-5 col-lg-5">
+                            <img class="img-flui" style="width:350px;height:350px" src="{{ getImageSrc($ad->image) }}"
+                                                alt="img-placeholder">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        @endforeach
+    </div>
+    @endif
     <div class="content-header row mt-0">
         <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
