@@ -1,0 +1,6 @@
+{
+    "editor.semanticTokenColorCustomizations": null,
+    "editor.fontSize": 16,
+    "editor.quickSuggestions": null,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true
+}

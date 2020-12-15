@@ -9,6 +9,7 @@
         @endif
     </div>
 </div>
+
 <div class="container">
 
     <h2>My Ads</h2>
@@ -27,16 +28,16 @@
             @csrf
             <input type="number" name="id" hidden>
               <label style="margin-top: 10px" for="name">Name: </label>
-              <input class="form-control" type="text" name="name">
+              <input class="form-control" type="text" name="name" required>
 
               <label style="margin-top: 10px" for="startdate">Start Date: </label>
-              <input class="form-control" type="date" name="startdate">
+              <input class="form-control" id="datefieldtoday" min='2000-13-13' type="date" name="startdate" required>
 
               <label style="margin-top: 10px" for="enddate">End Date: </label>
-              <input class="form-control" type="date" name="enddate">
+              <input class="form-control" id="datefieldtommorow" min='2000-13-13' type="date" name="enddate" required>
 
               <label style="margin-top: 10px" for="budget">Budget: </label>
-              <input class="form-control" type="number" name="budget">
+              <input class="form-control" type="number" name="budget" required min="5">
 
               <label style="margin-top: 10px" for="product">Product: </label>
               <select class="form-control" name="product">
@@ -92,4 +93,36 @@
         @endif
     </div>
 </div>
+
+<script>
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //
+    var yyyy = today.getFullYear();
+    if(dd<10){
+            dd='0'+dd
+        } 
+        if(mm<10){
+            mm='0'+mm
+        } 
+
+    today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("datefieldtoday").setAttribute("min", today);
+</script>
+<script>
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //
+    var yyyy = today.getFullYear();
+    if(dd<10){
+            dd='0'+dd
+        } 
+        if(mm<10){
+            mm='0'+mm
+        } 
+
+    today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("datefieldtommorow").setAttribute("min", today);
+</script>
+
 @endsection

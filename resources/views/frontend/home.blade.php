@@ -31,31 +31,22 @@
     </div>
     @endif
     <div class="content-header row mt-0">
-        <div class="content-header-left col-md-9 col-12 mb-2">
-            <div class="row breadcrumbs-top">
-                <div class="col-12">
-                    <h2 class="content-header-title float-left mb-0">Shop</h2>
-                    <div class="breadcrumb-wrapper col-12">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{'/home'}}">Home</a>
-                            </li>
-                            <li class="breadcrumb-item active">Shop
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div class="content-header-left col-md-9 col-12 mb-2">--}}
+{{--            <div class="row breadcrumbs-top">--}}
+{{--                <div class="col-12">--}}
+{{--                    <h2 class="content-header-title float-left mb-0">Shop</h2>--}}
+{{--                    <div class="breadcrumb-wrapper col-12">--}}
+{{--                        <ol class="breadcrumb">--}}
+{{--                            <li class="breadcrumb-item"><a href="{{'/home'}}">Home</a>--}}
+{{--                            </li>--}}
+{{--                            <li class="breadcrumb-item active">Shop--}}
+{{--                            </li>--}}
+{{--                        </ol>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
-            <div class="form-group breadcrum-right">
-                <div class="dropdown">
-                    <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                            class="feather icon-settings"></i></button>
-                    <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Chat</a><a
-                            class="dropdown-item" href="#">Email</a><a class="dropdown-item" href="#">Calendar</a></div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="content-detached content-right mt-0">
@@ -196,6 +187,7 @@
 
         </div>
     </div>
+
     <div class="sidebar-detached sidebar-left mt-0">
         <div class="sidebar">
             <!-- Ecommerce Sidebar Starts -->
@@ -271,21 +263,7 @@
                         </div>
                         <!-- /Price Filter -->
                         <hr>
-                        <!-- /Price Slider -->
-{{--                        <div class="price-slider">--}}
-{{--                            <div class="price-slider-title mt-1">--}}
-{{--                                <h6 class="filter-title mb-0">Slider</h6>--}}
-{{--                            </div>--}}
-{{--                            <div class="price-slider">--}}
-{{--                                <div class="price_slider_amount mb-2">--}}
-{{--                                </div>--}}
-{{--                                <div class="form-group">--}}
-{{--                                    <div class="slider-sm my-1 range-slider" id="price-slider"></div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-                        <!-- /Price Range -->
-                        <hr>
+
                         <!-- Categories Starts -->
                         <div id="product-categories">
                             <div class="product-category-title">
@@ -398,200 +376,12 @@
                         </div>
                         <!-- Categories Ends -->
                         <hr>
-                        <!-- Brands -->
-                        <div class="brands">
-                            <div class="brand-title mt-1 pb-1">
-                                <h6 class="filter-title mb-0">Brands</h6>
-                            </div>
-                            <div class="brand-list" id="brands">
-                                <ul class="list-unstyled">
-                                    <li class="d-flex justify-content-between align-items-center py-25">
-                                                <span class="vs-checkbox-con vs-checkbox-primary">
-                                                    <input type="checkbox" value="false">
-                                                    <span class="vs-checkbox">
-                                                        <span class="vs-checkbox--check">
-                                                            <i class="vs-icon feather icon-check"></i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="">Insignia™</span>
-                                                </span>
-                                        <span>746</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-center py-25">
-                                                <span class="vs-checkbox-con vs-checkbox-primary">
-                                                    <input type="checkbox" value="false">
-                                                    <span class="vs-checkbox">
-                                                        <span class="vs-checkbox--check">
-                                                            <i class="vs-icon feather icon-check"></i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="">
-                                                        Samsung
-                                                    </span>
-                                                </span>
-                                        <span>633</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-center py-25">
-                                                <span class="vs-checkbox-con vs-checkbox-primary">
-                                                    <input type="checkbox" value="false">
-                                                    <span class="vs-checkbox">
-                                                        <span class="vs-checkbox--check">
-                                                            <i class="vs-icon feather icon-check"></i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="">
-                                                        Metra
-                                                    </span>
-                                                </span>
-                                        <span>591</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-center py-25">
-                                                <span class="vs-checkbox-con vs-checkbox-primary">
-                                                    <input type="checkbox" value="false">
-                                                    <span class="vs-checkbox">
-                                                        <span class="vs-checkbox--check">
-                                                            <i class="vs-icon feather icon-check"></i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="">HP</span>
-                                                </span>
-                                        <span>530</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-center py-25">
-                                                <span class="vs-checkbox-con vs-checkbox-primary">
-                                                    <input type="checkbox" value="false">
-                                                    <span class="vs-checkbox">
-                                                        <span class="vs-checkbox--check">
-                                                            <i class="vs-icon feather icon-check"></i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="">Apple</span>
-                                                </span>
-                                        <span>442</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-center py-25">
-                                                <span class="vs-checkbox-con vs-checkbox-primary">
-                                                    <input type="checkbox" value="false">
-                                                    <span class="vs-checkbox">
-                                                        <span class="vs-checkbox--check">
-                                                            <i class="vs-icon feather icon-check"></i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="">GE</span>
-                                                </span>
-                                        <span>394</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-center py-25">
-                                                <span class="vs-checkbox-con vs-checkbox-primary">
-                                                    <input type="checkbox" value="false">
-                                                    <span class="vs-checkbox">
-                                                        <span class="vs-checkbox--check">
-                                                            <i class="vs-icon feather icon-check"></i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="">Sony</span>
-                                                </span>
-                                        <span>350</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-center py-25">
-                                                <span class="vs-checkbox-con vs-checkbox-primary">
-                                                    <input type="checkbox" value="false">
-                                                    <span class="vs-checkbox">
-                                                        <span class="vs-checkbox--check">
-                                                            <i class="vs-icon feather icon-check"></i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="">Incipio</span>
-                                                </span>
-                                        <span>320</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-center py-25">
-                                                <span class="vs-checkbox-con vs-checkbox-primary">
-                                                    <input type="checkbox" value="false">
-                                                    <span class="vs-checkbox">
-                                                        <span class="vs-checkbox--check">
-                                                            <i class="vs-icon feather icon-check"></i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="">KitchenAid</span>
-                                                </span>
-                                        <span>318</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-center py-25">
-                                                <span class="vs-checkbox-con vs-checkbox-primary">
-                                                    <input type="checkbox" value="false">
-                                                    <span class="vs-checkbox">
-                                                        <span class="vs-checkbox--check">
-                                                            <i class="vs-icon feather icon-check"></i>
-                                                        </span>
-                                                    </span>
-                                                    <span class="">Whirlpool</span>
-                                                </span>
-                                        <span>298</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- /Brand -->
-                        <hr>
-                        <!-- Rating section starts -->
-                        <div id="ratings">
-                            <div class="ratings-title mt-1 pb-75">
-                                <h6 class="filter-title mb-0">Ratings</h6>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <ul class="unstyled-list list-inline ratings-list mb-0">
-                                    <li class="ratings-list-item"><i class="feather icon-star text-warning"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-warning"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-warning"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-warning"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-light"></i></li>
-                                    <li>& up</li>
-                                </ul>
-                                <div class="stars-received">(160)</div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <ul class="unstyled-list list-inline ratings-list mb-0">
-                                    <li class="ratings-list-item"><i class="feather icon-star text-warning"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-warning"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-warning"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-light"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-light"></i></li>
-                                    <li>& up</li>
-                                </ul>
-                                <div class="stars-received">(176)</div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <ul class="unstyled-list list-inline ratings-list mb-0">
-                                    <li class="ratings-list-item"><i class="feather icon-star text-warning"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-warning"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-light"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-light"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-light"></i></li>
-                                    <li>& up</li>
-                                </ul>
-                                <div class="stars-received">(291)</div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <ul class="unstyled-list list-inline ratings-list mb-0 ">
-                                    <li class="ratings-list-item"><i class="feather icon-star text-warning"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-light"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-light"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-light"></i></li>
-                                    <li class="ratings-list-item"><i class="feather icon-star text-light"></i></li>
-                                    <li>& up</li>
-                                </ul>
-                                <div class="stars-received">(190)</div>
-                            </div>
-                        </div>
-                        <!-- Rating section Ends -->
-                        <hr>
+
                         <!-- Clear Filters Starts -->
                         <div id="clear-filters">
                             <button class="btn btn-block btn-primary">CLEAR ALL FILTERS</button>
                         </div>
                         <!-- Clear Filters Ends -->
-
                     </div>
                 </div>
             </div>

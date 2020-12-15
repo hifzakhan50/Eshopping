@@ -25,7 +25,7 @@
 
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control @error('name') not found @enderror" name="name"
-                               value="{{ $profile->name }}" required autocomplete="name" autofocus>
+                               value="{{ $profile->id }}" required autocomplete="name" autofocus>
 
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -40,7 +40,7 @@
 
                     <div class="col-md-6">
                         <input id="adress" type="text" class="form-control @error('adress') not found @enderror"
-                               name="adress" value="{{ $profile->address }}" required autocomplete="adress" autofocus>
+                               name="adress" value="{{ $profile->user_id }}" required autocomplete="adress" autofocus>
 
                         @error('adress')
                         <span class="invalid-feedback" role="alert">

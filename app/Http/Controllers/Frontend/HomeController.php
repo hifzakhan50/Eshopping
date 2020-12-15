@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
     public function index()
     {
         $products = Product::where('is_active', '1')->get();
+
+        $today = Carbon::now()->toDateString();
 
         $ads = DB::table('campaigns')->join('products', 'campaigns.Products', '=', 'products.id')->select(
             'campaigns.id as id',
@@ -21,8 +24,12 @@ class HomeController extends Controller
             'products.color as color',
             'campaigns.impressions as imp',
             'products.image as image',
-            'campaigns.is_active'
-        )->where('campaigns.is_active', 1)->inRandomOrder()->limit(3)->get();
+            'campaigns.is_active',
+            'campaigns.Ending_Date'
+        )->where('campaigns.is_active', 1)
+        ->where('campaigns.Ending_Date', '>=', $today)
+        ->inRandomOrder()->limit(3)->get();
+        // dd($ads);
         foreach($ads as $ad)
         {
             DB::update('update campaigns set impressions = ? where id = ?', [$ad->imp + 1, $ad->id]);

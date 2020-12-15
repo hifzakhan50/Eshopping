@@ -11,9 +11,9 @@ class ProfileController extends Controller
 {
     public function edit()
     {
-      $profile= SellerProfile::where('user_id', '=', auth()->id())->first();
-
-        return view('seller.profile.edit',compact('profile'));
+      $profile= SellerProfile::where('user_id', '=', auth()->id())->first();//querry thik krain
+        //dd($profile);
+                return view('seller.profile.edit',compact('profile'));
     }
     public function update(Request $request)
     {
