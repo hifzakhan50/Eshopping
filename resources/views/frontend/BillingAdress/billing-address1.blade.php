@@ -118,18 +118,22 @@
                                 </div>
                             </div>
                         </div>
+
+                        @php
+                            dd($data);
+                        @endphp
                         @isset($data)
                         <div class="customer-card">
                             <div class="card">
                                 <div class="card-header">
-                                <h4 class="card-title">{{$data['fname']}}</h4>
+                                <h4 class="card-title">{{$fname}}</h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body actions">
-                                    <p class="mb-0">{{$data['hname']}} {{$data['street']}}</p>
-                                        <p>{{$data['city']}}, {{$data['province']}}, {{$data['postalcode']}}</p>
-                                        <p>{{$data['country']}}</p>
-                                        <p>{{$data['mnumber']}}</p>
+                                    <p class="mb-0">{{$hname}} {{$street}}</p>
+                                        <p>{{$city}}, {{$province}}, {{$postalcode}}</p>
+                                        <p>{{$country}}</p>
+                                        <p>{{$mnumber}}</p>
                                         <hr>
                                         <div class="btn btn-primary btn-block delivery-address"> <a style="min-width: 300px; background-color: #7367f0; color: white;
 padding: 10px;border-radius: 5px" href=" {{route('addPayment')}}" class="btn-btn-primary">

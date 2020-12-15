@@ -40,7 +40,7 @@ Route::post('/order-confirmation-detail', 'Frontend\PaymentAddress\paymentAddres
 //
 Route::get('/test-route', 'Frontend\testController\testing@test');
 //order storing  routes
-Route::post('order', 'Frontend\Orders\order@store')->name('order.store');
+Route::post('/storeorder', 'Frontend\Orders\order@store');
 
 // OrderConfirmationDetail Route
 Route::get('/order-confirmation-detail', 'Frontend\OrderConfirmationDetail\orderConfirmationDetail@confirmOrder')->name('placeOrder');

@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="content-body">
-            @if(session('products') != null)
+            
             <form  action="#" class="icons-tab-steps checkout-tab-steps wizard-circle">
                 <!-- Checkout Payment Starts -->
                 <h6><i class="step-icon step feather icon-credit-card"></i>Payment</h6>
@@ -73,7 +73,6 @@ padding: 10px;border-radius: 5px" href=" {{route('placeOrder')}}" class="btn-btn
                                     </div>
                                 </div>
                             </div>
-                            @endif
                         </div>
                         <div class="amount-payable checkout-options">
                             <div class="card">
