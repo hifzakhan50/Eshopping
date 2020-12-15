@@ -121,7 +121,7 @@ class ProductsController extends Controller
     {
 
         $products = DB::table('products')
-            ->select(['id', 'name', 'description', 'sku', 'image', 'color', 'is_active'])->where('seller_profile_id', '=', auth()->user()->sellerProfile->id)->get();
+            ->select(['id', 'name', 'description','price', 'sku', 'image', 'color', 'is_active'])->where('seller_profile_id', '=', auth()->user()->sellerProfile->id)->get();
 
         return Datatables::of($products)
             ->addColumn('action', function ($products) {

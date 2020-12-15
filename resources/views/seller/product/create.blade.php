@@ -51,7 +51,7 @@
                     <label for="sku" class="col-md-4 col-form-label text-md-right">{{ __('SKU') }}</label>
 
                     <div class="col-md-6">
-                        <input id="sku" type="text" class="form-control @error('sku') not found @enderror" name="sku" value="{{ old('sku') }}" required autocomplete="sku" autofocus>
+                        <input id="sku" type="number" min="4" max="16"class="form-control @error('sku') not found @enderror" name="sku" value="{{ old('sku') }}" required autocomplete="sku" autofocus>
 
                         @error('sku')
                         <span class="invalid-feedback" role="alert">
