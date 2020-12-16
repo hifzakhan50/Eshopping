@@ -23,6 +23,17 @@ Route::get('/index', 'HomeController@index')->name('home');
 // Profile Routes
 Route::post('/sellerprofileupdate', 'Seller\ProfileController@update');
 Route::get('seller/profile/edit', 'Seller\ProfileController@edit')->name('profile.edit');
+/*new routes starts*/
+Route::put('/customer/profile', 'Customer\profileController@update')->name('profile.update');
+Route::get('/customer/profile/edit', 'Customer\profileController@edit')->name('profile.edit');
+
+Route::put('/admin/profile', 'Admin\profileController@update')->name('profile.update');
+Route::get('/admin/profile/edit', 'Admin\profileController@edit')->name('profile.edit');
+
+Route::put('/fulNet/profile', 'fulNet\profileController@update')->name('profile.update');
+Route::get('/fulNet/profile/edit', 'fulNet\profileController@edit')->name('profile.edit');
+/*new routes ends*/
+
 //Shoppingcart Route
 Route::post('addToCart', 'Frontend\shoppigCartController@addToCart')->name("addToCart");
 Route::post('remove/{index}', 'Frontend\shoppigCartController@remove');
@@ -47,16 +58,6 @@ Route::get('/order-confirmation-detail', 'Frontend\OrderConfirmationDetail\order
 
 //Order Success Message Route
 Route::get('/order-success', 'OrderuSuccess\orderSuccess@orderSuccessMsg');
-                                    /*new routes starts*/
-Route::put('/customer/profile', 'Customer\profileController@update')->name('profile.update');
-Route::get('/customer/profile/edit', 'Customer\profileController@edit')->name('profile.edit');
-
-Route::put('/admin/profile', 'Admin\profileController@update')->name('profile.update');
-Route::get('/admin/profile/edit', 'Admin\profileController@edit')->name('profile.edit');
-
-Route::put('/fulNet/profile', 'fulNet\profileController@update')->name('profile.update');
-Route::get('/fulNet/profile/edit', 'fulNet\profileController@edit')->name('profile.edit');
-                                    /*new routes ends*/
 
 // Product Routes
 Route::get('seller/products/create','Seller\ProductsController@create');
@@ -96,8 +97,12 @@ Route::put('/admin/category/{id}', 'admin\Categoriescontroller@update')->name('c
 Route::get('admin/category/{id}/suspend', 'admin\CategoriesController@suspend')->name('categorySuspend');
 Route::get('admin/category/{id}/active', 'admin\categoriesController@active')->name('category.active');
 
+/*Admin Users*/
 Route::get('admin/displayData/customer', 'admin\customersController@all');
 Route::get('admin/displayData/seller', 'admin\sellersController@all');
+
+/*Admin Orders*/
+Route::get('admin/displayData/orders', 'admin\sellersController@all');
 
 /*Shipping Routes*/
 Route::get('/admin/shipping-management/create','admin\shipMans@create');
@@ -124,7 +129,7 @@ Route::get('/customer', 'Customer\customerController@customerDashboard');
 Route::get('/customerads', 'Customer\customerController@customerAds');
 Route::get('/fulNet', 'fulNet\fulNetController@fulNetDashboard');
 
-Auth::routes();
+//Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 

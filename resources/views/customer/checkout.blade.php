@@ -1,20 +1,20 @@
 @extends('layouts.shoppingcart')
 @section('content')
 
-<div class="app-content content">
+<div class="app-content content" >
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper">
-        <div class="content-header row">
-            <div class="content-header-left col-md-9 col-12 mb-2">
-                <div class="row breadcrumbs-top">
+        <div class="content-header row" >
+            <div class="content-header-left col-md-9 col-12 mb-2"style="padding-bottom: 150px">
+                <div class="row breadcrumbs-top" >
                     <div class="col-12">
                         <h2 class="content-header-title float-left mb-0">Checkout</h2>
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                <li class="breadcrumb-item"><a href="/home">Home</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#">eCommerce</a>
+                                <li class="breadcrumb-item">Cart
                                 </li>
                                 <li class="breadcrumb-item active">Checkout
                                 </li>
@@ -23,16 +23,8 @@
                     </div>
                 </div>
             </div>
-            <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
-                <div class="form-group breadcrum-right">
-                    <div class="dropdown">
-                        <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather icon-settings"></i></button>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Chat</a><a class="dropdown-item" href="#">Email</a><a class="dropdown-item" href="#">Calendar</a></div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="content-body">
+        <div class="content-body" >
             <form action="#" class="icons-tab-steps checkout-tab-steps wizard-circle">
 
                 <!-- Checkout Place order starts -->
@@ -42,7 +34,10 @@
                         <div class="checkout-items">
                             <!--CART OBJECT LOOP WILL START HERE
                             //single product-->
-                            @if(!empty($products))
+                            {{-- @php
+                                    dump($products);
+                                @endphp --}}
+                            @if(!($products->isEmpty())))
                                 @foreach($products as $index => $product)
 
                             <div class="card ecommerce-card">
@@ -95,17 +90,13 @@
                             @endforeach
 
                             @else
-
                                 <div class="alert alert-danger">
                                     <strong>Oops!</strong> Nothing in the cart.
                                 </div>
 
-                        @endif
+                            @endif
                             <!--end of single product
                             //LOOP ENDS HERE-->
-
-
-
                         </div>
                         <div class="checkout-options">
                             <div class="card">

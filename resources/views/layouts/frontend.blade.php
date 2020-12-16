@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>Shop - Mega Shoppy </title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="../../../app-assets/images/ico/msicon2.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
@@ -72,7 +72,8 @@
                         {{-- //logo here --}}
                         <li class="nav-item mr-auto"><a class="navbar-brand"
                             href="{{ url('/home') }}">
-                                <h2 class="brand-text mb-0" style="color:#7367f0;font-size:2rem"><strong>Mega Shoppy</strong></h2></a>
+                                <img src="logo.png">
+{{--                                <h2 class="brand-text mb-0" style="color:#7367f0;font-size:2rem"><strong>Mega Shoppy</strong></h2></a>--}}
                         </li>
                         </ul>
                     </ul>

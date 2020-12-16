@@ -14,7 +14,7 @@
     <meta name="author" content="PIXINVENT">
     <title>Seller - Mega Shoppy</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="../../../app-assets/images/ico/msicon2.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
 
@@ -192,6 +192,7 @@
             <li class="nav-item mr-auto"><a class="navbar-brand"
                                             href="{{ url('index') }}">
 
+                    <img  class="brand-logo" src="logo.png" >
                     <h2 class="brand-text mb-0">Mega Shoppy</h2>
                 </a></li>
 
@@ -200,6 +201,10 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+
+
+
+
 
 
             <!--Side Bar: options-->
@@ -222,7 +227,7 @@
             <li class=" nav-item"><a href="{{ url('seller/adMan/all') }}"><i class="feather icon-home"></i><span class="menu-title"
                                                                                               data-i18n="Dashboard">My Ads</span>
                     <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
-               
+
             </li>
 
 

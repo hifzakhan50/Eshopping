@@ -14,7 +14,6 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Description</th>
-                        <th>Image</th>
                         <th>Action</th>
                     </tr>
                     </thead>

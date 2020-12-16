@@ -74,7 +74,11 @@ body {
   text-align: left;
   background-color: #f8fafc;
 }
-
+.brand-logo{
+    background: url("logo.png");
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
@@ -93,6 +97,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+    background-image: url("logo.png");
 }
 
 p {
