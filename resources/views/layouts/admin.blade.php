@@ -163,10 +163,10 @@
 
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item"
-                                                                          href="{{ url('admin/profile/edit') }}"><i
-                                    class="feather icon-user"></i> Edit Profile</a>
-                            <div class="dropdown-divider"></div>
+                        <div class="dropdown-menu dropdown-menu-right">
+{{--                            <a class="dropdown-item" href="{{ url('admin/profile/edit') }}"><i--}}
+{{--                                    class="feather icon-user"></i> Edit Profile</a>--}}
+{{--                            <div class="dropdown-divider"></div>--}}
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -300,11 +300,11 @@
                             <span class="badge badge badge-warning badge-pill float-right mr-2"></span>
                         </a>
                         <ul class="menu-content">
-                            <li class="active"><a href="{{url('admin/category/create')}}"><i class="feather icon-circle"></i>
+                            <li class=""><a href="{{url('admin/category/create')}}"><i class="feather icon-circle"></i>
                                  <span class="menu-item" data-i18n="Analytics">Add Category</span></a>
                             </li>
 
-                            <li class="active"><a href="{{url('admin/category/all')}}"><i class="feather icon-circle"></i>
+                            <li class=""><a href="{{url('admin/category/all')}}"><i class="feather icon-circle"></i>
                                     <span class="menu-item" data-i18n="Analytics">All Categories</span></a>
                             </li>
                         </ul>
@@ -312,19 +312,30 @@
                     <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Shipping Management </span>
                             <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
                         <ul class="menu-content">
-                            <li class="active"><a href="{{url('admin/shipping-management/create')}}"><i class="feather icon-circle"></i>
+                            <li class=""><a href="{{url('admin/shipping-management/create')}}"><i class="feather icon-circle"></i>
                                     <span class="menu-item" data-i18n="Analytics">Add Shipping Method </span></a>
                             </li>
-                            <li class="active"><a href="{{url('admin/shipping-management/all')}}"><i class="feather icon-circle"></i>
+                            <li class=""><a href="{{url('admin/shipping-management/all')}}"><i class="feather icon-circle"></i>
                                     <span class="menu-item" data-i18n="Analytics">All Shipping Methods </span></a>
                             </li>
                         </ul>
                     </li>
 
-                    <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Orders </span>
+                    <li class=" nav-item"><a href="{{url('admin/displayData/orderlist')}}"><i class="feather icon-home"></i>
+                            <span class="menu-title" data-i18n="Dashboard">Orders </span>
                             <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
                     </li>
+                <li class=" nav-item"><a href="{{url('admin/displayData/clist')}}"><i class="feather icon-home"></i>
+                        <span class="menu-title" data-i18n="Dashboard">Customer List </span>
+                        <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+
+                </li>
+                <li class=" nav-item"><a href="{{url('admin/displayData/slist')}}"><i class="feather icon-home"></i>
+                        <span class="menu-title" data-i18n="Dashboard">Seller List </span>
+                        <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+
+                </li>
                 </ul>
 {{--            </li>--}}
 

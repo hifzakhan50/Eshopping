@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\AdminProfile;
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 class profileController extends Controller
@@ -14,9 +15,11 @@ class profileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        $profile = AdminProfile::where('user_id', '=', auth()->id())->first();
+//        dd('here');
+        $profile =  AdminProfile::find($id);
+       // $info = User::find($name);
         return view('admin.profile.edit', compact('profile'));
     }
 
@@ -25,9 +28,6 @@ class profileController extends Controller
         $data = request()->validate([
             'name' => 'required',
             'image' => ['image'],
-            'address' => 'required',
-            'about' => 'required',
-            'country' => 'required',
         ]);
         if (request()->has('image')){
             $imagePath = request('image')->store('uploads', 'public');
@@ -36,12 +36,8 @@ class profileController extends Controller
         }
         auth()->user()->adminProfile->update([
             'name' => $data['name'],
-            'address' => $data['address'],
-            'country' => $data['country'],
-            'about' => $data['about'],
-
         ]);
-        return redirect()->back()->with('success', 'Profile updated successfully.');
+        return redirect('/admin')->with('success', 'Profile updated successfully.');
     }
 
     /**

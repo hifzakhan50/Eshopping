@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\Facades\DataTables;
 
 class sellersController extends Controller
 {
@@ -12,80 +15,41 @@ class sellersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function all()
+        public function all()
     {
-        $customer = SellerProfile::where('seller_profile_id', '=', auth()->user()->sellerProfile->id)->get();
-        return view('admin.customer', compact('customer'));
-
-    }
-    public function index()
-    {
-        //
+        return view('admin.displayData.seller');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function data($id)
     {
-        //
-    }
+        $sel= Role::find($id = '3');
+        dd($sel);
+        if ($sel) {
+            $slist = DB::table('users')
+                ->select(['id', 'name', 'email']);
+//        , 'seller-id'
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+            return Datatables::of($slist)->addColumn('action', function ($s) {
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+                $suspendURL = url('admin/displayData' . $s->id . '/suspend');
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+//            $editBtn = '<a href="'.$editURL.'" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+                $suspendBtn = '<a href="' . $suspendURL . '" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Suspend</a>';
+//            $activeBtn = '<a href="'.$active.' class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
+
+            })
+                ->make(true);
+        }
+        else
+            { echo "Oops no data";}
+
+    }
+    public function suspend($id)
     {
-        //
+        //dd($id);
+        $slist =User::find($id)->delete();
+        return redirect()->back()->with('success', 'User has been suspended.');
     }
 }

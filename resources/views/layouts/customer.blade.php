@@ -196,17 +196,9 @@
             <!--Side Bar: options UMAR-->
 
 
-            <li class=" nav-item"><a href="{{ url('/home') }}"><i class="feather icon-home"></i><span class="menu-title"
+            <li class=" nav-item"><i class="feather icon-home"></i><span class="menu-title"
                                                                                               data-i18n="Dashboard">My Orders</span>
-                    <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
-
-            </li>
-
-            <li class=" nav-item"><a href="{{ url('/home') }}"><i class="feather icon-home"></i><span class="menu-title"
-                data-i18n="Dashboard">Manage Ads</span>
-            <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
-
-</li>
+                    <span class="badge badge badge-warning badge-pill float-right mr-2"></span>
         </ul>
 
 

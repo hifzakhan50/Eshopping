@@ -103,8 +103,7 @@ class CategoriesController extends Controller
     public function suspend($id)
     {
        //dd($id);
-        $cat= Category::find($id);
-        $cat->update(['is_active' => 0]);
+        $cat= Category::find($id)->delete();
         //dd($cat);
 
         return redirect()->back()->with('success', 'Product has been suspended.');

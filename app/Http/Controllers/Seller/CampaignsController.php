@@ -131,8 +131,7 @@ class CampaignsController extends Controller
 
     public function suspend($id)
     {
-        $method = Campaigns::find($id);
-        $method->update(['is_active' => 0]);
+        $method = Campaigns::find($id)->delete();
 
         return redirect()->back()->with('success', 'Campaign has been suspended.');
     }

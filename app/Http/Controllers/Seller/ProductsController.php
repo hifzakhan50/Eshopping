@@ -157,11 +157,8 @@ class ProductsController extends Controller
 
     public function suspend($id)
     {
-        $product = Product::find($id);
-        dd($id);
-        $product->update(['is_active' => 0]);
-
-        return redirect()->back()->with('success', 'Product has been suspended.');
+        $product = Product::find($id)->delete();
+        return redirect()->back()->with('Success', 'Product has been suspended.');
     }
 
 }

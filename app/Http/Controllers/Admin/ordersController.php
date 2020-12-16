@@ -17,7 +17,8 @@ class ordersController extends Controller
     }
     public function all()
     {
-        return view('admin.dataDisplay.allOrders');
+        //dd('here');
+        return view('admin.displayData.allOrders');
     }
     public function data()
     {

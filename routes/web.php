@@ -97,11 +97,15 @@ Route::get('admin/category/{id}/suspend', 'admin\CategoriesController@suspend')-
 Route::get('admin/category/{id}/active', 'admin\categoriesController@active')->name('category.active');
 
 /*Admin Users*/
-Route::get('admin/displayData/customer', 'admin\customersController@all');
-Route::get('admin/displayData/seller', 'admin\sellersController@all');
+Route::get('admin/displayData/clist', 'admin\customersController@all');
+Route::get('admin/displayData/data', 'admin\CategoriesController@data')->name('displayData.data');
+
+Route::get('admin/displayData/slist', 'admin\sellersController@all');
+Route::get('admin/displayData/data', 'admin\CategoriesController@data')->name('displayData.data');
 
 /*Admin Orders*/
-Route::get('admin/displayData/orders', 'admin\sellersController@all');
+Route::get('admin/displayData/orderlist', 'admin\ordersController@all');
+Route::get('admin/displayData/data', 'admin\CategoriesController@data')->name('displayData.data');
 
 /*Shipping Routes*/
 Route::get('/admin/shipping-management/create','admin\shipMans@create');

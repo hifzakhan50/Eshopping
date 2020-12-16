@@ -99,9 +99,7 @@ class shipMans extends Controller
 
     public function suspend($id)
     {
-        $method = ShipMan::find($id);
-        $method->update(['is_active' => 0]);
-
+        $method = ShipMan::find($id)->delete();
         return redirect()->back()->with('success', 'Product has been suspended.');
     }
 

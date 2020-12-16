@@ -1,26 +1,47 @@
 @extends('layouts.admin')
 @section('content')
-    <h1>Customer Details</h1>
-    <div class="table-responsive">
-        <table class="table table-hover mb-0">
-            <tbody>
-            <tr><th>ID</th>
-                <th>Name</th>
-                <th>Address</th></tr>
-            @foreach($customer as $c)
-                <tr>
-                    <td>
-                        {{$c->id}}
-                    </td>
-                    <td>
-                        {{$c->name}}
-                    </td>
-                    <td>
-                        {{$c->address}}
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+    <div class="card">
+        <div class="card-header"><h2>Customers</h2></div>
+
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered zero-configuration dataTable" id="dataTable" width="100%"
+                       cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        {{--                            <th>Customer-id</th>--}}
+                        <th>Name</th>
+                        <th>E-mail</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
     </div>
 @endsection
+
+@push('script')
+    <script>
+        let routeName = '{{url('admin/displayData/data')}}';
+        $(function()
+        {
+            $('#dataTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: routeName,
+                columns: [
+                    { data: 'id', name: 'id' },
+                    // { data: 'customer_id', name: 'seller_id' },
+                    { data: 'name', name: 'name' },
+                    { data: 'email', name: 'email' },
+                    {data: 'action', name: 'action', orderable: false, searchable: false}
+                ]
+            });
+        });
+
+
+    </script>
+@endpush

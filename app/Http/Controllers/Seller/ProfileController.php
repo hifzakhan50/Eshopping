@@ -9,9 +9,10 @@ use Illuminate\Http\Facades\DB;
 
 class ProfileController extends Controller
 {
-    public function edit()
+    public function edit($id)
     {
-      $profile= SellerProfile::where('user_id', '=', auth()->id())->first();//querry thik krain
+      $profile= SellerProfile::find($id);
+//      where('user_id', '=', auth()->id())->first();//querry thik krain
         //dd($profile);
                 return view('seller.profile.edit',compact('profile'));
     }
