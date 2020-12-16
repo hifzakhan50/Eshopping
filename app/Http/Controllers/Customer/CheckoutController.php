@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Session;
 use App\shoppingCart;
 use Auth;
+use Illuminate\Support\Facades\DB;
+
 class CheckoutController extends Controller
 {
     public function checkout(Request $request)
@@ -15,37 +17,14 @@ class CheckoutController extends Controller
        // dd(session()->all());
        //dd(Session::get('products'));
         $userId = Auth::user()->id;
-        if($request->session()->has('products'))
-        {
-            $products = Session::get('products');
-            foreach ($products as $product){
-               // dd($product);
-                $productId = $product['id'];
-                $productQuantity = $product['quantity'];
-                $shoppingCart = new shoppingCart;
-                $shoppingCart->product_id = $productId;
-                $shoppingCart->customer_profile_id = $userId;
-                $shoppingCart->quantity = $productQuantity;
-                $shoppingCart->save();
-            }
-            Session::forget('products');
-
            //$userCart_products= User::with("cart_products")->where('customer_profile_id',$userId)->orderBy('id')->get();
-           $products= shoppingCart::with("shoppingCart_products")->where('customer_profile_id',$userId)->orderBy('id','desc')->get();
-           // dd($userCart_products);
-            //   $products = shoppingCart::where('customer_profile_id',$userId);
-            return view('customer.checkout', compact('products'));
-        }else{
-            //echo'testing cart';
-            //return redirect()->route('homePage');
-            //$products = shoppingCart::where('customer_profile_id',$userId);
-           // $products = shoppingCart::where('customer_profile_id',$userId)->get();
-            $products= shoppingCart::with("shoppingCart_products")->where('customer_profile_id',$userId)->orderBy('id','desc')->get();
-            //dd($userCart_products);
-            return view('customer.checkout', compact('products'));
-        }
-        //exit;
-        //return view('customer.checkout', compact('products'));
+           
+        $products = DB::table('shopping_cart')
+        ->select('shopping_cart.id', 'products.name', 'products.price', 'products.weight', 'products.color', 'shopping_cart.quantity', 'products.image', 'products.description')
+        ->join('products', 'shopping_cart.product_id', '=', 'products.id')
+        ->where('shopping_cart.customer_profile_id', $userId)
+        ->get();
+        return view('customer.checkout', compact('products'));
     }
 
 }

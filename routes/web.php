@@ -46,15 +46,14 @@ Route::get('/shoppingcart', 'Frontend\ShoppingCart\shoppingCart@viewCart');
 Route::get('/billing-address', 'Frontend\BillingAdress\billingAdress@addBilling')->name('addBilling');
 
 //Route payment Adress
-Route::get('/payment-address', 'Frontend\PaymentAddress\paymentAddress@addPaymentAddress')->name('addPayment');
-Route::post('/order-confirmation-detail', 'Frontend\PaymentAddress\paymentAddress@store')->name('paymentAddress.store');
+Route::post('/order-confirmation-detail', 'Frontend\OrderConfirmationDetail\orderConfirmationDetail@confirmOrder');
 //
 Route::get('/test-route', 'Frontend\testController\testing@test');
 //order storing  routes
 Route::post('/storeorder', 'Frontend\Orders\order@store');
 
 // OrderConfirmationDetail Route
-Route::get('/order-confirmation-detail', 'Frontend\OrderConfirmationDetail\orderConfirmationDetail@confirmOrder')->name('placeOrder');
+//Route::get('/order-confirmation-detail', 'Frontend\OrderConfirmationDetail\orderConfirmationDetail@confirmOrder')->name('placeOrder');
 
 //Order Success Message Route
 Route::get('/order-success', 'OrderuSuccess\orderSuccess@orderSuccessMsg');

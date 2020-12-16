@@ -73,6 +73,7 @@
                 <div class="top-right links">
                     @auth
                         <a style="text:bold;" href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/checkout') }}"><i class="fa fa-shopping-cart"></i></a>
                     @else
                         <a href="{{ url('/home') }}">Home</a>
                         <a href="{{ route('login') }}">Login</a>

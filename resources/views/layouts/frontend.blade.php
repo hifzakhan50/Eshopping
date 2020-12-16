@@ -72,7 +72,7 @@
                         {{-- //logo here --}}
                         <li class="nav-item mr-auto"><a class="navbar-brand"
                             href="{{ url('/home') }}">
-                                <img src="logo.png">
+                                <img src="{{ asset('logo.png') }}">
 {{--                                <h2 class="brand-text mb-0" style="color:#7367f0;font-size:2rem"><strong>Mega Shoppy</strong></h2></a>--}}
                         </li>
                         </ul>
@@ -93,6 +93,12 @@
                             </li>
                         @endif
                     @else
+                    <li class="nav-item">
+                        <a style="position: absolute;
+                        top: 35%;
+                        margin-left: -40px;
+                        font-size: 30px;" href="{{ url('/checkout') }}"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false" v-pre>

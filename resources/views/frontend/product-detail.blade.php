@@ -88,7 +88,11 @@
                                 <p>Available - <span class="text-success">In stock</span></p>
 
                                 <div class="d-flex flex-column flex-sm-row">
+                                    @if($product_is_in_cart)
+                                    <button class="btn btn-success mr-0 mr-sm-1 mb-1 mb-sm-0" disabled><i class="feather icon-shopping-cart mr-25"></i>Already In The Cart</button>
+                                    @else
                                     <button id="addToCartBtn" type="submit" class="btn btn-primary mr-0 mr-sm-1 mb-1 mb-sm-0" ><i class="feather icon-shopping-cart mr-25"></i>ADD TO CART</button>
+                                    @endif
                                 </div>
                                 <hr>
                                 <button type="button" class="btn btn-icon rounded-circle btn-outline-primary mr-1 mb-1"><i class="feather icon-facebook"></i></button>

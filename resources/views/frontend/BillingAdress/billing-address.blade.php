@@ -2,29 +2,28 @@
 @section('content')
 
 
-    <div class="content-wrapper">
+    <div style="margin-top: 50px" class="content-wrapper">
         <div class="content-header row">
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
-                    <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">Checkout</h2>
-                        <div class="breadcrumb-wrapper col-12">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a>
-                                </li>
-                                <li class="breadcrumb-item"><a href="#">eCommerce</a>
-                                </li>
-                                <li class="breadcrumb-item active">Checkout
-                                </li>
-                            </ol>
-                        </div>
+                    <div style="margin-top: 50px"  class="col-12">
+                        <h2 class="content-header-title float-left mb-0">Shipping Address</h2>
+                                <div class="breadcrumb-wrapper col-12">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{{ url('/home') }}">Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item"><a href="{{ url('/checkout') }}">Cart</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Shipping Address
+                                        </li>
+                                    </ol>
+                                </div>
                     </div>
                 </div>
             </div>
             <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
                 <div class="form-group breadcrum-right">
                     <div class="dropdown">
-                        <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather icon-settings"></i></button>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Chat</a><a class="dropdown-item" href="#">Email</a><a class="dropdown-item" href="#">Calendar</a></div>
                     </div>
                 </div>
@@ -118,35 +117,45 @@
                                 </div>
                             </div>
                         </div>
-                        @isset($data)
-                        <div class="customer-card">
-                            <div class="card">
-                                <div class="card-header">
-                                <h4 class="card-title">{{$data['fname']}}</h4>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-body actions">
-                                    <p class="mb-0">{{$data['hname']}} {{$data['street']}}</p>
-                                        <p>{{$data['city']}}, {{$data['province']}}, {{$data['postalcode']}}</p>
-                                        <p>{{$data['country']}}</p>
-                                        <p>{{$data['mnumber']}}</p>
-                                        <hr>
-                                        <div class="btn btn-primary btn-block delivery-address"> <a style="min-width: 300px; background-color: #7367f0; color: white;
-padding: 10px;border-radius: 5px" href=" {{route('addPayment')}}" class="btn-btn-primary">
-
-                                                <strong>{{ __('PLACE ORDER') }}</strong>
-                                            </a></div>
-
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endisset
+                        
                     </section>
                 </fieldset>
 
                 <!-- Checkout Customer Address Ends -->
             </form>
+
+            @if($data!=null)
+                        
+                        <div class="customer-card">
+                        @foreach ($data as $single)
+                            <div class="card">
+                                <div class="card-header">
+                                <h4 class="card-title">{{$single->fullname}}</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body actions">
+                                    <p class="mb-0">{{$single->house}} {{$single->street}}</p>
+                                        <p>{{$single->province}}, {{$single->postalcode}}</p>
+                                        <p>{{$single->country}}</p>
+                                        <p>{{$single->mobile}}</p>
+                                        <hr>
+                                        <form action="/order-confirmation-detail" method="POST">
+                                        @csrf
+                                            <input name="id" type="number" value="{{$single->id}}" hidden>
+                                            <button type="submit" style="min-width: 300px; background-color: #7367f0; color: white; border: none;
+                                                    padding: 10px;border-radius: 5px"  class="btn-btn-primary">
+
+                                                    <strong>{{ __('Place Order On This Address') }}</strong>
+                                            </button>
+                                        </form>
+
+                                        </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        
+                        @endif
 
         </div>
     </div>
