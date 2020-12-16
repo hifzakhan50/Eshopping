@@ -136,7 +136,8 @@
             </div>                        
         </div>
         <form action="/savefinalorderdetails" method="POST">
-            <input type="text">
+            @csrf
+            <input type="number" hidden name="addressid" value="{{$address[0]->id}}">
             <div style="margin: auto">
                 <button type="submit" style="min-width: 300px; background-color: #7367f0; color: white; border: none;
                     padding: 20px 50px;border-radius: 5px; float: right; margin-bottom: 50px;"  class="btn-btn-primary">
