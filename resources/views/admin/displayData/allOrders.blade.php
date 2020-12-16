@@ -42,8 +42,8 @@
                 columns: [
                     { data: 'order_id', name: 'order_id' },
                     { data: 'Customer_Id', name: 'Customer_Id' },
-                    { data: 'order_No', name: 'Order_No' },
-                    { data: 'status', name: 'status' },
+                    { data: 'order_number', name: 'Order_No' },
+                    { data: 'transact_status', name: 'status' },
                     { data: 'item_count', name: 'item_count' },
                     { data: 'grandTotal', name: 'grandTotal' },
                     {data: 'action', name: 'action', orderable: false, searchable: false}

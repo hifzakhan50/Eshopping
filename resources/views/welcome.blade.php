@@ -13,7 +13,7 @@
 
         <style>
             html, body {
-                background-image: url({{ url('/app-assets/images/h1.jpg') }});
+                background-image: url({{ url('/app-assets/images/h11.jpg') }});
                 background-size: cover;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;

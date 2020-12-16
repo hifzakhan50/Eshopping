@@ -32,6 +32,6 @@ class ProfileController extends Controller
         DB::update('update seller_profile set votes = 100 where name = ?', ['John']);//without image
         }*/
 
-        return redirect()->back()->with('success', 'Profile updated successfully.');
+        return redirect('/seller')->with('success', 'Profile updated successfully.');
     }
 }

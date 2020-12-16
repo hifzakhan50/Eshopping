@@ -1,26 +1,36 @@
 @extends('layouts.shoppingcart')
 @section('content')
 
-<div class="app-content content">
+<div class="app-content content" >
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper">
-        <div class="content-header row">
-            <div class="content-header-left col-md-9 col-12 mb-2">
-                <div class="row breadcrumbs-top">
+        <div class="content-header row" >
+            <div class="content-header-left col-md-9 col-12 mb-2"style="padding-bottom: 150px">
+                <div class="row breadcrumbs-top" >
                     <div class="col-12">
                         <h2 class="content-header-title float-left mb-0">Cart</h2>
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
+<<<<<<< HEAD
+                                <li class="breadcrumb-item"><a href="/home">Home</a>
+                                </li>
+                                <li class="breadcrumb-item">Cart
+                                </li>
+                                <li class="breadcrumb-item active">Checkout
+=======
                                 <li class="breadcrumb-item"><a href="{{ url('/home') }}">Home</a>
                                 </li>
                                 <li class="breadcrumb-item active">Cart
+>>>>>>> 072a5d12ba1dbecb6bc448da4092127277d52702
                                 </li>
                             </ol>
                         </div>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
             <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
                 <div class="form-group breadcrum-right">
                     <div class="dropdown">
@@ -28,8 +38,9 @@
                     </div>
                 </div>
             </div>
+>>>>>>> 072a5d12ba1dbecb6bc448da4092127277d52702
         </div>
-        <div class="content-body">
+        <div class="content-body" >
             <form action="#" class="icons-tab-steps checkout-tab-steps wizard-circle">
 
                 <!-- Checkout Place order starts -->
@@ -38,6 +49,7 @@
                         <div class="checkout-items">
                             <!--CART OBJECT LOOP WILL START HERE
                             //single product-->
+
                             @if(!($products->isEmpty()))
                             @foreach($products as $index => $product)
                             <div class="card ecommerce-card">
@@ -88,17 +100,13 @@
                             @endforeach
 
                             @else
-
                                 <div class="alert alert-danger">
                                     <strong>Oops!</strong> Nothing in the cart.
                                 </div>
 
-                        @endif
+                            @endif
                             <!--end of single product
                             //LOOP ENDS HERE-->
-
-
-
                         </div>
 
                         @php
