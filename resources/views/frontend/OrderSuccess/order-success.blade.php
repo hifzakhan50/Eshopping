@@ -6,6 +6,9 @@
 <h1 style="text-align: center; margin-top:50px; font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-size: large;">
     <strong>YOU HAVE SUCCESSFULLY PLACED YOUR ORDER</strong>
 </h1>
+<h2 style="text-align: center; margin-top:20px; font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-size: large;">
+    Your Order Number is: {{$order_number}}
+</h2>
         <button type="button" onclick="location.href='{{ url('home') }}'" style="margin-top:20px;margin-left:550px ;padding-top:5px; padding-bottom: 5px;
     position: relative;border-color:#7367f0;border-width: 4px;border-radius: 4px; color: black;font-size: 1.5em;">
            <strong>{{ __('Continue Shopping') }}</strong>

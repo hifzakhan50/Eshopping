@@ -47,6 +47,7 @@ Route::get('/billing-address', 'Frontend\BillingAdress\billingAdress@addBilling'
 
 //Route payment Adress
 Route::post('/order-confirmation-detail', 'Frontend\OrderConfirmationDetail\orderConfirmationDetail@confirmOrder');
+Route::post('/savefinalorderdetails', 'Frontend\OrderConfirmationDetail\orderConfirmationDetail@placeFinalOrder');
 //
 Route::get('/test-route', 'Frontend\testController\testing@test');
 //order storing  routes

@@ -83,7 +83,7 @@
                                                 $item_cost = $product->price * $product->quantity;
                                             @endphp
                                             <div class="item-cost">
-                                                <h6 style="font-size: 12px" class="item-price"><strong>Total Cost: </strong>{{ $product->price }} PKR
+                                                <h6 style="font-size: 12px" class="item-price"><strong>Total Cost: </strong>{{ $item_cost }} PKR
                                                 </h6>
                                             </div>
                                         </div>

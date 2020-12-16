@@ -8,6 +8,7 @@
         });
     }
 </script>
+<div style="margin-top: 120px;"></div>
     @if(!$ads->isEmpty())
     <div class="slider">
         @foreach ($ads as $ad)
