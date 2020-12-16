@@ -92,6 +92,12 @@
                             </li>
                         @endif
                     @else
+                    <li class="nav-item">
+                        <a style="position: absolute;
+                        top: 35%;
+                        margin-left: -40px;
+                        font-size: 30px;" href="{{ url('/checkout') }}"><i class="fa fa-shopping-cart"></i></a>
+                    </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false" v-pre>

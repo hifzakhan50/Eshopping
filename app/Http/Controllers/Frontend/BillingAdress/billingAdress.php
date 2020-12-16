@@ -9,6 +9,9 @@ class billingAdress extends Controller
 {
     public function addBilling()
     {
-        return view('frontend.BillingAdress.billing-address');
+        $user_id = Auth::user()->id;
+        $data = DB::select('select * from billing_address where user_id = ?', [Auth::user()->id]);
+
+        return view('frontend.BillingAdress.billing-address')->with('data', $data);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use Auth;
 use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
@@ -44,8 +45,29 @@ class HomeController extends Controller
 
     public function product($name)
     {
-        $product = Product::where('name', '=', $name)->first();
+        if(Auth::user())
+        {
+            $product = Product::where('name', '=', $name)->first();
+            $ALREADY_ADDED = DB::select('select id from shopping_cart where customer_profile_id = ? and product_id = ?', [Auth::user()->id, $product->id]);
+            
+            if($ALREADY_ADDED == null)
+            {
+                $product_is_in_cart = false;
+            }
+            else
+            {
+                $product_is_in_cart = true;
+            }
 
-        return view('frontend.product-detail', compact('product'));
+            $data = array(
+                'product_is_in_cart' => $product_is_in_cart,
+                'product' => $product
+            );
+            return view('frontend.product-detail')->with($data);
+        }
+        else
+        {
+            return redirect()->back()->with('PleaseLogin', 'Please Login to check the details of the product');
+        }
     }
 }

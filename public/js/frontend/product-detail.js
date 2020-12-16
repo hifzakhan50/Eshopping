@@ -34,10 +34,8 @@ $(document).ready(function () {
 
 
         } else {
-            $(this).text('ADD TO CART');
-            $(this).attr('class', 'btn btn-warningmr-0 mr-sm-1 mb-1 mb-sm-0');
-
-
+            $(this).text('Added to Cart');
+            $(this).attr('class', 'btn btn-success mr-0 mr-sm-1 mb-1 mb-sm-0');
         }
     });
 });

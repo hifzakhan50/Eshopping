@@ -30,6 +30,16 @@
         @endforeach
     </div>
     @endif
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            @if(session()->has('PleaseLogin'))
+                <div>
+                    <p><strong>Please Login!</strong> to access and add the product in the cart.</p>
+                    <a style="padding: 15px 30px; margin-top: 15px; background-color: #7367f0; color: white;" href="{{ route('login') }}">Login</a>
+                </div>
+            @endif
+        </div>
+    </div>
     <div class="content-header row mt-0">
 {{--        <div class="content-header-left col-md-9 col-12 mb-2">--}}
 {{--            <div class="row breadcrumbs-top">--}}
@@ -151,11 +161,11 @@
                                     </div>
                                 </div>
 
-                                <div class="cart">
+                                {{-- <div class="cart">
                                     <i class="feather icon-shopping-cart"></i> <span
                                         class="add-to-cart">Add to cart</span>
                                     <a href='{{ url('checkout') }}' class="view-in-cart d-none">View In Cart</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

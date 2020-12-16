@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class paymentAddress extends Controller
 {
-    public function addPaymentAddress()
+    public function addPaymentAddress(Request $request)
     {
+        //dd($request['id']);
         return view('frontend.Payment Address.payment-address');
     }
     public function store()
