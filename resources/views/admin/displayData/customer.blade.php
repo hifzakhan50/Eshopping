@@ -1,12 +1,21 @@
 @extends('layouts.admin')
 @section('content')
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        @if(session()->has('success'))
+            <div class="alert alert-success text-white">
+                <strong>Success!</strong> {{ session('success')  }}
+            </div>
+        @endif
+    </div>
+</div>
     <div class="card">
         <div class="card-header"><h2>Customers</h2></div>
 
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered zero-configuration dataTable" id="dataTable" width="100%"
+                <table class="table table-bordered zero-configuration dataTable" id="dataTable1" width="100%"
                        cellspacing="0">
                     <thead>
                     <tr>
@@ -25,10 +34,10 @@
 
 @push('script')
     <script>
-        let routeName = '{{url('admin/displayData/data')}}';
+        let routeName = '{{url('admin/displayDataforcustomers/data')}}';
         $(function()
         {
-            $('#dataTable').DataTable({
+            $('#dataTable1').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: routeName,

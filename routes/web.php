@@ -24,14 +24,14 @@ Route::get('/index', 'HomeController@index')->name('home');
 Route::post('/sellerprofileupdate', 'Seller\ProfileController@update');
 Route::get('seller/profile/edit', 'Seller\ProfileController@edit')->name('profile.edit');
 /*new routes starts*/
-Route::put('/customer/profile', 'Customer\profileController@update')->name('profile.update');
-Route::get('/customer/profile/edit', 'Customer\profileController@edit')->name('profile.edit');
-
-Route::put('/admin/profile', 'Admin\profileController@update')->name('profile.update');
-Route::get('/admin/profile/edit', 'Admin\profileController@edit')->name('profile.edit');
-
-Route::put('/fulNet/profile', 'fulNet\profileController@update')->name('profile.update');
-Route::get('/fulNet/profile/edit', 'fulNet\profileController@edit')->name('profile.edit');
+//Route::put('/customer/profile', 'Customer\profileController@update')->name('profile.update');
+//Route::get('/customer/profile/edit', 'Customer\profileController@edit')->name('profile.edit');
+//
+//Route::put('/admin/profile', 'Admin\profileController@update')->name('profile.update');
+//Route::get('/admin/profile/edit', 'Admin\profileController@edit')->name('profile.edit');
+//
+//Route::put('/fulNet/profile', 'fulNet\profileController@update')->name('profile.update');
+//Route::get('/fulNet/profile/edit', 'fulNet\profileController@edit')->name('profile.edit');
 /*new routes ends*/
 
 //Shoppingcart Route
@@ -99,14 +99,15 @@ Route::get('admin/category/{id}/active', 'admin\categoriesController@active')->n
 
 /*Admin Users*/
 Route::get('admin/displayData/clist', 'admin\customersController@all');
-Route::get('admin/displayData/data', 'admin\CategoriesController@data')->name('displayData.data');
+Route::get('admin/displayDataforcustomers/data', 'admin\customersController@data');
+Route::get('admin/customer/{id}/suspend', 'admin\customersController@suspend');
 
 Route::get('admin/displayData/slist', 'admin\sellersController@all');
-Route::get('admin/displayData/data', 'admin\CategoriesController@data')->name('displayData.data');
-
+Route::get('admin/displayDataforsellers/data', 'admin\sellersController@data');
+Route::get('admin/seller/{id}/suspend', 'admin\sellersController@suspend');
 /*Admin Orders*/
 Route::get('admin/displayData/orderlist', 'admin\ordersController@all');
-Route::get('admin/displayData/data', 'admin\CategoriesController@data')->name('displayData.data');
+//Route::get('admin/displayData/data', 'admin\CategoriesController@data')->name('displayData.data');
 
 /*Shipping Routes*/
 Route::get('/admin/shipping-management/create','admin\shipMans@create');

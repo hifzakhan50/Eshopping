@@ -19,39 +19,49 @@ class customersController extends Controller
      */
     public function all()
     {
-        return view('admin.displayData.customer');
+        $all_customers = DB::table('users')
+        ->join('role_user', 'role_user.role_id', '=', 'users.id')
+        ->select()
+        ->where('role_user.user_id', '=', 2)->get();
+        //dd($all_customers);
+        return view('admin.displayData.customer')->with('customers', $all_customers);
     }
 
 
-    public function data($id)
+    public function data()
     {
-        $cus= Role::find($id = '3');
-        dd($cus);
-        if ($cus) {
-            $slist = DB::table('users')
-                ->select(['id', 'name', 'email']);
-//        , 'cusler-id'
+        $all_customers = DB::table('users')
+        ->join('role_user', 'role_user.role_id', '=', 'users.id')
+        ->select()
+        ->where('role_user.user_id', '=', 2)->get();
 
-            return Datatables::of($slist)->addColumn('action', function ($c) {
+        $categories = DB::table('category')
+            ->select(['id', 'name', 'description', 'is_active']);
 
-                $suspendURL = url('admin/displayData' . $c->id . '/suspend');
+        return Datatables::of($all_customers) ->addColumn('action', function ($customer) {
+
+                $editURL = url('admin/customer/'.$customer->id.'/edit');
+                $suspendURL = url('admin/customer/'.$customer->id.'/suspend');
+                $active = url('admin/customer/'.$customer->id.'/active');
 
 
-//            $editBtn = '<a href="'.$editURL.'" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
-                $suspendBtn = '<a href="' . $suspendURL . '" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Suspend</a>';
-//            $activeBtn = '<a href="'.$active.' class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
+                $editBtn = '<a href="'.$editURL.'" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+                $suspendBtn = '<a href="'.$suspendURL.'" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Suspend</a>';
+                $activeBtn = '<a href="'.$active.' class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
 
+
+                    return $editBtn.' '.$suspendBtn;
             })
-                ->make(true);
-        }
-        else
-        { echo "Oops no data";}
-
+            ->make(true);
     }
+
     public function suspend($id)
     {
-        //dd($id);
-        $slist =User::find($id)->delete();
-        return redirect()->back()->with('success', 'Customer has been suspended.');
+//       dd($id);
+        DB::table('users')
+        ->where('id', $id)
+        ->delete();
+
+        return redirect()->back()->with('success', 'Customer has been deleted.');
     }
 }

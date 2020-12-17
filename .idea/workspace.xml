@@ -21,24 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="680b7f2d-c099-4765-8588-b34c45fd851a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/customersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/customersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ordersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ordersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/profileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/profileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/sellersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/sellersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/shipMans.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/shipMans.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Seller/CampaignsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Seller/CampaignsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Seller/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Seller/ProductsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Seller/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Seller/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/displayData/allOrders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/displayData/allOrders.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/displayData/customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/displayData/customer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/displayData/seller.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/displayData/seller.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/profile/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/fulNet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/fulNet.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -243,6 +230,7 @@
       <workItem from="1608104831703" duration="14047000" />
       <workItem from="1608129659495" duration="285000" />
       <workItem from="1608129994317" duration="9629000" />
+      <workItem from="1608179949030" duration="5426000" />
     </task>
     <servers />
   </component>
