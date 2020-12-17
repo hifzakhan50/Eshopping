@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Seller;
 use App\Http\Controllers\Controller;
 use App\SellerProfile;
 use Illuminate\Http\Request;
-use Illuminate\Http\Facades\DB;
+use Illuminate\Support\Facades\DB;
+use Auth;
 
 class ProfileController extends Controller
 {
@@ -61,6 +62,8 @@ class ProfileController extends Controller
             'country' => $data['country'],
             'about' => $data['about'],
         ]);
+
+        DB::update('update users set name = ?, email = ? where id = ?', [$data['name'], $data['adress'], Auth::user()->id]);
 
         return redirect()->back()->with('success', 'Profile updated successfully.');
     }

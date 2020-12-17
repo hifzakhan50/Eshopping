@@ -157,7 +157,16 @@
                             <div class="user-nav d-sm-flex d-none"><span
                                     class="user-name text-bold-600">{{ auth()->user()->name}}</span><span
                                     class="user-status">Available</span></div>
-                            <span><img class="round" src="{{ getImageSrc(auth()->user()->image)}}"
+
+                                    
+                                    {{-- yahan pe kam hua hy --}}
+                                    @php
+                                        $data = auth()->user()->join('seller_profiles', 'users.id', 'seller_profiles.user_id')
+                                        ->where('seller_profiles.user_id', Auth::user()->id)
+                                        ->first();
+                                        $image = $data->getOriginal('image');
+                                    @endphp
+                            <span><img class="round" src="{{ getImageSrc($image)}}"
                                        alt="avatar" height="40" width="40"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item"
@@ -192,7 +201,8 @@
             <li class="nav-item mr-auto"><a class="navbar-brand"
                                             href="{{ url('index') }}">
 
-                    <img  class="brand-logo" src="logo.png" >
+                   {{-- <img  class="brand-logo" src=url('/app-assets/images/logo.png')"> --}}
+                    <img class="brand-logo"  src="{{ URL::to('/app-assets/images/logo.png') }}">
                     <h2 class="brand-text mb-0">Mega Shoppy</h2>
                 </a></li>
 
@@ -201,11 +211,6 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-
-
-
-
-
 
             <!--Side Bar: options-->
             <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title"

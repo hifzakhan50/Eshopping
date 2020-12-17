@@ -25,7 +25,7 @@
 
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control @error('name') not found @enderror" name="name"
-                               value="{{ $profile->id }}" required autocomplete="name" autofocus>
+                               value="{{ $profile->name }}" required autocomplete="name" autofocus>
 
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -40,7 +40,7 @@
 
                     <div class="col-md-6">
                         <input id="adress" type="text" class="form-control @error('adress') not found @enderror"
-                               name="adress" value="{{ $profile->user_id }}" required autocomplete="adress" autofocus>
+                               name="adress" value="{{ $profile->address }}" required autocomplete="address" autofocus>
 
                         @error('adress')
                         <span class="invalid-feedback" role="alert">
@@ -57,7 +57,7 @@
                     <div class="col-md-6">
                         <select id="country" type="text"
                                 class="form-control @error('country') is-invalid @enderror" name="country"
-                                value="{{ old('country') }}" required autocomplete="size" autofocus>
+                                value="{{ old('country') }}" required autocomplete="country" autofocus>
 
                             <option value="Pakistan">Pakistan</option>
                             <option value="China">China</option>

@@ -74,11 +74,13 @@ body {
   text-align: left;
   background-color: #f8fafc;
 }
-.brand-logo{
+ .brand-logo{
     background: url("logo.png");
     margin-top: 0;
     margin-bottom: 0.5rem;
-}
+    width: 300px;
+    height: 120px;
+} 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }

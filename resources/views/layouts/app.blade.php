@@ -24,7 +24,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" >
-                        <h2 class="brand-logo mb-0" style="color:#7367f0;font-size:2rem;"><img src="logo.png" alt=""><strong>Mega Shoppy</strong></h2></a>
+                        <h2 class="brand-logo mb-0" style="color:#7367f0;font-size:2rem;"><img src="{{ URL::to('/app-assets/images/logo.png') }}">
+                            <strong>Mega Shoppy</strong></h2></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
