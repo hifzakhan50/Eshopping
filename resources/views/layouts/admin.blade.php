@@ -269,11 +269,13 @@
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav ">
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="/admin">
-                    <div class="brand-logo"></div>
-                    <img src="logo.png" >
-                    <h2 class="brand-text mb-0">MegaShoppy </h2>
-                </a></li>
+
+            <li class="nav-item mr-auto"><a class="navbar-brand"
+                                            href="{{ url('index') }}">
+
+                    <img class="brand-logo"  src="{{ URL::to('/app-assets/images/logo.png') }}">
+                    <h2 class="brand-text mb-0">Mega Shoppy</h2>
+                </a></li></li>
 
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
              <i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i>
@@ -308,6 +310,10 @@
                                     <span class="menu-item" data-i18n="Analytics">All Categories</span></a>
                             </li>
                         </ul>
+
+                    <li class=" nav-item"><a href="{{url('admin/displayData/prods')}}"><i class="feather icon-home"></i>
+                        <span class="menu-title" data-i18n="Dashboard">Products </span>
+                        <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
                     <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Shipping Management </span>
                             <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>

@@ -27,38 +27,24 @@ class ordersController extends Controller
 
         return Datatables::of($categories) ->addColumn('action', function ($category) {
 
-            $editURL = url('admin/category/'.$category->id.'/edit');
+//            $editURL = url('admin/category/'.$category->id.'/edit');
             $suspendURL = url('admin/category/'.$category->id.'/suspend');
-            $active = url('admin/category/'.$category->id.'/active');
 
 
-            $editBtn = '<a href="'.$editURL.'" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+//            $editBtn = '<a href="'.$editURL.'" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
             $suspendBtn = '<a href="'.$suspendURL.'" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Suspend</a>';
-            $activeBtn = '<a href="'.$active.' class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
+//            $activeBtn = '<a href="'.$active.' class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
 
-            if($category->is_active)
-                return $editBtn.' '.$suspendBtn;
-            else
-                return $editBtn.' '.$activeBtn;
+                return $suspendBtn;
         })
             ->make(true);
-    }
-
-    public function active($id)
-    {
-        $cat = Category::find($id);
-        $cat->update(['is_active' => 1]);
-
-        return redirect()->back()->with('success', 'Product has been activated.');
     }
 
     public function suspend($id)
     {
         //dd($id);
-        $cat= Category::find($id);
-        $cat->update(['is_active' => 0]);
-        //dd($cat);
+        $cat= Order::find($id)->delete();
 
-        return redirect()->back()->with('success', 'Product has been suspended.');
+        return redirect()->back()->with('success', 'Order has been suspended.');
     }
 }

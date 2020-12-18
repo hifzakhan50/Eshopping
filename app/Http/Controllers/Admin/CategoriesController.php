@@ -106,7 +106,7 @@ class CategoriesController extends Controller
         $cat= Category::find($id)->delete();
         //dd($cat);
 
-        return redirect()->back()->with('success', 'Product has been suspended.');
+        return redirect()->back()->with('success', 'Category has been suspended.');
     }
 
 }

@@ -37,17 +37,17 @@ class sellersController extends Controller
 
         return Datatables::of($all_sellers) ->addColumn('action', function ($seller) {
 
-            $editURL = url('admin/seller/'.$seller->id.'/edit');
+//            $editURL = url('admin/seller/'.$seller->id.'/edit');
             $suspendURL = url('admin/seller/'.$seller->id.'/suspend');
-            $active = url('admin/seller/'.$seller->id.'/active');
+//            $active = url('admin/seller/'.$seller->id.'/active');
 
 
-            $editBtn = '<a href="'.$editURL.'" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+//            $editBtn = '<a href="'.$editURL.'" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
             $suspendBtn = '<a href="'.$suspendURL.'" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Suspend</a>';
 //            $activeBtn = '<a href="'.$active.' class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
 
 
-            return $editBtn.' '.$suspendBtn;
+            return $suspendBtn;
         })
             ->make(true);
     }
@@ -55,6 +55,9 @@ class sellersController extends Controller
     {
         //dd($id);
         DB::table('users')
+            ->where('id', $id)
+            ->delete();
+        DB::table('products')
             ->where('id', $id)
             ->delete();
         //dd($id);

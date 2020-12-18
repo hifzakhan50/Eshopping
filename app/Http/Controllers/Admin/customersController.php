@@ -50,7 +50,7 @@ class customersController extends Controller
                 $activeBtn = '<a href="'.$active.' class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
 
 
-                    return $editBtn.' '.$suspendBtn;
+                    return $suspendBtn;
             })
             ->make(true);
     }
@@ -61,6 +61,9 @@ class customersController extends Controller
         DB::table('users')
         ->where('id', $id)
         ->delete();
+        DB::table('products')
+            ->where('id', $id)
+            ->delete();
 
         return redirect()->back()->with('success', 'Customer has been deleted.');
     }

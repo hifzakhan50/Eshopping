@@ -147,14 +147,6 @@ class ProductsController extends Controller
             ->make(true);
     }
 
-    public function active($id)
-    {
-        $product = Product::find($id);
-        $product->update(['is_active' => 1]);
-
-        return redirect()->back()->with('success', 'Product has been activated.');
-    }
-
     public function suspend($id)
     {
         $product = Product::find($id)->delete();

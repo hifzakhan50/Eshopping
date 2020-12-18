@@ -1,6 +1,15 @@
 @extends('layouts.admin')
 @section('content')
 
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            @if(session()->has('success'))
+                <div class="alert alert-success text-white">
+                    <strong>Success!</strong> {{ session('success')  }}
+                </div>
+            @endif
+        </div>
+    </div>
     <div class="card">
         <div class="card-header"><h2>Categories</h2></div>
 

@@ -97,7 +97,11 @@ Route::put('/admin/category/{id}', 'admin\Categoriescontroller@update')->name('c
 Route::get('admin/category/{id}/suspend', 'admin\CategoriesController@suspend')->name('categorySuspend');
 Route::get('admin/category/{id}/active', 'admin\categoriesController@active')->name('category.active');
 
-/*Admin Users*/
+/*Admin lists*/
+Route::get('admin/displayData/prods', 'admin\productsController@data');
+Route::get('admin/displayProductsData/data', 'admin\productsController@all');
+Route::get('admin/products/{id}/suspend', 'admin\productsController@suspend');
+
 Route::get('admin/displayData/clist', 'admin\customersController@all');
 Route::get('admin/displayDataforcustomers/data', 'admin\customersController@data');
 Route::get('admin/customer/{id}/suspend', 'admin\customersController@suspend');
@@ -105,8 +109,12 @@ Route::get('admin/customer/{id}/suspend', 'admin\customersController@suspend');
 Route::get('admin/displayData/slist', 'admin\sellersController@all');
 Route::get('admin/displayDataforsellers/data', 'admin\sellersController@data');
 Route::get('admin/seller/{id}/suspend', 'admin\sellersController@suspend');
+
 /*Admin Orders*/
 Route::get('admin/displayData/orderlist', 'admin\ordersController@all');
+Route::get('admin/displayOrderlist/data', 'admin\customersController@data');
+Route::get('admin/orders/{id}/suspend', 'admin\customersController@suspend');
+
 //Route::get('admin/displayData/data', 'admin\CategoriesController@data')->name('displayData.data');
 
 /*Shipping Routes*/

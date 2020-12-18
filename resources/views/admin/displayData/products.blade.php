@@ -1,4 +1,4 @@
-@extends('layouts.seller')
+@extends('layouts.admin')
 @section('content')
 
     <div class="row justify-content-center">
@@ -12,16 +12,17 @@
     </div>
 
     <div class="card">
-        <div class="card-header"><h2>Products</h2></div>
+        <div class="card-header"><h2>Products list</h2></div>
 
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered zero-configuration dataTable" id="dataTable" width="100%"
+                <table class="table table-bordered zero-configuration dataTable" id="dataTablee" width="100%"
                        cellspacing="0">
                     <thead>
                     <tr>
                         <th>Id</th>
+{{--                        <th>Seller Id</th>--}}
                         <th>Name</th>
                         <th>Description</th>
                         <th>Price</th>
@@ -36,18 +37,18 @@
         </div>
     </div>
 
-
 @endsection
 @push('script')
     <script>
-
+        let routeName = '{{url('admin/displayProductsData/data')}}';
         $(function () {
-            $('#dataTable').dataTable({
+            $('#dataTablee').dataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{{url('/seller/products/data')}}',
+                ajax: routeName,
                 columns: [
                     {data: 'id', name: 'id'},
+                    // {data: 'seller_profile_id', name: 'seller_profile_id'},
                     {data: 'name', name: 'name'},
                     {data: 'description', name: 'description'},
                     {data: 'price', name: 'price'},
