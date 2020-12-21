@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\SellerProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -52,6 +52,7 @@ class ProfileController extends Controller
             'country' => 'required',
         ]);
         if (request()->has('image')){
+            
             $imagePath = request('image')->store('uploads', 'public');
             auth()->user()->sellerProfile->update(['image' => $imagePath]);
 
@@ -63,9 +64,9 @@ class ProfileController extends Controller
             'about' => $data['about'],
         ]);
 
-        DB::update('update users set name = ?, email = ? where id = ?', [$data['name'], $data['adress'], Auth::user()->id]);
-
+        DB::update('update users set name = ? where id = ?', [$data['name'], Auth::user()->id]);
         return redirect()->back()->with('success', 'Profile updated successfully.');
     }
 
 }
+

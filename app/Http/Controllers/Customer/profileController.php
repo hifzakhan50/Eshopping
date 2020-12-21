@@ -5,14 +5,14 @@ namespace App\Http\Controllers\customer;
  use App\CustomerProfile;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 class profileController extends Controller
 {
 
-    public function edit($id)
+    public function edit()
     {
         $profile= CustomerProfile::where('user_id', '=', auth()->id())->first();
-
         return view('customer.profile.edit',compact('profile'));
     }
 
@@ -23,14 +23,16 @@ class profileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request $data)
     {
-        $data = request()->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'about' => 'required',
-            'country' => 'required',
-        ]);
+        
+        // $data = request()->validate([
+        //     'name' => 'required',
+        //     'address' => 'required',
+        //     'about' => 'required',
+        //     'city' => 'required',
+        // ]);
+
         if (request()->has('image')){
             $imagePath = request('image')->store('uploads', 'public');
             auth()->user()->customerProfile->update(['image' => $imagePath]);
@@ -40,10 +42,10 @@ class profileController extends Controller
             'name' => $data['name'],
             'address' => $data['address'],
             'country' => $data['country'],
-            'about' => $data['about'],
+            'city' => $data['city'],
         ]);
-
-        return redirect()->back()->with('success', 'Profile updated successfully.');
+        DB::update('update users set name = ? where id = ?', [$data['name'], Auth::user()->id]);
+        return redirect()->back()->with('success', 'Customer Profile updated successfully.');
     }
 
     /**

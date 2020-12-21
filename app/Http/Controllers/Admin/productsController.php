@@ -11,7 +11,7 @@ class productsController extends Controller
 {
     public function all()
     {
-        dd('here');
+        //dd('here');
         return view('admin.displayData.products');
     }
 
@@ -33,11 +33,11 @@ class productsController extends Controller
                 return $suspendBtn;
 
             })
-//            ->editColumn('image', function ($products) {
-//                $imagePath = asset('/storage/' . $aproducts->image);
-//                return '<img src="' . $imagePath . '" class="w-25">';
-//            })
-//            ->rawColumns(['image', 'action'])
+           ->editColumn('image', function ($products) {
+               $imagePath = asset('/storage/' . $products->image);
+               return '<img src="' . $imagePath . '" class="w-25">';
+           })
+           ->rawColumns(['image', 'action'])
             ->make(true);
     }
 

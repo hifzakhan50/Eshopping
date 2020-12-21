@@ -24,8 +24,8 @@ Route::get('/index', 'HomeController@index')->name('home');
 Route::post('/sellerprofileupdate', 'Seller\ProfileController@update');
 Route::get('seller/profile/edit', 'Seller\ProfileController@edit')->name('profile.edit');
 /*new routes starts*/
-//Route::put('/customer/profile', 'Customer\profileController@update')->name('profile.update');
-//Route::get('/customer/profile/edit', 'Customer\profileController@edit')->name('profile.edit');
+Route::post('/customerprofileupdate', 'Customer\profileController@update');
+Route::get('/customer/profile/edit', 'Customer\profileController@edit')->name('profile.customeredit');
 //
 //Route::put('/admin/profile', 'Admin\profileController@update')->name('profile.update');
 //Route::get('/admin/profile/edit', 'Admin\profileController@edit')->name('profile.edit');
@@ -98,8 +98,8 @@ Route::get('admin/category/{id}/suspend', 'admin\CategoriesController@suspend')-
 Route::get('admin/category/{id}/active', 'admin\categoriesController@active')->name('category.active');
 
 /*Admin lists*/
-Route::get('admin/displayData/prods', 'admin\productsController@data');
-Route::get('admin/displayProductsData/data', 'admin\productsController@all');
+Route::get('admin/displayData/prods', 'admin\productsController@all');
+Route::get('admin/displayProductsData/data', 'admin\productsController@data');
 Route::get('admin/products/{id}/suspend', 'admin\productsController@suspend');
 
 Route::get('admin/displayData/clist', 'admin\customersController@all');
