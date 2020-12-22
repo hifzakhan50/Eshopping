@@ -12,25 +12,15 @@
                         <h2 class="content-header-title float-left mb-0">Cart</h2>
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-<<<<<<< HEAD
-                                <li class="breadcrumb-item"><a href="/home">Home</a>
-                                </li>
-                                <li class="breadcrumb-item">Cart
-                                </li>
-                                <li class="breadcrumb-item active">Checkout
-=======
                                 <li class="breadcrumb-item"><a href="{{ url('/home') }}">Home</a>
                                 </li>
                                 <li class="breadcrumb-item active">Cart
->>>>>>> 072a5d12ba1dbecb6bc448da4092127277d52702
                                 </li>
                             </ol>
                         </div>
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-=======
             <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
                 <div class="form-group breadcrum-right">
                     <div class="dropdown">
@@ -38,7 +28,6 @@
                     </div>
                 </div>
             </div>
->>>>>>> 072a5d12ba1dbecb6bc448da4092127277d52702
         </div>
         <div class="content-body" >
             <form action="#" class="icons-tab-steps checkout-tab-steps wizard-circle">
@@ -90,9 +79,6 @@
 
                                         <div onclick="removeProduct(this, {{$product->id}})" class="wishlist remove-wishlist">
                                             <i class="feather icon-x align-middle"></i> Remove
-                                        </div>
-                                        <div class="cart remove-wishlist">
-                                            <i class="fa fa-heart-o mr-25"></i> Wishlist
                                         </div>
                                     </div>
                                 </div>

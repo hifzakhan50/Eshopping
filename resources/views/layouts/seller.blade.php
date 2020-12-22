@@ -240,11 +240,11 @@
                                                                                               data-i18n="Dashboard">Orders</span>
                     <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
                 <ul class="menu-content">
-                    <li class=""><a href=""><i class="feather icon-circle"></i><span
+                    <li class=""><a href="{{ url('seller/orders/active') }}"><i class="feather icon-circle"></i><span
                                 class="menu-item" data-i18n="Analytics">Active Orders</span></a>
                     </li>
 
-                    <li class=""><a href="#"><i class="feather icon-circle"></i><span class="menu-item"
+                    <li class=""><a href="{{ url('seller/orders/all') }}"><i class="feather icon-circle"></i><span class="menu-item"
                                                                                       data-i18n="Analytics">All Orders</span></a>
                     </li>
 
@@ -301,8 +301,9 @@
 
 <!-- END: Page JS-->
 <link href="{{ asset('assets/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
-<script src="{{ asset('assets/datatables/dataTables.bootstrap4.js') }}"></script>
 <script src="{{ asset('assets/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('assets/datatables/dataTables.bootstrap4.js') }}"></script>
+
 
 <script src="{{ asset('assets/js/global.js') }}"></script>
 

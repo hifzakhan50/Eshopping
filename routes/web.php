@@ -69,6 +69,15 @@ Route::put('seller/products/{id}', 'Seller\ProductsController@update')->name('pr
 Route::get('seller/products/{id}/suspend', 'Seller\ProductsController@suspend')->name('products.suspend');
 Route::get('seller/products/{id}/active', 'Seller\ProductsController@active')->name('products.active');
 
+//Seller Orders
+Route::get('seller/orders/active', 'Seller\sellerController@activeOrders')->name('active.activeOrders');
+Route::get('seller/orders/activeorders', 'Seller\sellerController@data1')->name('active.data1');
+Route::get('seller/orders/{id}/delivered', 'Seller\sellerController@delivered')->name('activeorder.delivered');
+Route::get('seller/orders/{id}/suspend', 'Seller\sellerController@suspend')->name('activeorder.suspend');
+
+Route::get('seller/orders/all', 'Seller\sellerController@allOrders')->name('active.allOrders');
+Route::get('seller/orders/allorders', 'Seller\sellerController@data2')->name('active.data2');
+
 //Ad-management Routes
 Route::get('seller/adMan/create','Seller\CampaignsController@create');
 Route::post('seller/adMan', 'Seller\CampaignsController@store')->name('adManCreate');

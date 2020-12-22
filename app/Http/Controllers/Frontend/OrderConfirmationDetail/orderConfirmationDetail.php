@@ -59,13 +59,12 @@ class orderConfirmationDetail extends Controller
         values (?, ?, ?, ?, ?, ? ,?)', 
         [$userId, $billing_id, $order_number, $today, $status, $total_price, $GST]);
 
-        $order_id = 1;DB::select('select id from orders where order_number = ?', [$order_number]);
-    
+        $order_id = DB::select('select id from orders where order_number = ?', [$order_number]);
+        
         foreach($products as $product)
         {
-            DB::insert('insert into order_details (order_id, product_id) values (?, ?)', [$order_id, $product->productid]);
+            DB::insert('insert into order_details (order_id, product_id, quantity) values (?, ?, ?)', [$order_id[0]->id, $product->productid, $product->quantity]);
         }
-
         $res=shoppingCart::where('customer_profile_id',$userId)->delete();
         return view('frontend.OrderSuccess.order-success')->with('order_number', $order_number);
     }
