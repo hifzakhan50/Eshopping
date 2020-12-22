@@ -148,7 +148,15 @@
                             <div class="user-nav d-sm-flex d-none"><span
                                     class="user-name text-bold-600">{{ auth()->user()->name}}</span><span
                                     class="user-status">Available</span></div>
-                            <span><img class="round" src="{{ getImageSrc(auth()->user()->image)}}"
+
+                                 @php
+                                 $data = auth()->user()->join('customer_profiles', 'users.id', 'customer_profiles.user_id')
+                                 ->where('customer_profiles.user_id', Auth::user()->id)
+                                 ->first();
+                                 $image = $data->getOriginal('image');
+
+                                 @endphp
+                            <span><img class="round" src="{{ getImageSrc($image)}}"
                                        alt="avatar" height="40" width="40"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item"

@@ -157,15 +157,15 @@
                             <div class="user-nav d-sm-flex d-none"><span
                                     class="user-name text-bold-600">{{ auth()->user()->name}}</span><span
                                     class="user-status">Available</span></div>
-
-                                    
-                                    {{-- yahan pe kam hua hy --}}
                                     @php
+
                                         $data = auth()->user()->join('seller_profiles', 'users.id', 'seller_profiles.user_id')
                                         ->where('seller_profiles.user_id', Auth::user()->id)
                                         ->first();
                                         $image = $data->getOriginal('image');
+
                                     @endphp
+
                             <span><img class="round" src="{{ getImageSrc($image)}}"
                                        alt="avatar" height="40" width="40"></span>
                         </a>
@@ -203,7 +203,7 @@
 
                    {{-- <img  class="brand-logo" src=url('/app-assets/images/logo.png')"> --}}
                     <img class="brand-logo"  src="{{ URL::to('/app-assets/images/logo.png') }}">
-                    <h2 class="brand-text mb-0">Mega Shoppy</h2>
+                    <h2 class=" brand-text mb-0">Mega Shoppy</h2>
                 </a></li>
 
         </ul>

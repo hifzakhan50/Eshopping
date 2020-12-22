@@ -75,12 +75,11 @@ body {
   background-color: #f8fafc;
 }
  .brand-logo{
-    background: url("logo.png");
     margin-top: 0;
     margin-bottom: 0.5rem;
-    width: 300px;
-    height: 120px;
-} 
+    width: 60px;
+    height: 50px;
+}  
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
