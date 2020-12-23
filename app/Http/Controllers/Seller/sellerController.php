@@ -105,7 +105,7 @@ class sellerController extends Controller
         $activeorders = DB::table('orders')
         ->join('order_details', 'order_details.order_id', '=', 'orders.id')
         ->join('products', 'products.id', '=', 'order_details.product_id')
-        ->join('billing_address', 'billing_address.id', '=', 'orders.billing_id' )
+        ->join('billing_address', 'billing_address.id', '=', 'orders.billing_id')
         ->select('orders.id', 'orders.status', 'orders.order_number', 'billing_address.fullname', 'billing_address.mobile', 'billing_address.house', 
         'billing_address.street', 'billing_address.province', 'billing_address.country', 'billing_address.postalcode', 'products.name', 'order_details.quantity')
         ->where('products.seller_profile_id', '=', auth()->user()->sellerProfile->id)

@@ -65,19 +65,51 @@
 
 
                 </div>
+                @php
+                    $activeorders = DB::table('orders')
+                    ->join('order_details', 'order_details.order_id', '=', 'orders.id')
+                    ->join('products', 'products.id', '=', 'order_details.product_id')
+                    ->join('billing_address', 'billing_address.id', '=', 'orders.billing_id')
+                    ->select('orders.id', 'orders.status', 'orders.order_number', 'billing_address.fullname', 'billing_address.mobile', 'billing_address.house', 
+                    'billing_address.street', 'billing_address.province', 'billing_address.country', 'billing_address.postalcode', 'products.name', 'order_details.quantity')
+                    ->where('products.seller_profile_id', '=', auth()->user()->sellerProfile->id)
+                    ->where('orders.status', '=', 'Order Created')
+                    ->get();
+                @endphp
+                
                 <ul class="nav navbar-nav float-right">
-
+                    @if(!$activeorders->isEmpty())
+                        <div style="margin-right: -17px; margin-top: -17px;" class="blinkanim">
+                            <span style='font-size:50px; color: #7367f2'>&#8226;</span>
+                        </div>
+                    @endif
                     <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
-                                                                           data-toggle="dropdown"><i
-                                class="ficon feather icon-bell"></i><span
+                   data-toggle="dropdown">
+                    @if(!$activeorders->isEmpty())
+                        <i style="color: #7367f2" class="ficon feather icon-bell"></i>
+                    @else
+                        <i class="ficon feather icon-bell"></i>
+                    @endif
+                            <span
                                 class="badge badge-pill badge-primary badge-up"></span></a>
                         <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            @if(!$activeorders->isEmpty())
+                            @foreach ($activeorders as $order)
                             <li class="dropdown-menu-header">
                                 <div class="dropdown-header m-0 p-2">
                                     <h3 class="white"></h3><span
-                                        class="notification-title">App Notifications</span>
+                                        class="notification-title">Active Order from {{$order->fullname}}</span>
                                 </div>
                             </li>
+                            @endforeach
+                            @else
+                            <li class="dropdown-menu-header">
+                                <div class="dropdown-header m-0 p-2">
+                                    <h3 class="white"></h3><span
+                                        class="notification-title">No Active orders</span>
+                                </div>
+                            </li>
+                            @endif
 {{--                            <li class="scrollable-container media-list"><a class="d-flex justify-content-between"--}}
 {{--                                                                           href="javascript:void(0)">--}}
 {{--                                    <div class="media d-flex align-items-start">--}}
@@ -270,7 +302,16 @@
 
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
-
+<style>
+    	.blinkanim{	
+    animation: blink 1s linear infinite;
+	}
+        @keyframes blink{
+        0%{opacity: 0;}
+        50%{opacity: .5;}
+        100%{opacity: 1;}
+        }
+</style>
 <!-- BEGIN: Footer-->
 <footer class="footer footer-static footer-light navbar-shadow">
     <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020
