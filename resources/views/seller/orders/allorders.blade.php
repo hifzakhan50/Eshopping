@@ -1,4 +1,4 @@
-@extends('layouts.customer')
+@extends('layouts.seller')
 @section('content')
 
     <div class="row justify-content-center">
@@ -48,8 +48,7 @@
                                                     'font-weight' : '600'
                                                     });
                     }
-                    else
-                    if(data['status'] == 'Suspended'){
+                    else{
                         $(row).find('td:eq(6)').css({
                                                     'color' : 'red',
                                                     'font-weight' : '600'
@@ -58,7 +57,7 @@
             },
                 processing: true,
                 serverSide: true,
-                ajax: '{{url('/customer/orders/allorders')}}',
+                ajax: '{{url('/seller/orders/allorders')}}',
                 columns: [
                     {data: 'id', name: 'ID'},
                     {data: 'order_number', name: 'Order Number'},

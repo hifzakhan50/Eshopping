@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.seller')
 @section('content')
 
     <div class="row justify-content-center">
@@ -12,7 +12,7 @@
     </div>
 
     <div class="card">
-        <div class="card-header"><h2 style="color:#7468f0"><strong>Categories</strong></h2></div>
+        <div class="card-header"><h2>Active Orders</h2></div>
 
 
         <div class="card-body">
@@ -21,10 +21,14 @@
                        cellspacing="0">
                     <thead>
                     <tr>
-                        <th style="color:#7468f0;font-size:20px;">Id</th>
-                        <th style="color:#7468f0;font-size:20px;">Name</th>
-                        <th style="color:#7468f0;font-size:20px;">Description</th>
-                        <th style="color:#7468f0;font-size:20px;">Action</th>
+                        <th>Id</th>
+                        <th>Order Number</th>
+                        <th>Customer Name</th>
+                        <th>Mobile</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Address</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                 </table>
@@ -32,32 +36,28 @@
         </div>
     </div>
 
-    <!--View HTML--->
 
 @endsection
-
-    <!---VIew Script-->
 @push('script')
     <script>
-        let routeName ='{{url('admin/category/data')}}';
-        $(function()
-        {
-            $('#dataTable').DataTable({
+
+        $(function () {
+            $('#dataTable').dataTable({
                 processing: true,
                 serverSide: true,
-                ajax: routeName,
+                ajax: '{{url('/seller/orders/activeorders')}}',
                 columns: [
-                    { data: 'id', name: 'id' },
-                    { data: 'name', name: 'name' },
-                    { data: 'description', name: 'description' },
+                    {data: 'id', name: 'ID'},
+                    {data: 'order_number', name: 'Order Number'},
+                    {data: 'fullname', name: 'Customer Name'},
+                    {data: 'mobile', name: 'Mobile'},
+                    {data: 'name', name: 'Name'},
+                    {data: 'quantity', name: 'Quantity'},
+                    {data: 'street', name: 'Street'},
                     {data: 'action', name: 'action', orderable: false, searchable: false}
                 ]
             });
         });
 
-
     </script>
-
-
 @endpush
-

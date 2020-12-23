@@ -10,7 +10,7 @@
         </div>
     </div>
         <div class="card">
-            <div class="card-header"><h2>Sellers</h2></div>
+            <div class="card-header"><h2 style="color:#7468f0"><strong>All Sellers</strong></h2></div>
 
 
             <div class="card-body">
@@ -19,11 +19,11 @@
                            cellspacing="0">
                         <thead>
                         <tr>
-                            <th>Id</th>
+                            <th style="color:#7468f0;font-size:20px;">Id</th>
 {{--                            <th>Seller-id</th>--}}
-                            <th>Name</th>
-                            <th>E-mail</th>
-                            <th>Action</th>
+                            <th style="color:#7468f0;font-size:20px;">Name</th>
+                            <th style="color:#7468f0;font-size:20px;">E-mail</th>
+                            <th style="color:#7468f0;font-size:20px;">Action</th>
                         </tr>
                         </thead>
                     </table>

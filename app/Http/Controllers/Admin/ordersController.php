@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Yajra\DataTables\Facades\DataTables;
 
 class ordersController extends Controller
 {
@@ -12,14 +14,24 @@ class ordersController extends Controller
     public function index()
     {
         $data = Order::all();
+        dd('here');
         return view('category.all',compact(data));
 
     }
     public function all()
     {
-        //dd('here');
         return view('admin.displayData.allOrders');
     }
+
+    public function allorders()
+    {
+        $allorders = DB::table('orders')
+        ->get();
+            
+        return Datatables::of($allorders)
+            ->make(true);
+    }
+
     public function data()
     {
         $categories = DB::table('orders')

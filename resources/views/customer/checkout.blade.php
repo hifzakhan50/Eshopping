@@ -12,7 +12,6 @@
                         <h2 class="content-header-title float-left mb-0">Cart</h2>
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-
                                 <li class="breadcrumb-item"><a href="{{ url('/home') }}">Home</a>
                                 </li>
                                 <li class="breadcrumb-item active">Cart
@@ -22,7 +21,14 @@
                     </div>
                 </div>
             </div>
-</div>
+            <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+                <div class="form-group breadcrum-right">
+                    <div class="dropdown">
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Chat</a><a class="dropdown-item" href="#">Email</a><a class="dropdown-item" href="#">Calendar</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="content-body" >
             <form action="#" class="icons-tab-steps checkout-tab-steps wizard-circle">
 
@@ -73,9 +79,6 @@
 
                                         <div onclick="removeProduct(this, {{$product->id}})" class="wishlist remove-wishlist">
                                             <i class="feather icon-x align-middle"></i> Remove
-                                        </div>
-                                        <div class="cart remove-wishlist">
-                                            <i class="fa fa-heart-o mr-25"></i> Wishlist
                                         </div>
                                     </div>
                                 </div>

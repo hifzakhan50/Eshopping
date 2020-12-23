@@ -24,9 +24,9 @@ Route::get('/index', 'HomeController@index')->name('home');
 Route::post('/sellerprofileupdate', 'Seller\ProfileController@update');
 Route::get('seller/profile/edit', 'Seller\ProfileController@edit')->name('profile.edit');
 /*new routes starts*/
-//Route::put('/customer/profile', 'Customer\profileController@update')->name('profile.update');
-//Route::get('/customer/profile/edit', 'Customer\profileController@edit')->name('profile.edit');
-//
+Route::post('/customerprofileupdate', 'Customer\profileController@update');
+Route::get('/customer/profile/edit', 'Customer\profileController@edit')->name('profile.customeredit');
+Route::get('customer/orders/allorders', 'Customer\customerController@allorders')->name('orders.allorders');
 //Route::put('/admin/profile', 'Admin\profileController@update')->name('profile.update');
 //Route::get('/admin/profile/edit', 'Admin\profileController@edit')->name('profile.edit');
 //
@@ -68,6 +68,15 @@ Route::get('seller/products/{id}/edit', 'Seller\ProductsController@edit')->name(
 Route::put('seller/products/{id}', 'Seller\ProductsController@update')->name('products.update');
 Route::get('seller/products/{id}/suspend', 'Seller\ProductsController@suspend')->name('products.suspend');
 Route::get('seller/products/{id}/active', 'Seller\ProductsController@active')->name('products.active');
+
+//Seller Orders
+Route::get('seller/orders/active', 'Seller\sellerController@activeOrders')->name('active.activeOrders');
+Route::get('seller/orders/activeorders', 'Seller\sellerController@data1')->name('active.data1');
+Route::get('seller/orders/{id}/delivered', 'Seller\sellerController@delivered')->name('activeorder.delivered');
+Route::get('seller/orders/{id}/suspend', 'Seller\sellerController@suspend')->name('activeorder.suspend');
+
+Route::get('seller/orders/all', 'Seller\sellerController@allOrders')->name('active.allOrders');
+Route::get('seller/orders/allorders', 'Seller\sellerController@data2')->name('active.data2');
 
 //Ad-management Routes
 Route::get('seller/adMan/create','Seller\CampaignsController@create');
@@ -112,6 +121,7 @@ Route::get('admin/seller/{id}/suspend', 'admin\sellersController@suspend');
 
 /*Admin Orders*/
 Route::get('admin/displayData/orderlist', 'admin\ordersController@all');
+Route::get('admin/displayData/data', 'admin\ordersController@allorders');
 Route::get('admin/displayOrderlist/data', 'admin\customersController@data');
 Route::get('admin/orders/{id}/suspend', 'admin\customersController@suspend');
 

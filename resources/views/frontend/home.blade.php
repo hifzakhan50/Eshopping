@@ -139,7 +139,7 @@
                                     </div>
                                 </div>
                                 <div class="item-name">
-                                    <a href="app-ecommerce-details.html">{{ $product->name }}</a>
+                                    <a href="{{ url('product/'.$product->name) }}">{{ $product->name }}</a>
 {{--                                    <p class="item-company">By <span class="company-name">Google</span></p>--}}
                                 </div>
                                 <div>

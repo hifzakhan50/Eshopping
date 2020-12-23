@@ -24,8 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" >
-                    <img class="brand-logo" src="{{ URL::to('/app-assets/images/logo.png') }}"></a><h2 Style="color:#7367f0;font-size:25px;"><strong>Mega Shoppy</strong></h2>
-
+                <img class="brand-logo" src="{{ URL::to('/app-assets/images/logo.png') }}"></a><h2 Style="color:#7367f0;font-size:25px;"><strong>Mega Shoppy</strong></h2>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -42,11 +41,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}" style="color:#7367f0"><strong>{{ __('Login') }}</strong></a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}" style="color:#7367f0"><strong>{{ __('Register') }}</strong></a>
                                 </li>
                             @endif
                         @else

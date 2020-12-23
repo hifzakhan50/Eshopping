@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    <h2>Add Catagory</h2>
+    <h2 style="color:#7468f0"><strong>Add Catagory</strong></h2>
     <div class="card">
 
         <div class="card-body">
