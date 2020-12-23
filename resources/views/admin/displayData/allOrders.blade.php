@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header"><h2>Categories</h2></div>
+        <div class="card-header"><h2  style="color:#7468f0"><strong>All Orders</strong></h2></div>
 
 
         <div class="card-body">
@@ -11,13 +11,13 @@
                        cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Order_Id</th>
-                        <th>Customer_Id</th>
-                        <th>Order No</th>
-                        <th>Status</th>
-                        <th>Item Count</th>
-                        <th>Grand Total</th>
-                        <th>Action</th>
+                        <th style="color:#7468f0;font-size:20px;">Order_Id</th>
+                        <th style="color:#7468f0;font-size:20px;">Customer_Id</th>
+                        <th style="color:#7468f0;font-size:20px;">Order No</th>
+                        <th style="color:#7468f0;font-size:20px;">Status</th>
+                        <th style="color:#7468f0;font-size:20px;">Item Count</th>
+                        <th style="color:#7468f0;font-size:20px;">Grand Total</th>
+                        <th style="color:#7468f0;font-size:20px;">Action</th>
                     </tr>
                     </thead>
                 </table>

@@ -13,7 +13,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h2>Edit Shipping Method</h2>
+            <h2  style="color:#7468f0"><strong>Edit Shipping Method</strong></h2>
         </div>
 
         <div class="card-body">

@@ -12,7 +12,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h2>Add Shipping-Method</h2>
+            <h2 style="color:#7468f0"><strong>Add Shipping-Method</strong></h2>
         </div>
 
         <div class="card-body">

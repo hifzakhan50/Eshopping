@@ -357,7 +357,7 @@
 
         <!-- Content from views files will be displayed here -->
         @yield('content')
-
+ 
     </div>
 </div>
 

@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header"><h2>Shipping Methods</h2></div>
+        <div class="card-header"><h2 style="color:#7468f0"><strong>Shipping Methods</strong></h2></div>
 
 
         <div class="card-body">
@@ -11,10 +11,10 @@
                        cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Action</th>
+                        <th style="color:#7468f0;font-size:20px;">Id</th>
+                        <th style="color:#7468f0;font-size:20px;">Name</th>
+                        <th style="color:#7468f0;font-size:20px;">Price</th>
+                        <th style="color:#7468f0;font-size:20px;">Action</th>
                     </tr>
                     </thead>
                 </table>

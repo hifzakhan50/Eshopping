@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="card">
-        <div class="card-header"><h2>Categories</h2></div>
+        <div class="card-header"><h2 style="color:#7468f0"><strong>Categories</strong></h2></div>
 
 
         <div class="card-body">
@@ -20,10 +20,10 @@
                        cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Action</th>
+                        <th style="color:#7468f0;font-size:20px;">Id</th>
+                        <th style="color:#7468f0;font-size:20px;">Name</th>
+                        <th style="color:#7468f0;font-size:20px;">Description</th>
+                        <th style="color:#7468f0;font-size:20px;">Action</th>
                     </tr>
                     </thead>
                 </table>
@@ -38,7 +38,7 @@
     <!---VIew Script-->
 @push('script')
     <script>
-        let routeName = '{{url('admin/category/data')}}';
+        let routeName ='{{url('admin/category/data')}}';
         $(function()
         {
             $('#dataTable').DataTable({
