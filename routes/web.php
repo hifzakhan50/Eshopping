@@ -121,6 +121,7 @@ Route::get('admin/seller/{id}/suspend', 'admin\sellersController@suspend');
 
 /*Admin Orders*/
 Route::get('admin/displayData/orderlist', 'admin\ordersController@all');
+Route::get('admin/displayData/data', 'admin\ordersController@allorders');
 Route::get('admin/displayOrderlist/data', 'admin\customersController@data');
 Route::get('admin/orders/{id}/suspend', 'admin\customersController@suspend');
 
