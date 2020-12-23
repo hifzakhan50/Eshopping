@@ -45,6 +45,11 @@
     <!-- END: Custom CSS-->
 
 </head>
+<style>
+    #tippy-1 {
+        display: none!important;
+    }
+</style>
 <body class="vertical-layout vertical-menu-modern 2-columns  navbar-floating footer-static  " data-open="click"
       data-menu="vertical-menu-modern" data-col="2-columns">
 
@@ -276,11 +281,6 @@
                     <img class="brand-logo"  src="{{ URL::to('/app-assets/images/logo.png') }}">
                     <h2 class="brand-text mb-0">Mega Shoppy</h2>
                 </a></li></li>
-
-            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
-             <i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i>
-              <i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary"
-                 data-ticon="icon-disc"></i></a></li>
         </ul>
     </div>
 

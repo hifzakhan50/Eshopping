@@ -13,7 +13,6 @@
     <div class="card-header">
             <h2>Update Profile</h2>
         </div>
-
         <div class="card-body">
             <form method="POST" action="/customerprofileupdate" enctype="multipart/form-data">
                 @csrf

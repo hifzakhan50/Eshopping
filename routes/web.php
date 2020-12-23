@@ -26,7 +26,7 @@ Route::get('seller/profile/edit', 'Seller\ProfileController@edit')->name('profil
 /*new routes starts*/
 Route::post('/customerprofileupdate', 'Customer\profileController@update');
 Route::get('/customer/profile/edit', 'Customer\profileController@edit')->name('profile.customeredit');
-//
+Route::get('customer/orders/allorders', 'Customer\customerController@allorders')->name('orders.allorders');
 //Route::put('/admin/profile', 'Admin\profileController@update')->name('profile.update');
 //Route::get('/admin/profile/edit', 'Admin\profileController@edit')->name('profile.edit');
 //
