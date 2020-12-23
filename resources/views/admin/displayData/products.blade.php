@@ -12,7 +12,7 @@
     </div>
 
     <div class="card">
-        <div class="card-header"><h2>Products list</h2></div>
+        <div class="card-header"><h2 style="color:#7468f0"><strong>Products list</strong></h2></div>
 
 
         <div class="card-body">
@@ -21,15 +21,15 @@
                        cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Id</th>
-{{--                        <th>Seller Id</th>--}}
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Sku</th>
-                        <th>Image</th>
-                        <th>Color</th>
-                        <th>Action</th>
+                        <th style="color:#7468f0;font-size:20px;">Id</th>
+{{--                        <th style="color:#7468f0;font-size:20px;">Seller Id</th>--}}
+                        <th style="color:#7468f0;font-size:20px;">Name</th>
+                        <th style="color:#7468f0;font-size:20px;">Description</th>
+                        <th style="color:#7468f0;font-size:20px;">Price</th>
+                        <th style="color:#7468f0;font-size:20px;">Sku</th>
+                        <th style="color:#7468f0;font-size:20px;">Image</th>
+                        <th style="color:#7468f0;font-size:20px;">Color</th>
+                        <th style="color:#7468f0;font-size:20px;">Action</th>
                     </tr>
                     </thead>
                 </table>
