@@ -21,8 +21,9 @@
                        cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Id</th>
-{{--                        <th>Seller Id</th>--}}
+                        <th>Product Id</th>
+                        <th>Seller Id</th>
+{{--                        <th>Category Id</th>--}}
                         <th>Name</th>
                         <th>Description</th>
                         <th>Price</th>
@@ -48,7 +49,7 @@
                 ajax: routeName,
                 columns: [
                     {data: 'id', name: 'id'},
-                    // {data: 'seller_profile_id', name: 'seller_profile_id'},
+                    {data: 'seller_profile_id', name: 'seller_profile_id'},
                     {data: 'name', name: 'name'},
                     {data: 'description', name: 'description'},
                     {data: 'price', name: 'price'},

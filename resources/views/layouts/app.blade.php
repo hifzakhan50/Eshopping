@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Log-in - Mega Shoppy') }}</title>
+    <title>Log-in - Mega Shoppy</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,8 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" >
-                        <h2 class="brand-logo mb-0" style="color:#7367f0;font-size:2rem;"><img src="{{ URL::to('/app-assets/images/logo.png') }}">
-                            <strong>Mega Shoppy</strong></h2></a>
+                    <img class="brand-logo" src="{{ URL::to('/app-assets/images/logo.png') }}"></a><h2 Style="color:#7367f0;font-size:25px;"><strong>Mega Shoppy</strong></h2>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

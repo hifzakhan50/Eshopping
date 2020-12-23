@@ -40,20 +40,19 @@ class shipMans extends Controller
     public function edit($id)
     {
         $method = ShipMan::find($id);
-
+//dd($method);
         return view('admin.shipping-management.edit', compact('method'));
     }
 
-    public function update($id, $method)
+    public function update($id)
     {
         $data = request()->validate([
             'name' => 'required',
             'price' => 'required',
         ]);
-
+        $method = ShipMan::find($id);
        $method ->update([
             'name' => $data['name'],
-            'id' => $data['id'],
             'price' => $data['price'],
         ]);
         return redirect('index')->with('success', 'Method updated Successfully');
@@ -68,39 +67,28 @@ class shipMans extends Controller
     public function data()
     {
         $methods = DB::table('shipping_method')
-            ->select(['id', 'name', 'price', 'is_active']);
+            ->select(['id', 'name', 'price']);
 
         return Datatables::of($methods) ->addColumn('action', function ($method) {
 
-            $editURL = url('admin/shipping-method/'.$method->id.'/edit');
-            $suspendURL = url('admin/shipping-method/'.$method->id.'/suspend');
-            $active = url('admin/shipping-method/'.$method->id.'/active');
+            $editURL = url('/admin/shipping-management/'.$method->id.'/edit');
+            $suspendURL = url('/admin/shipping-management/'.$method->id.'/suspend');
+//            $active = url('admin/shipping-method/'.$method->id.'/active');
 
 
             $editBtn = '<a href="'.$editURL.'" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
             $suspendBtn = '<a href="'.$suspendURL.'" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Suspend</a>';
-            $activeBtn = '<a href="'.$active.' class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
+//            $activeBtn = '<a href="'.$active.' class="btn btn-sm btn-success"><i class="fa fa-ticket"></i> Activate</a>';
 
-            if($method->is_active)
                 return $editBtn.' '.$suspendBtn;
-            else
-                return $editBtn.' '.$activeBtn;
         })
             ->make(true);
-    }
-
-    public function active($id)
-    {
-        $method = ShipMan::find($id);
-        $method->update(['is_active' => 1]);
-
-        return redirect()->back()->with('success', 'Product has been activated.');
     }
 
     public function suspend($id)
     {
         $method = ShipMan::find($id)->delete();
-        return redirect()->back()->with('success', 'Product has been suspended.');
+        return redirect()->back()->with('success', 'Method has been suspended.');
     }
 
 }

@@ -158,8 +158,8 @@
                                     class="user-name text-bold-600">{{ auth()->user()->name}}</span><span
                                     class="user-status">Available</span></div>
 
-                                    
-                                    {{-- yahan pe kam hua hy --}}
+
+                                    {{-- next kam --}}
                                     @php
                                         $data = auth()->user()->join('seller_profiles', 'users.id', 'seller_profiles.user_id')
                                         ->where('seller_profiles.user_id', Auth::user()->id)

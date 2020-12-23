@@ -10,6 +10,7 @@
             @endif
         </div>
     </div>
+
     <div class="card">
         <div class="card-header"><h2>Categories</h2></div>
 
@@ -20,7 +21,7 @@
                        cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>Category Id</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th>Action</th>

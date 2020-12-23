@@ -98,8 +98,8 @@ Route::get('admin/category/{id}/suspend', 'admin\CategoriesController@suspend')-
 Route::get('admin/category/{id}/active', 'admin\categoriesController@active')->name('category.active');
 
 /*Admin lists*/
-Route::get('admin/displayData/prods', 'admin\productsController@data');
-Route::get('admin/displayProductsData/data', 'admin\productsController@all');
+Route::get('admin/displayData/prods', 'admin\productsController@all');
+Route::get('admin/displayProductsData/data', 'admin\productsController@data');
 Route::get('admin/products/{id}/suspend', 'admin\productsController@suspend');
 
 Route::get('admin/displayData/clist', 'admin\customersController@all');

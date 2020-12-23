@@ -12,34 +12,17 @@
                         <h2 class="content-header-title float-left mb-0">Cart</h2>
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-<<<<<<< HEAD
-                                <li class="breadcrumb-item"><a href="/home">Home</a>
-                                </li>
-                                <li class="breadcrumb-item">Cart
-                                </li>
-                                <li class="breadcrumb-item active">Checkout
-=======
+
                                 <li class="breadcrumb-item"><a href="{{ url('/home') }}">Home</a>
                                 </li>
                                 <li class="breadcrumb-item active">Cart
->>>>>>> 072a5d12ba1dbecb6bc448da4092127277d52702
                                 </li>
                             </ol>
                         </div>
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-=======
-            <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
-                <div class="form-group breadcrum-right">
-                    <div class="dropdown">
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Chat</a><a class="dropdown-item" href="#">Email</a><a class="dropdown-item" href="#">Calendar</a></div>
-                    </div>
-                </div>
-            </div>
->>>>>>> 072a5d12ba1dbecb6bc448da4092127277d52702
-        </div>
+</div>
         <div class="content-body" >
             <form action="#" class="icons-tab-steps checkout-tab-steps wizard-circle">
 
@@ -56,7 +39,7 @@
                                 <div class="card-content">
                                     <div class="item-img text-center">
                                             <img  style="width:100px;height:100px" src=" {{ getImageSrc($product->image) }}" alt="img-placeholder">
-                                    
+
                                     </div>
 
                                     <div class="card-body">
@@ -66,7 +49,7 @@
                                             <p class="stock-status-in">In Stock</p>
                                             <div class="item-quantity">
                                                 <p class="quantity-title">Color: {{ $product->color }}</p>
-                                                
+
                                             </div>
                                         </div>
                                         <div class="item-quantity">
@@ -178,7 +161,7 @@ padding: 10px;border-radius: 5px" href=" {{route('addBilling')}}" class="btn-btn
                                         </div>
                                 </div>
                             </div>
-                            </div>                        
+                            </div>
                         </div>
                         @endif
                     </section>

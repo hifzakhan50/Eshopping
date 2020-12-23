@@ -221,7 +221,7 @@
                             <ul class="list-unstyled price-range" id="price-range">
                                 <li>
                                             <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="price-range" checked value="false">
+                                                <input type="radio" name="price-range" value="" checked value="false">
                                                 <span class="vs-radio">
                                                     <span class="vs-radio--border"></span>
                                                     <span class="vs-radio--circle"></span>

@@ -63,7 +63,7 @@ class ProfileController extends Controller
             'about' => $data['about'],
         ]);
 
-        DB::update('update users set name = ?, email = ? where id = ?', [$data['name'], $data['adress'], Auth::user()->id]);
+        DB::update('update users set name = ? where id = ?', [$data['name'], Auth::user()->id]);
 
         return redirect()->back()->with('success', 'Profile updated successfully.');
     }

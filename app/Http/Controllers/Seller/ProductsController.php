@@ -22,21 +22,14 @@ class ProductsController extends Controller
         return view('seller.product.create', compact('shippingMethods','categorys'));
     }
 
-    public function edit($id)
-    {
-        $product = Product::find($id);
-        $categories = Category::all();
-        return view('seller.product.edit', compact('product', 'categories'));
-    }
-
     public function store()
     {
         $data = request()->validate([
+            'sku' => 'required',
             'name' => 'required',
             'category-id' => 'required',
             'color' => 'required',
             'size' => 'required',
-            'sku' => 'required',
             'description' => 'required',
             'price' => 'required',
             'image' => ['required', 'image'],
@@ -74,6 +67,12 @@ class ProductsController extends Controller
         return redirect()->back()->with('success', 'Product has been added Successfully');
 
 
+    }
+    public function edit($id)
+    {
+        $product = Product::find($id);
+        $categories = Category::all();
+        return view('seller.product.edit', compact('product', 'categories'));
     }
 
     public function update($id)
