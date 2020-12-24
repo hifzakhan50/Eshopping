@@ -59,13 +59,15 @@
                             <i class="ficon feather icon-menu"></i></a>
                         </li>
                     </ul>
-
                     <ul class="nav navbar-nav">
                         <ul class="nav navbar-nav flex-row">
 {{--                         //logo here --}}
                         <li class="nav-item mr-auto"><a class="navbar-brand" >
-{{--                                <img class="brand-logo" src="{{ URL::to('/app-assets/images/logo.png') }}"></a><h2 Style="color:#7367f0;font-size:25px;"><strong>Mega Shoppy</strong></h2>--}}
-
+                                <img class="brand-logo" style="width:50px;height:50px;" src="{{ URL::to('/app-assets/images/logo.png') }}"></a></li>
+                            <li>
+                            <span>
+                                <h2 Style="color:#7367f0;font-size:25px;margin-top: 10px;"><strong>Mega Shoppy</strong></h2>
+                            </span>
                         </li>
                         </ul>
                     </ul>
@@ -92,7 +94,7 @@
                         font-size: 30px;" href="{{ url('/checkout') }}"><i class="fa fa-shopping-cart"></i></a>
                     </li>
                         <li class="nav-item">
-                            <a class="nav-link" href='/customer' ><strong>{{ __('Dashboard') }}</strong></a>
+                            <a class="nav-link" href='/customer' style="margin-top: 14px;color:#7367f0;"><strong>{{ __('Dashboard') }}</strong></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"

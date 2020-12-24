@@ -32,14 +32,7 @@
                                 <div class="ecommerce-details-price d-flex flex-wrap">
 
                                     <p id="price" class="text-primary font-medium-3 mr-1 mb-0">RS.{{ $product->price }}</p>
-                                    <span class="pl-1 font-medium-3 border-left">
-                                            <i class="feather icon-star text-warning"></i>
-                                            <i class="feather icon-star text-warning"></i>
-                                            <i class="feather icon-star text-warning"></i>
-                                            <i class="feather icon-star text-warning"></i>
-                                            <i class="feather icon-star text-secondary"></i>
-                                        </span>
-                                    <span class="ml-50 text-dark font-medium-1">424 ratings</span>
+
                                 </div>
                                 <hr>
                                 <div class="form-group d-flex align-items-baseline">
@@ -94,11 +87,11 @@
                                     <button id="addToCartBtn" type="submit" class="btn btn-primary mr-0 mr-sm-1 mb-1 mb-sm-0" ><i class="feather icon-shopping-cart mr-25"></i>ADD TO CART</button>
                                     @endif
                                 </div>
-                                <hr>
-                                <button type="button" class="btn btn-icon rounded-circle btn-outline-primary mr-1 mb-1"><i class="feather icon-facebook"></i></button>
-                                <button type="button" class="btn btn-icon rounded-circle btn-outline-info mr-1 mb-1"><i class="feather icon-twitter"></i></button>
-                                <button type="button" class="btn btn-icon rounded-circle btn-outline-danger mr-1 mb-1"><i class="feather icon-youtube"></i></button>
-                                <button type="button" class="btn btn-icon rounded-circle btn-outline-primary mr-1 mb-1"><i class="feather icon-instagram"></i></button>
+{{--                                <hr>--}}
+{{--                                <button type="button" class="btn btn-icon rounded-circle btn-outline-primary mr-1 mb-1"><i class="feather icon-facebook"></i></button>--}}
+{{--                                <button type="button" class="btn btn-icon rounded-circle btn-outline-info mr-1 mb-1"><i class="feather icon-twitter"></i></button>--}}
+{{--                                <button type="button" class="btn btn-icon rounded-circle btn-outline-danger mr-1 mb-1"><i class="feather icon-youtube"></i></button>--}}
+{{--                                <button type="button" class="btn btn-icon rounded-circle btn-outline-primary mr-1 mb-1"><i class="feather icon-instagram"></i></button>--}}
                             </div>
                         </div>
                     </div>

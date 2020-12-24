@@ -18,7 +18,7 @@ class productsController extends Controller
 
     public function data()
     {
-//        dd('here');
+//  dd('here');
         $aproducts = DB::table('products')
             ->select(['id','seller_profile_id', 'name', 'description','price', 'sku', 'image', 'color', 'is_active'])->get();
 

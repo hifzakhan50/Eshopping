@@ -60,7 +60,7 @@
         <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
         </div>
     </div>
-    <div class="content-detached content-right mt-0">
+    <div class="content-detached content-center mt-0">
         <div class="content-body">
             <!-- Ecommerce Content Section Starts -->
             <section id="ecommerce-header">
@@ -106,11 +106,8 @@
                     <div class="col-sm-12">
                         <fieldset class="form-group position-relative">
 {{--                            <div id="dataTable_filter" class="dataTables_filter">--}}
-                            <input type="text" class="form-control search-product" id="iconLeft5" onkeyup="myFunction()"
+                            <input type="text" class="form-control  search-product" id="iconLeft5" onkeyup="myFunction()"
                                    placeholder="Search here">
-{{--                            <input type="search" class="form-control form-control-sm" placeholder="Search here" aria-controls="dataTable">--}}
-{{--                        @php--}}
-{{--                        @endphp--}}
                             <div class="form-control-position">
                                 <i class="feather icon-search"></i>
                             </div>
@@ -205,98 +202,6 @@
 
         </div>
     </div>
-
-{{--    <div class="sidebar-detached sidebar-left mt-0">--}}
-{{--        <div class="sidebar">--}}
-{{--            <!-- Ecommerce Sidebar Starts -->--}}
-{{--            <div class="sidebar-shop" id="ecommerce-sidebar-toggler">--}}
-
-{{--                <div class="row">--}}
-{{--                    <div class="col-sm-12">--}}
-{{--                        <h6 class="filter-heading d-none d-lg-block">Filters</h6>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <span class="sidebar-close-icon d-block d-md-none">--}}
-{{--                            <i class="feather icon-x"></i>--}}
-{{--                        </span>--}}
-{{--                <div class="card">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="multi-range-price">--}}
-{{--                            <div class="multi-range-title pb-75">--}}
-{{--                                <h6 class="filter-title mb-0">Multi Range</h6>--}}
-{{--                            </div>--}}
-{{--                            <ul class="list-unstyled price-range" id="price-range">--}}
-{{--                                <li>--}}
-{{--                                            <span class="vs-radio-con vs-radio-primary py-25">--}}
-{{--                                                <input type="radio" name="price-range" value="false"--}}
-{{--                                                       checked >--}}
-
-{{--                                                <span class="vs-radio">--}}
-{{--                                                    <span class="vs-radio--border"></span>--}}
-{{--                                                    <span class="vs-radio--circle"></span>--}}
-{{--                                                </span>--}}
-{{--                                                <span class="ml-50">All</span>--}}
-{{--                                            </span>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                            <span class="vs-radio-con vs-radio-primary py-25">--}}
-{{--                                                <input type="radio" name="price-range" value="false">--}}
-
-{{--                                                <span class="vs-radio">--}}
-{{--                                                    <span class="vs-radio--border"></span>--}}
-{{--                                                    <span class="vs-radio--circle"></span>--}}
-{{--                                                </span>--}}
-{{--                                                <span class="ml-50"> &lt;=Rs200</span>--}}
-{{--                                            </span>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                            <span class="vs-radio-con vs-radio-primary py-25">--}}
-{{--                                                <input type="radio" name="price-range" value="false">--}}
-{{--                                                <span class="vs-radio">--}}
-{{--                                                    <span class="vs-radio--border"></span>--}}
-{{--                                                    <span class="vs-radio--circle"></span>--}}
-{{--                                                </span>--}}
-{{--                                                <span class="ml-50">RS200 - Rs800</span>--}}
-{{--                                            </span>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                            <span class="vs-radio-con vs-radio-primary py-25">--}}
-{{--                                                <input type="radio" name="price-range" value="false">--}}
-{{--                                                <span class="vs-radio">--}}
-{{--                                                    <span class="vs-radio--border"></span>--}}
-{{--                                                    <span class="vs-radio--circle"></span>--}}
-{{--                                                </span>--}}
-{{--                                                <span class="ml-50">Rs800 - Rs1500</span>--}}
-{{--                                            </span>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                            <span class="vs-radio-con vs-radio-primary py-25">--}}
-{{--                                                <input type="radio" name="price-range" value="false">--}}
-{{--                                                <span class="vs-radio">--}}
-{{--                                                    <span class="vs-radio--border"></span>--}}
-{{--                                                    <span class="vs-radio--circle"></span>--}}
-{{--                                                </span>--}}
-{{--                                                <span class="ml-50">&gt;= RS1500</span>--}}
-{{--                                            </span>--}}
-{{--                                </li>--}}
-
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <!-- /Price Filter -->--}}
-
-{{--                        <!-- Clear Filters Starts -->--}}
-{{--                        <div id="clear-filters">--}}
-{{--                            <button class="btn btn-block btn-primary">CLEAR ALL FILTERS</button>--}}
-{{--                        </div>--}}
-{{--                        <!-- Clear Filters Ends -->--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <!-- Ecommerce Sidebar Ends -->--}}
-
-{{--        </div>--}}
-{{--    </div>--}}
-
 @endsection
 
 
