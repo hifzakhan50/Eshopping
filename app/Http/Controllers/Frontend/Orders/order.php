@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend\Orders;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class order extends Controller
 {
@@ -41,5 +41,4 @@ class order extends Controller
 
         return view('frontend.BillingAdress.billing-address')->with('data', $data);
     }
-
     }
