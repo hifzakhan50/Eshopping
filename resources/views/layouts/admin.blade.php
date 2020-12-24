@@ -342,6 +342,29 @@
                         <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
                 </li>
+
+                <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Reports</span>
+                            <span class="badge badge badge-warning badge-pill float-right mr-2"></span>
+                        </a>
+                        <ul class="menu-content">
+                            <li class=""><a href="{{url('/salestax')}}"><i class="feather icon-circle"></i>
+                                 <span class="menu-item" data-i18n="Analytics">Sales Tax Report</span></a>
+                            </li>
+
+                            <li class=""><a href="{{url('/allusersreports')}}"><i class="feather icon-circle"></i>
+                                    <span class="menu-item" data-i18n="Analytics">Registered Users</span></a>
+                            </li>
+                            <li class=""><a href="{{url('/Inventory')}}"><i class="feather icon-circle"></i>
+                                    <span class="menu-item" data-i18n="Analytics">Inventory</span></a>
+                            </li>
+                            <li class=""><a href="{{url('/Delivered')}}"><i class="feather icon-circle"></i>
+                                    <span class="menu-item" data-i18n="Analytics">All Delivered Orders</span></a>
+                            </li>
+
+                            <li class=""><a href="{{url('/Suspended-orders-report')}}"><i class="feather icon-circle"></i>
+                                    <span class="menu-item" data-i18n="Analytics">All Suspended Orders</span></a>
+                            </li>
+                        </ul>
                 </ul>
 {{--            </li>--}}
 

@@ -154,5 +154,21 @@ Route::get('/fulNet', 'fulNet\fulNetController@fulNetDashboard');
 
 //Auth::routes();
 
+// Report routes
+Route::get('/salestax', 'DynamicPDFController@index');
+Route::get('/allusersreports', 'DynamicPDFController@all_users');
+Route::get('/reports/all_users/report', 'DynamicPDFController@get_all_users');
+Route::get('/reports/salestax/report', 'DynamicPDFController@salestax');
+
+Route::get('/Inventory', 'DynamicPDFController@Inventory');
+Route::get('/reports/allProducts/report', 'DynamicPDFController@get_all_products');
+
+Route::get('/Delivered', 'DynamicPDFController@delivered_orders');
+Route::get('/reports/allDeliveredOrders/report', 'DynamicPDFController@get_all_delivered_orders');
+
+Route::get('/Suspended-orders-report', 'DynamicPDFController@suspended_orders');
+Route::get('/reports/allSuspendedOrders/report', 'DynamicPDFController@get_all_suspended_orders');
+
+
 //Route::get('/home', 'HomeController@index')->name('home');
 
