@@ -104,15 +104,18 @@
                 <div class="row mt-1">
 
                     <div class="col-sm-12">
-                        <fieldset class="form-group position-relative">
-{{--                            <div id="dataTable_filter" class="dataTables_filter">--}}
-                            <input type="text" class="form-control  search-product" id="iconLeft5" onkeyup="myFunction()"
-                                   placeholder="Search here">
-                            <div class="form-control-position">
-                                <i class="feather icon-search"></i>
-                            </div>
-{{--                            </div>--}}
-                        </fieldset>
+                        <form action="/searchproductbyname" method="POST">
+                        @csrf
+                            <fieldset class="form-group position-relative">
+    {{--                            <div id="dataTable_filter" class="dataTables_filter">--}}
+                                <input type="text" class="form-control  search-product" id="iconLeft5" name="name"
+                                    placeholder="Search here" required>
+                                <button style="background-color: white; border: none;" type="submit" class="form-control-position">
+                                    <i class="feather icon-search"></i>
+                                </button>
+    {{--                            </div>--}}
+                            </fieldset>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -120,7 +123,11 @@
 {{--filter--}}
             <!-- Ecommerce Products Starts -->
             <section id="ecommerce-products" class="grid-view">
+                @if($products->isEmpty())
+                <h3 style="text-align: center; padding: 50px;">No product was found</h3>
 
+                <button onclick="location.href='{{ url('home') }}'">Show all products</button>
+                @else
                 @foreach($products as $product)
                     <div class="card ecommerce-card">
                         <div class="card-content">
@@ -175,6 +182,7 @@
                         </div>
                     </div>
                 @endforeach
+                @endif
             </section>
             <!-- Ecommerce Products Ends -->
 

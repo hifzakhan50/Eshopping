@@ -102,11 +102,15 @@
                                 <strong>{{ Auth::user()->name }} <span class="caret"></span>
                                 </strong>
             @php
-                $data = auth()->user()->join('customer_profiles', 'users.id', 'customer_profiles.user_id')
-                ->where('customer_profiles.user_id', Auth::user()->id)
-                ->first();
-                $image = $data->getOriginal('image');
-
+                if(auth()->user()->customerProfile){
+                    $data = auth()->user()->join('customer_profiles', 'users.id', 'customer_profiles.user_id')
+                    ->where('customer_profiles.user_id', Auth::user()->id)
+                    ->first();
+                    $image = $data->getOriginal('image');
+                }
+                else {
+                    $image = null;
+                }
             @endphp
             <span><img class="round" src="{{ getImageSrc($image)}}"
                        alt="avatar" height="40" width="40"></span>

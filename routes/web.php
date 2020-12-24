@@ -177,3 +177,4 @@ Route::get('/fulNet/requestManagement/create','fulNet\fulNetController@create');
 Route::post('/fulNet/requestManagement', 'fulNet\fulNetController@store')->name('requestManagement.create');
 //Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/searchproductbyname', 'Frontend\HomeCOntroller@productByName');
