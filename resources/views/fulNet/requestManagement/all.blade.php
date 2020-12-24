@@ -24,7 +24,7 @@
                         <th style="color:#7468f0;font-size:20px;">Id</th>
                         <th style="color:#7468f0;font-size:20px;">Invoice No.</th>
                         <th style="color:#7468f0;font-size:20px;">Image</th>
-                        <th style="color:#7468f0;font-size:20px;">Action</th>
+                        <th style="color:#7468f0;font-size:20px;">Status</th>
                     </tr>
                     </thead>
                 </table>
@@ -48,9 +48,9 @@
                 ajax: routeName,
                 columns: [
                     { data: 'id', name: 'Id' },
-                    { data: 'inv-no', name: 'Invoice No.' },
+                    { data: 'inv_no', name: 'Invoice No.' },
                     {data: 'image', name: 'Image'},
-                    {data: 'action', name: 'action', orderable: false, searchable: false}
+                    {data: 'is_active', name: 'is_active'}
                 ]
             });
         });

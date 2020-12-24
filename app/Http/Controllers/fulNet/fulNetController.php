@@ -26,17 +26,13 @@ class fulNetController extends Controller
         return view('fulNet.requestManagement.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $data = request()->validate([
-            'inv-no' => 'required',
-            'image' => ['required', 'image'],
-        ]);
         $imagePath = request('image')->store('uploads', 'public');
-        $net = FulNet::create([
-            'inv-no' => $data['inv-no'],
-            'image' => $imagePath,
-        ]);
+        DB::insert('insert into ful_nets 
+        (inv_no, image) 
+        values (?, ?)', 
+        [$request['Invoice_No'], $imagePath]);
 
         return redirect()->back()->with('success', 'Request has been created Successfully');
     }
@@ -51,24 +47,24 @@ class fulNetController extends Controller
     public function data()
     {
         $fulnet = DB::table('ful_nets')
-            ->select(['id', 'inv-no', 'image', 'is_active']);
+            ->select(['id', 'inv_no', 'image', 'is_active']);
 
         return Datatables::of( $fulnet) ->addColumn('action', function ( $fulnet) {
-
-
-            $suspendURL = url('fulNet/requestManagement'. $fulnet->id.'/suspend');
-
-            $suspendBtn = '<a href="'.$suspendURL.'" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Suspend</a>';
-
-                return $suspendBtn;
+            
+         })->editColumn('image', function ($products) {
+            $imagePath = asset('/storage/' . $products->image);
+            return '<img src="' . $imagePath . '" class="w-25">';
         })
-            ->make(true);
+        ->rawColumns(['image', 'action'])
+        ->make(true);
     }
 
     public function active($id)
     {
         $cat = Category::find($id);
         $cat->update(['is_active' => 1]);
+
+       
 
         return redirect()->back()->with('success', 'Product has been activated.');
     }

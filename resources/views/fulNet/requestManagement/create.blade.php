@@ -1,19 +1,29 @@
 @extends('layouts.fulNet')
 @section('content')
+<div class="row justify-content-center">
+        <div class="col-md-12">
+            @if(session()->has('success'))
+                <div class="alert alert-success text-white">
+                    <strong>Success!</strong> {{ session('success')  }}
+                </div>
+            @endif
+        </div>
+    </div>
+
     <h2 style="color:#7468f0"><strong>Add Request details</strong></h2>
     <div class="card">
 
         <div class="card-body">
 
             <!-- BEGIN: Create Form-->
-            <form method="POST" action="{{ route('requestManagement.create') }}"enctype="multipart/form-data">
+            <form method="POST" action="{{ route('requestManagement.create') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group row">
                     <label for="invoice No" class="col-md-4 col-form-label text-md-right">{{ __('Invoice No') }}</label>
 
                     <div class="col-md-6">
-                        <input id="invoice No" type="text" class="form-control @error('invoice No') is-invalid @enderror" name="Invoice No" value="{{ old('Invoice No') }}" required autocomplete="invoice No" autofocus>
+                        <input id="invoice No" type="text" class="form-control @error('invoice No') is-invalid @enderror" name="Invoice_No" value="{{ old('Invoice No') }}" required autocomplete="invoice No" autofocus>
 
                         @error('Invoice No')
                         <span class="invalid-feedback" role="alert">
