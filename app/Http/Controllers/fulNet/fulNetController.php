@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\fulNet;
 
 use App\Http\Controllers\Controller;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
@@ -76,6 +77,11 @@ class fulNetController extends Controller
         //dd($cat);
 
         return redirect()->back()->with('success', 'Category has been suspended.');
+    }
+
+    public function newRequests()
+    {
+        return view('fulNet.requestManagement.newRequests');
     }
 
 }

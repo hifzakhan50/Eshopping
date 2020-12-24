@@ -418,6 +418,25 @@
                 </ul>
 {{--            </li>--}}
 
+
+<!--############################FULLFILLMENNNTTT  RREEEQQQUEASSSTTT###########################-->
+<li class=" nav-item"><a href="index.html"><i class="feather icon-home" style="color: 
+#7367f0;"></i><span class="menu-title" data-i18n="Dashboard">Fulfillment Management</span>
+                            <span class="badge badge badge-warning badge-pill float-right mr-2"></span>
+                        </a>
+                        <ul>
+                            <li class=""><a href="{{url('/newrequests')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
+                                 <span class="menu-item" data-i18n="Analytics">New Requests</span></a>
+                            </li>
+
+                            <li class=""><a href="{{url('/fulfilledrequests')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
+                                    <span class="menu-item" data-i18n="Analytics">Fulfilled Requests</span></a>
+                            </li>
+                        </ul>
+                </ul>
+
         </ul>
     </div>
 </div>
