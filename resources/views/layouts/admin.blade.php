@@ -49,6 +49,39 @@
     #tippy-1 {
         display: none!important;
     }
+    .buttons-pdf{
+        border-radius:4px;
+        border-color: black;;
+     padding-right:15px;
+      padding-left:15px;
+      margin-right:10px;
+      font-size: 20px;
+      color:black !important;
+      background-color: #ec7979 !important;  
+    }
+
+    .buttons-csv{
+        border-radius:4px;
+        border-color: black;;
+     padding-right:15px;
+      padding-left:15px;
+      margin-right:10px;
+      font-size: 20px;
+      color:black !important;
+      background-color: #569eac !important;  
+    }
+
+    .buttons-excel{
+        border-radius:4px;
+        border-color: black;;
+     padding-right:15px;
+      padding-left:15px;
+      margin-right:10px;
+      font-size: 20px;
+      font-weight: 30;
+      color:black !important;
+      background-color: #186b22 !important;  
+    }
 </style>
 <body class="vertical-layout vertical-menu-modern 2-columns  navbar-floating footer-static  " data-open="click"
       data-menu="vertical-menu-modern" data-col="2-columns">
@@ -161,8 +194,9 @@
 
 
                             <span>
-                                @isset(auth()->user()->name)<img class="round" src="{{ getImageSrc(auth()->user()->image)}}"
-                                       alt="avatar" height="40" width="40">
+                                @isset(auth()->user()->name)<img class="round" src="{{ URL::to('/app-assets/images/admin.png') }}"   alt="avatar" height="40" width="40">
+                                <!-- <img class="round" src="{{ getImageSrc(auth()->user()->image)}}"
+                                       alt="avatar" height="40" width="40"> -->
                                 @endisset
                             </span>
 
@@ -298,70 +332,86 @@
                     <li><a href="dashboard-ecommerce.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="eCommerce">eCommerce</span></a>
                     </li>    -->
 
-                    <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Category Management</span>
+                    <li class=" nav-item"><a href="index.html"><i class="feather icon-home" style="color: 
+#7367f0;"></i><span class="menu-title" data-i18n="Dashboard">Category Management</span>
                             <span class="badge badge badge-warning badge-pill float-right mr-2"></span>
                         </a>
-                        <ul class="menu-content">
-                            <li class=""><a href="{{url('admin/category/create')}}"><i class="feather icon-circle"></i>
+                        <ul class="">
+                            <li class=""><a href="{{url('admin/category/create')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
                                  <span class="menu-item" data-i18n="Analytics">Add Category</span></a>
                             </li>
 
-                            <li class=""><a href="{{url('admin/category/all')}}"><i class="feather icon-circle"></i>
+                            <li class=""><a href="{{url('admin/category/all')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
                                     <span class="menu-item" data-i18n="Analytics">All Categories</span></a>
                             </li>
                         </ul>
 
-                    <li class=" nav-item"><a href="{{url('admin/displayData/prods')}}"><i class="feather icon-home"></i>
+                    <li class=" nav-item"><a href="{{url('admin/displayData/prods')}}"><i class="feather icon-home" style="color: 
+#7367f0;"></i>
                         <span class="menu-title" data-i18n="Dashboard">Products </span>
                         <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
-                    <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Shipping Management </span>
+                    <li class=" nav-item"><a href="index.html"><i class="feather icon-home" style="color: 
+#7367f0;"></i><span class="menu-title" data-i18n="Dashboard">Shipping Management </span>
                             <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
-                        <ul class="menu-content">
-                            <li class=""><a href="{{url('admin/shipping-management/create')}}"><i class="feather icon-circle"></i>
+                        <ul>
+                            <li class=""><a href="{{url('admin/shipping-management/create')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
                                     <span class="menu-item" data-i18n="Analytics">Add Shipping Method </span></a>
                             </li>
-                            <li class=""><a href="{{url('admin/shipping-management/all')}}"><i class="feather icon-circle"></i>
+                            <li class=""><a href="{{url('admin/shipping-management/all')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
                                     <span class="menu-item" data-i18n="Analytics">All Shipping Methods </span></a>
                             </li>
                         </ul>
                     </li>
 
-                    <li class=" nav-item"><a href="{{url('admin/displayData/orderlist')}}"><i class="feather icon-home"></i>
+                    <li class=" nav-item"><a href="{{url('admin/displayData/orderlist')}}"><i class="feather icon-home" style="color: 
+#7367f0;"></i>
                             <span class="menu-title" data-i18n="Dashboard">Orders </span>
                             <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
                     </li>
-                <li class=" nav-item"><a href="{{url('admin/displayData/clist')}}"><i class="feather icon-home"></i>
+                <li class=" nav-item"><a href="{{url('admin/displayData/clist')}}"><i class="feather icon-home" style="color: 
+#7367f0;"></i>
                         <span class="menu-title" data-i18n="Dashboard">Customer List </span>
                         <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
                 </li>
-                <li class=" nav-item"><a href="{{url('admin/displayData/slist')}}"><i class="feather icon-home"></i>
+                <li class=" nav-item"><a href="{{url('admin/displayData/slist')}}"><i class="feather icon-home" style="color: 
+#7367f0;"></i>
                         <span class="menu-title" data-i18n="Dashboard">Seller List </span>
                         <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
                 </li>
 
-                <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Reports</span>
+                <li class=" nav-item"><a href="index.html"><i class="feather icon-home" style="color: 
+#7367f0;"></i><span class="menu-title" data-i18n="Dashboard">Reports</span>
                             <span class="badge badge badge-warning badge-pill float-right mr-2"></span>
                         </a>
-                        <ul class="menu-content">
-                            <li class=""><a href="{{url('/salestax')}}"><i class="feather icon-circle"></i>
+                        <ul>
+                            <li class=""><a href="{{url('/salestax')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
                                  <span class="menu-item" data-i18n="Analytics">Sales Tax Report</span></a>
                             </li>
 
-                            <li class=""><a href="{{url('/allusersreports')}}"><i class="feather icon-circle"></i>
+                            <li class=""><a href="{{url('/allusersreports')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
                                     <span class="menu-item" data-i18n="Analytics">Registered Users</span></a>
                             </li>
-                            <li class=""><a href="{{url('/Inventory')}}"><i class="feather icon-circle"></i>
+                            <li class=""><a href="{{url('/Inventory')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
                                     <span class="menu-item" data-i18n="Analytics">Inventory</span></a>
                             </li>
-                            <li class=""><a href="{{url('/Delivered')}}"><i class="feather icon-circle"></i>
+                            <li class=""><a href="{{url('/Delivered')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
                                     <span class="menu-item" data-i18n="Analytics">All Delivered Orders</span></a>
                             </li>
 
-                            <li class=""><a href="{{url('/Suspended-orders-report')}}"><i class="feather icon-circle"></i>
+                            <li class=""><a href="{{url('/Suspended-orders-report')}}"><i class="feather icon-circle" style="color: 
+#7367f0;"></i>
                                     <span class="menu-item" data-i18n="Analytics">All Suspended Orders</span></a>
                             </li>
                         </ul>
