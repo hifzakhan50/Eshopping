@@ -11,11 +11,8 @@ class productsController extends Controller
 {
     public function all()
     {
-<<<<<<< HEAD
-//        dd('here');
-=======
+
         //dd('here');
->>>>>>> 282afb5a658dfd1063ff675f9e65d9d1efd92ec0
         return view('admin.displayData.products');
     }
 
@@ -37,20 +34,12 @@ class productsController extends Controller
                 return $suspendBtn;
 
             })
-<<<<<<< HEAD
             ->editColumn('image', function ($products) {
                 $imagePath = asset('/storage/' . $products->image);
                 return '<img src="' . $imagePath . '" class="w-25">';
             })
             ->rawColumns(['image', 'action'])
-=======
-           ->editColumn('image', function ($products) {
-               $imagePath = asset('/storage/' . $products->image);
-               return '<img src="' . $imagePath . '" class="w-25">';
-           })
-           ->rawColumns(['image', 'action'])
->>>>>>> 282afb5a658dfd1063ff675f9e65d9d1efd92ec0
-            ->make(true);
+             ->make(true);
     }
 
     public function suspend($id)

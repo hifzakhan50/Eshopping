@@ -65,19 +65,51 @@
 
 
                 </div>
+                @php
+                    $activeorders = DB::table('orders')
+                    ->join('order_details', 'order_details.order_id', '=', 'orders.id')
+                    ->join('products', 'products.id', '=', 'order_details.product_id')
+                    ->join('billing_address', 'billing_address.id', '=', 'orders.billing_id')
+                    ->select('orders.id', 'orders.status', 'orders.order_number', 'billing_address.fullname', 'billing_address.mobile', 'billing_address.house', 
+                    'billing_address.street', 'billing_address.province', 'billing_address.country', 'billing_address.postalcode', 'products.name', 'order_details.quantity')
+                    ->where('products.seller_profile_id', '=', auth()->user()->sellerProfile->id)
+                    ->where('orders.status', '=', 'Order Created')
+                    ->get();
+                @endphp
+                
                 <ul class="nav navbar-nav float-right">
-
+                    @if(!$activeorders->isEmpty())
+                        <div style="margin-right: -17px; margin-top: -17px;" class="blinkanim">
+                            <span style='font-size:50px; color: #7367f2'>&#8226;</span>
+                        </div>
+                    @endif
                     <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
-                                                                           data-toggle="dropdown"><i
-                                class="ficon feather icon-bell"></i><span
+                   data-toggle="dropdown">
+                    @if(!$activeorders->isEmpty())
+                        <i style="color: #7367f2" class="ficon feather icon-bell"></i>
+                    @else
+                        <i class="ficon feather icon-bell"></i>
+                    @endif
+                            <span
                                 class="badge badge-pill badge-primary badge-up"></span></a>
                         <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            @if(!$activeorders->isEmpty())
+                            @foreach ($activeorders as $order)
                             <li class="dropdown-menu-header">
                                 <div class="dropdown-header m-0 p-2">
                                     <h3 class="white"></h3><span
-                                        class="notification-title">App Notifications</span>
+                                        class="notification-title">Active Order from {{$order->fullname}}</span>
                                 </div>
                             </li>
+                            @endforeach
+                            @else
+                            <li class="dropdown-menu-header">
+                                <div class="dropdown-header m-0 p-2">
+                                    <h3 class="white"></h3><span
+                                        class="notification-title">No Active orders</span>
+                                </div>
+                            </li>
+                            @endif
 {{--                            <li class="scrollable-container media-list"><a class="d-flex justify-content-between"--}}
 {{--                                                                           href="javascript:void(0)">--}}
 {{--                                    <div class="media d-flex align-items-start">--}}
@@ -157,15 +189,15 @@
                             <div class="user-nav d-sm-flex d-none"><span
                                     class="user-name text-bold-600">{{ auth()->user()->name}}</span><span
                                     class="user-status">Available</span></div>
-
-                                
-                                    {{-- yahan pe kam hua hy --}}
                                     @php
+
                                         $data = auth()->user()->join('seller_profiles', 'users.id', 'seller_profiles.user_id')
                                         ->where('seller_profiles.user_id', Auth::user()->id)
                                         ->first();
                                         $image = $data->getOriginal('image');
+
                                     @endphp
+
                             <span><img class="round" src="{{ getImageSrc($image)}}"
                                        alt="avatar" height="40" width="40"></span>
                         </a>
@@ -203,7 +235,7 @@
 
                    {{-- <img  class="brand-logo" src=url('/app-assets/images/logo.png')"> --}}
                     <img class="brand-logo"  src="{{ URL::to('/app-assets/images/logo.png') }}">
-                    <h2 class="brand-text mb-0">Mega Shoppy</h2>
+                    <h2 class=" brand-text mb-0">Mega Shoppy</h2>
                 </a></li>
 
         </ul>
@@ -240,11 +272,11 @@
                                                                                               data-i18n="Dashboard">Orders</span>
                     <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
                 <ul class="menu-content">
-                    <li class=""><a href=""><i class="feather icon-circle"></i><span
+                    <li class=""><a href="{{ url('seller/orders/active') }}"><i class="feather icon-circle"></i><span
                                 class="menu-item" data-i18n="Analytics">Active Orders</span></a>
                     </li>
 
-                    <li class=""><a href="#"><i class="feather icon-circle"></i><span class="menu-item"
+                    <li class=""><a href="{{ url('seller/orders/all') }}"><i class="feather icon-circle"></i><span class="menu-item"
                                                                                       data-i18n="Analytics">All Orders</span></a>
                     </li>
 
@@ -270,7 +302,16 @@
 
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
-
+<style>
+    	.blinkanim{	
+    animation: blink 1s linear infinite;
+	}
+        @keyframes blink{
+        0%{opacity: 0;}
+        50%{opacity: .5;}
+        100%{opacity: 1;}
+        }
+</style>
 <!-- BEGIN: Footer-->
 <footer class="footer footer-static footer-light navbar-shadow">
     <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020
@@ -301,8 +342,9 @@
 
 <!-- END: Page JS-->
 <link href="{{ asset('assets/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
-<script src="{{ asset('assets/datatables/dataTables.bootstrap4.js') }}"></script>
 <script src="{{ asset('assets/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('assets/datatables/dataTables.bootstrap4.js') }}"></script>
+
 
 <script src="{{ asset('assets/js/global.js') }}"></script>
 

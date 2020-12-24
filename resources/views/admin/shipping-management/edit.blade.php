@@ -13,12 +13,9 @@
 
     <div class="card">
         <div class="card-header">
-<<<<<<< HEAD
-            <h2>Edit Shipping Method</h2></div>
-=======
+
             <h2  style="color:#7468f0"><strong>Edit Shipping Method</strong></h2>
         </div>
->>>>>>> 282afb5a658dfd1063ff675f9e65d9d1efd92ec0
 
         <div class="card-body">
             <form method="POST" action="{{ route('shipManUpdate',$method->id) }}" enctype="multipart/form-data">

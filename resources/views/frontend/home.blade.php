@@ -75,11 +75,11 @@
                                 </button>
                             </div>
                             <div class="view-options">
-                                <select class="price-options form-control" id="ecommerce-price-options">
-                                    <option selected>Featured</option>
+{{--                                <select class="price-options form-control" id="ecommerce-price-options">--}}
+{{--                                    <option selected>Featured</option>--}}
 {{--                                    <option value="1">Lowest</option>--}}
 {{--                                    <option value="2">Highest</option>--}}
-                                </select>
+{{--                                </select>--}}
                                 <div class="view-btn-option">
                                     <button class="btn btn-white view-btn grid-view-btn active">
                                         <i class="feather icon-grid"></i>
@@ -100,20 +100,27 @@
 
             <!-- Ecommerce Search Bar Starts -->
             <section id="ecommerce-searchbar">
+
                 <div class="row mt-1">
+
                     <div class="col-sm-12">
                         <fieldset class="form-group position-relative">
-                            <input type="text" class="form-control search-product" id="iconLeft5"
+{{--                            <div id="dataTable_filter" class="dataTables_filter">--}}
+                            <input type="text" class="form-control search-product" id="iconLeft5" onkeyup="myFunction()"
                                    placeholder="Search here">
+{{--                            <input type="search" class="form-control form-control-sm" placeholder="Search here" aria-controls="dataTable">--}}
+{{--                        @php--}}
+{{--                        @endphp--}}
                             <div class="form-control-position">
                                 <i class="feather icon-search"></i>
                             </div>
+{{--                            </div>--}}
                         </fieldset>
                     </div>
                 </div>
             </section>
             <!-- Ecommerce Search Bar Ends -->
-
+{{--filter--}}
             <!-- Ecommerce Products Starts -->
             <section id="ecommerce-products" class="grid-view">
 
@@ -128,9 +135,9 @@
                             <div class="card-body">
                                 <div class="item-wrapper">
                                     <div class="item-rating">
-                                        <div class="badge badge-primary badge-md">
-                                            <span>4</span> <i class="feather icon-star"></i>
-                                        </div>
+{{--                                        <div class="badge badge-primary badge-md">--}}
+{{--                                            <span>4</span> <i class="feather icon-star"></i>--}}
+{{--                                        </div>--}}
                                     </div>
                                     <div>
                                         <h6 class="item-price">
@@ -150,11 +157,11 @@
                             </div>
                             <div class="item-options text-center">
                                 <div class="item-wrapper">
-                                    <div class="item-rating">
-                                        <div class="badge badge-primary badge-md">
-                                            <span>4</span> <i class="feather icon-star"></i>
-                                        </div>
-                                    </div>
+{{--                                    <div class="item-rating">--}}
+{{--                                        <div class="badge badge-primary badge-md">--}}
+{{--                                            <span>4</span> <i class="feather icon-star"></i>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                     <div class="item-cost">
                                         <h6 class="item-price">
                                             Rs.{{ $product->price }}
@@ -175,230 +182,121 @@
             <!-- Ecommerce Products Ends -->
 
             <!-- Ecommerce Pagination Starts -->
-            <section id="ecommerce-pagination">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center mt-2">
-                                <li class="page-item prev-item"><a class="page-link" href="#"></a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item" aria-current="page"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                <li class="page-item next-item"><a class="page-link" href="#"></a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </section>
+{{--            <section id="ecommerce-pagination">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-sm-12">--}}
+{{--                        <nav aria-label="Page navigation example">--}}
+{{--                            <ul class="pagination justify-content-center mt-2">--}}
+{{--                                <li class="page-item prev-item"><a class="page-link" href="#"></a></li>--}}
+{{--                                <li class="page-item active"><a class="page-link" href="#">1</a></li>--}}
+{{--                                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+{{--                                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+{{--                                <li class="page-item" aria-current="page"><a class="page-link" href="#">4</a></li>--}}
+{{--                                <li class="page-item"><a class="page-link" href="#">5</a></li>--}}
+{{--                                <li class="page-item"><a class="page-link" href="#">6</a></li>--}}
+{{--                                <li class="page-item"><a class="page-link" href="#">7</a></li>--}}
+{{--                                <li class="page-item next-item"><a class="page-link" href="#"></a></li>--}}
+{{--                            </ul>--}}
+{{--                        </nav>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </section>--}}
             <!-- Ecommerce Pagination Ends -->
 
         </div>
     </div>
 
-    <div class="sidebar-detached sidebar-left mt-0">
-        <div class="sidebar">
-            <!-- Ecommerce Sidebar Starts -->
-            <div class="sidebar-shop" id="ecommerce-sidebar-toggler">
+{{--    <div class="sidebar-detached sidebar-left mt-0">--}}
+{{--        <div class="sidebar">--}}
+{{--            <!-- Ecommerce Sidebar Starts -->--}}
+{{--            <div class="sidebar-shop" id="ecommerce-sidebar-toggler">--}}
 
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h6 class="filter-heading d-none d-lg-block">Filters</h6>
-                    </div>
-                </div>
-                <span class="sidebar-close-icon d-block d-md-none">
-                            <i class="feather icon-x"></i>
-                        </span>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="multi-range-price">
-                            <div class="multi-range-title pb-75">
-                                <h6 class="filter-title mb-0">Multi Range</h6>
-                            </div>
-                            <ul class="list-unstyled price-range" id="price-range">
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="price-range" value="" checked value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">All</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="price-range" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50"> &lt;=Rs200</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="price-range" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">RS200 - Rs800</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="price-range" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">Rs800 - Rs1500</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="price-range" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">&gt;= RS1500</span>
-                                            </span>
-                                </li>
+{{--                <div class="row">--}}
+{{--                    <div class="col-sm-12">--}}
+{{--                        <h6 class="filter-heading d-none d-lg-block">Filters</h6>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <span class="sidebar-close-icon d-block d-md-none">--}}
+{{--                            <i class="feather icon-x"></i>--}}
+{{--                        </span>--}}
+{{--                <div class="card">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="multi-range-price">--}}
+{{--                            <div class="multi-range-title pb-75">--}}
+{{--                                <h6 class="filter-title mb-0">Multi Range</h6>--}}
+{{--                            </div>--}}
+{{--                            <ul class="list-unstyled price-range" id="price-range">--}}
+{{--                                <li>--}}
+{{--                                            <span class="vs-radio-con vs-radio-primary py-25">--}}
+{{--                                                <input type="radio" name="price-range" value="false"--}}
+{{--                                                       checked >--}}
 
-                            </ul>
-                        </div>
-                        <!-- /Price Filter -->
-                        <hr>
+{{--                                                <span class="vs-radio">--}}
+{{--                                                    <span class="vs-radio--border"></span>--}}
+{{--                                                    <span class="vs-radio--circle"></span>--}}
+{{--                                                </span>--}}
+{{--                                                <span class="ml-50">All</span>--}}
+{{--                                            </span>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                            <span class="vs-radio-con vs-radio-primary py-25">--}}
+{{--                                                <input type="radio" name="price-range" value="false">--}}
 
-                        <!-- Categories Starts -->
-                        <div id="product-categories">
-                            <div class="product-category-title">
-                                <h6 class="filter-title mb-1">Categories</h6>
-                            </div>
-                            <ul class="list-unstyled categories-list">
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="category-filter" value="false" checked>
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50" >Appliances</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="category-filter" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50"> Audio</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="category-filter" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">Cameras & Camcorders</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="category-filter" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">Car Electronics & GPS</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="category-filter" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">Cell Phones</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="category-filter" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">Computers & Tablets</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="category-filter" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50"> Health, Fitness & Beauty</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="category-filter" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">Office & School Supplies</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="category-filter" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">TV & Home Theater</span>
-                                            </span>
-                                </li>
-                                <li>
-                                            <span class="vs-radio-con vs-radio-primary py-25">
-                                                <input type="radio" name="category-filter" value="false">
-                                                <span class="vs-radio">
-                                                    <span class="vs-radio--border"></span>
-                                                    <span class="vs-radio--circle"></span>
-                                                </span>
-                                                <span class="ml-50">Video Games
-                                                </span>
-                                            </span>
-                                </li>
+{{--                                                <span class="vs-radio">--}}
+{{--                                                    <span class="vs-radio--border"></span>--}}
+{{--                                                    <span class="vs-radio--circle"></span>--}}
+{{--                                                </span>--}}
+{{--                                                <span class="ml-50"> &lt;=Rs200</span>--}}
+{{--                                            </span>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                            <span class="vs-radio-con vs-radio-primary py-25">--}}
+{{--                                                <input type="radio" name="price-range" value="false">--}}
+{{--                                                <span class="vs-radio">--}}
+{{--                                                    <span class="vs-radio--border"></span>--}}
+{{--                                                    <span class="vs-radio--circle"></span>--}}
+{{--                                                </span>--}}
+{{--                                                <span class="ml-50">RS200 - Rs800</span>--}}
+{{--                                            </span>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                            <span class="vs-radio-con vs-radio-primary py-25">--}}
+{{--                                                <input type="radio" name="price-range" value="false">--}}
+{{--                                                <span class="vs-radio">--}}
+{{--                                                    <span class="vs-radio--border"></span>--}}
+{{--                                                    <span class="vs-radio--circle"></span>--}}
+{{--                                                </span>--}}
+{{--                                                <span class="ml-50">Rs800 - Rs1500</span>--}}
+{{--                                            </span>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                            <span class="vs-radio-con vs-radio-primary py-25">--}}
+{{--                                                <input type="radio" name="price-range" value="false">--}}
+{{--                                                <span class="vs-radio">--}}
+{{--                                                    <span class="vs-radio--border"></span>--}}
+{{--                                                    <span class="vs-radio--circle"></span>--}}
+{{--                                                </span>--}}
+{{--                                                <span class="ml-50">&gt;= RS1500</span>--}}
+{{--                                            </span>--}}
+{{--                                </li>--}}
 
-                            </ul>
-                        </div>
-                        <!-- Categories Ends -->
-                        <hr>
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <!-- /Price Filter -->--}}
 
-                        <!-- Clear Filters Starts -->
-                        <div id="clear-filters">
-                            <button class="btn btn-block btn-primary">CLEAR ALL FILTERS</button>
-                        </div>
-                        <!-- Clear Filters Ends -->
-                    </div>
-                </div>
-            </div>
-            <!-- Ecommerce Sidebar Ends -->
+{{--                        <!-- Clear Filters Starts -->--}}
+{{--                        <div id="clear-filters">--}}
+{{--                            <button class="btn btn-block btn-primary">CLEAR ALL FILTERS</button>--}}
+{{--                        </div>--}}
+{{--                        <!-- Clear Filters Ends -->--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <!-- Ecommerce Sidebar Ends -->--}}
 
-        </div>
-    </div>
+{{--        </div>--}}
+{{--    </div>--}}
 
 @endsection
+
+
