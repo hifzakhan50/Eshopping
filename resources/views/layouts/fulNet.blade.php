@@ -263,13 +263,11 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a href="index.html"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">
-                        Dashboard</span>
+            <li class=" nav-item"><a href="#"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">
+                        Manage Requests</span>
                     <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
                 <ul class="menu-content">
-                    <li class=" nav-item"><a href=#><i class="feather icon-home"></i><span class="menu-title"
-                                                                                                      data-i18n="Dashboard">Manage Requests</span>
-                            <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+
                         <ul class="menu-content">
                             <li class=""><a href="{{url('fulNet/requestManagement/create')}}"><i class="feather icon-circle"></i><span
                                         class="menu-item" data-i18n="Analytics">Create Request</span></a>

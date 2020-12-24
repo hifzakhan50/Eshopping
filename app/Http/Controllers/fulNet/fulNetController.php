@@ -50,7 +50,7 @@ class fulNetController extends Controller
 
     public function data()
     {
-        $fulnet = DB::table('fulNet')
+        $fulnet = DB::table('ful_nets')
             ->select(['id', 'inv-no', 'image', 'is_active']);
 
         return Datatables::of( $fulnet) ->addColumn('action', function ( $fulnet) {

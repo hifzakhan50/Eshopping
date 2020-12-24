@@ -17,6 +17,7 @@ class CreateFulNetsTable extends Migration
             $table->bigIncrements('id');
             $table->string('inv-no');
             $table->string('image');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }
