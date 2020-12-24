@@ -20,18 +20,12 @@
             <form method="POST" action="{{ route('category.update',$cat->id ) }}" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
-                <div class="form-group row">
-                    <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Category') }}</label>
-
-
-
 
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                     <div class="col-md-6">
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                               name="name" value="{{ $cat->name }}" required autocomplete="name" autofocus>
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $cat->name }}" required autocomplete="name" autofocus>
 
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -41,7 +35,19 @@
                     </div>
                 </div>
 
+                <div class="form-group row">
+                    <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
+                    <div class="col-md-6">
+                        <input id="description" type="text Area" class="form-control @error('description') not found @enderror" name="description" value="{{$cat->description }}" required autocomplete="description" autofocus>
+
+                        @error('description')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+                </div>
 
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
@@ -49,7 +55,6 @@
                             {{ __('Update') }}
                         </button>
                     </div>
-                </div>
                 </div>
             </form>
         </div>
@@ -65,5 +70,4 @@
 
         });
     </script>
-
 @endpush

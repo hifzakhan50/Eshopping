@@ -10,6 +10,7 @@
             @endif
         </div>
     </div>
+
     <div class="card">
         <div class="card-header"><h2 style="color:#7468f0"><strong>Categories</strong></h2></div>
 

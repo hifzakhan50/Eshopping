@@ -51,7 +51,7 @@
                     <label for="sku" class="col-md-4 col-form-label text-md-right">{{ __('SKU') }}</label>
 
                     <div class="col-md-6">
-                        <input id="sku" type="number" min="4" max="16"class="form-control
+                        <input id="sku" type="number" minlength="4" maxlength="16"class="form-control
                         @error('sku') not found @enderror" name="sku" value="{{ old('sku') }}" required autocomplete="sku" autofocus>
 
                         @error('sku')
@@ -109,7 +109,11 @@
                     <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Size') }}</label>
 
                     <div class="col-md-6">
-                        <select id="size" type="text"
+
+{{--                        <input id="size" type="text" class="form-control @error('size') is-invalid @enderror" name="size" value="{{ old('size') }}" required autocomplete="size" autofocus>--}}
+
+
+                                                <select id="size" type="text"
                                 class="form-control @error('size') is-invalid @enderror" name="size"
                                 value="{{ old('size') }}" required autocomplete="size" autofocus>
 

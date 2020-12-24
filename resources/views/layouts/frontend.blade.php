@@ -47,13 +47,6 @@
 <body class="horizontal-layout horizontal-menu content-detached-left-sidebar ecommerce-application navbar-floating footer-static">
 
 <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu navbar-fixed navbar-shadow navbar-brand-center">
-    <div class="navbar-header d-xl-block d-none">
-        <ul class="nav navbar-nav flex-row">
-            <li class="nav-item"><a class="navbar-brand" href="../../../html/ltr/horizontal-menu-template/index.html">
-                    <div class="brand-logo"></div>
-                </a></li>
-        </ul>
-    </div>
 
     <div class="navbar-wrapper">
         <div class="navbar-container content" style="padding-top:10px">
@@ -69,27 +62,26 @@
 
                     <ul class="nav navbar-nav">
                         <ul class="nav navbar-nav flex-row">
-                        {{-- //logo here --}}
-                        <li class="nav-item mr-auto"><a class="navbar-brand"
-                            href="{{ url('/home') }}">
-                                <img src="{{ asset('logo.png') }}">
-{{--                                <h2 class="brand-text mb-0" style="color:#7367f0;font-size:2rem"><strong>Mega Shoppy</strong></h2></a>--}}
+{{--                         //logo here --}}
+                        <li class="nav-item mr-auto"><a class="navbar-brand" >
+{{--                                <img class="brand-logo" src="{{ URL::to('/app-assets/images/logo.png') }}"></a><h2 Style="color:#7367f0;font-size:25px;"><strong>Mega Shoppy</strong></h2>--}}
+
                         </li>
                         </ul>
                     </ul>
                 </div>
 
                 <ul class="nav navbar-nav float-right">
-                  {{-- //login--reg.ister                         --}}
+{{--                   //login--reg.ister                         --}}
                   <li class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}" style="color:#7367f0"><strong>{{ __('Login') }}</strong></a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}" style="color:#7367f0"><strong>{{ __('Register') }}</strong></a>
                             </li>
                         @endif
                     @else
@@ -99,10 +91,23 @@
                         margin-left: -40px;
                         font-size: 30px;" href="{{ url('/checkout') }}"><i class="fa fa-shopping-cart"></i></a>
                     </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href='/customer' ><strong>{{ __('Dashboard') }}</strong></a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                <strong>{{ Auth::user()->name }} <span class="caret"></span>
+                                </strong>
+            @php
+                $data = auth()->user()->join('customer_profiles', 'users.id', 'customer_profiles.user_id')
+                ->where('customer_profiles.user_id', Auth::user()->id)
+                ->first();
+                $image = $data->getOriginal('image');
+
+            @endphp
+            <span><img class="round" src="{{ getImageSrc($image)}}"
+                       alt="avatar" height="40" width="40"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -125,7 +130,9 @@
     </div>
 </nav>
 
-<!-- BEGIN: Content-->
+
+
+{{--<!-- BEGIN: Content-->--}}
 <div class="app-content content mt-0 pt-0">
     <div class="content-wrapper mt-0">
         @yield('content')

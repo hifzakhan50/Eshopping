@@ -48,7 +48,7 @@
                 ajax: routeName,
                 columns: [
                     {data: 'id', name: 'id'},
-                    // {data: 'seller_profile_id', name: 'seller_profile_id'},
+                    {data: 'seller_profile_id', name: 'seller_profile_id'},
                     {data: 'name', name: 'name'},
                     {data: 'description', name: 'description'},
                     {data: 'price', name: 'price'},

@@ -11,6 +11,7 @@ class productsController extends Controller
 {
     public function all()
     {
+
         //dd('here');
         return view('admin.displayData.products');
     }
@@ -19,7 +20,7 @@ class productsController extends Controller
     {
 //        dd('here');
         $aproducts = DB::table('products')
-            ->select(['id', 'name', 'description','price', 'sku', 'image', 'color', 'is_active'])->get();
+            ->select(['id','seller_profile_id', 'name', 'description','price', 'sku', 'image', 'color', 'is_active'])->get();
 
         return Datatables::of($aproducts)
             ->addColumn('action', function ($aproducts) {
@@ -33,12 +34,12 @@ class productsController extends Controller
                 return $suspendBtn;
 
             })
-           ->editColumn('image', function ($products) {
-               $imagePath = asset('/storage/' . $products->image);
-               return '<img src="' . $imagePath . '" class="w-25">';
-           })
-           ->rawColumns(['image', 'action'])
-            ->make(true);
+            ->editColumn('image', function ($products) {
+                $imagePath = asset('/storage/' . $products->image);
+                return '<img src="' . $imagePath . '" class="w-25">';
+            })
+            ->rawColumns(['image', 'action'])
+             ->make(true);
     }
 
     public function suspend($id)
