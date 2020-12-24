@@ -397,7 +397,11 @@
 <link href="{{ asset('assets/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
 <script src="{{ asset('assets/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('assets/datatables/dataTables.bootstrap4.js') }}"></script>
-
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
 <script src="{{ asset('assets/js/global.js') }}"></script>
 
 @stack('script')
