@@ -15,11 +15,13 @@ class Product extends Model
      */
     protected $fillable = [
         'name',
+        'category_id',
+        'sku',
         'description',
         'price',
         'color',
         'weight',
-        'weight',
+        'quantity',
         'image',
     ];
     public function sellerProfile(){

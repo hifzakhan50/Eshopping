@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\Facades\DataTables;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -49,7 +50,7 @@ class HomeController extends Controller
         {
             $product = Product::where('name', '=', $name)->first();
             $ALREADY_ADDED = DB::select('select id from shopping_cart where customer_profile_id = ? and product_id = ?', [Auth::user()->id, $product->id]);
-            
+
             if($ALREADY_ADDED == null)
             {
                 $product_is_in_cart = false;
@@ -70,4 +71,9 @@ class HomeController extends Controller
             return redirect()->back()->with('PleaseLogin', 'Please Login to check the details of the product');
         }
     }
+//    public function filter()
+//    {
+//        $data = DB::table('products');
+//        if()
+//    }
 }

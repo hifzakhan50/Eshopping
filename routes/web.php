@@ -169,6 +169,11 @@ Route::get('/reports/allDeliveredOrders/report', 'DynamicPDFController@get_all_d
 Route::get('/Suspended-orders-report', 'DynamicPDFController@suspended_orders');
 Route::get('/reports/allSuspendedOrders/report', 'DynamicPDFController@get_all_suspended_orders');
 
+/*Fulfillment Routes*/
+Route::get('/fulNet/requestManagement/all', 'fulNet\fulNetcontroller@all')->name('requestManagement.all');
+Route::get('fulNet/requestManagement/data', 'fulNet\fulNetController@data')->name('requestManagement.data');
 
+Route::get('/fulNet/requestManagement/create','fulNet\fulNetController@create');
+Route::post('/fulNet/requestManagement', 'fulNet\fulNetController@store')->name('requestManagement.create');
 //Route::get('/home', 'HomeController@index')->name('home');
 

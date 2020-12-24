@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header"><h2  style="color:#7468f0"><strong>Salex Tax Report</strong></h2></div>
+        <div class="card-header"><h2  style="color:#7468f0"><strong>Sales Tax Report</strong></h2></div>
 
 
         <div class="card-body">
@@ -41,7 +41,7 @@
             $('#dataTable1').DataTable({
                 "footerCallback": function ( row, data, start, end, display ) {
                     var api = this.api(), data;
-        
+
                     var intVal = function ( i ) {
                         return typeof i === 'string' ?
                             i.replace(/[\$,]/g, '')*1 :
@@ -55,14 +55,14 @@
                         .reduce( function (a, b) {
                             return intVal(a) + intVal(b);
                         }, 0 );
-        
+
                     // Update footer
                     $( api.column( 3 ).footer() ).html(
                         total +'PKR'
                     );
                 },
-                dom: 'Bfrtip', 
-                 buttons: [ 
+                dom: 'Bfrtip',
+                 buttons: [
                     { extend: 'excelHtml5', footer: true },
                     { extend: 'csvHtml5', footer: true },
                     { extend: 'pdfHtml5', footer: true } ],

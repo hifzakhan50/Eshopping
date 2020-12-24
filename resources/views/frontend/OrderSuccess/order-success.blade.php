@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
 @section('content')
+
+
     <div style="width: 100%; text-align: center;">
     <img width="180px" src="{{ URL::to('/assets/potos/greentick.png') }}" />
     </div>

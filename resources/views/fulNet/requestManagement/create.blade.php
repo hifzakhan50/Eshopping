@@ -1,33 +1,21 @@
-@extends('layouts.admin')
+@extends('layouts.fulNet')
 @section('content')
-
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            @if(session()->has('success'))
-                <div class="alert alert-success text-white">
-                    <strong>Success!</strong> {{ session('success')  }}
-                </div>
-            @endif
-        </div>
-    </div>
-
+    <h2 style="color:#7468f0"><strong>Add Request details</strong></h2>
     <div class="card">
-        <div class="card-header">
-            <h2>Edit Category</h2>
-        </div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('category.update',$cat->id ) }}" enctype="multipart/form-data">
-                @method('PUT')
+
+            <!-- BEGIN: Create Form-->
+            <form method="POST" action="{{ route('requestManagement.create') }}"enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group row">
-                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                    <label for="invoice No" class="col-md-4 col-form-label text-md-right">{{ __('Invoice No') }}</label>
 
                     <div class="col-md-6">
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $cat->name }}" required autocomplete="name" autofocus>
+                        <input id="invoice No" type="text" class="form-control @error('invoice No') is-invalid @enderror" name="Invoice No" value="{{ old('Invoice No') }}" required autocomplete="invoice No" autofocus>
 
-                        @error('name')
+                        @error('Invoice No')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -36,23 +24,25 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+                    <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
 
                     <div class="col-md-6">
-                        <input id="description" type="text Area" class="form-control @error('description') not found @enderror" name="description" value="{{$cat->description }}" required autocomplete="description" autofocus>
+                        <input id="images-upload" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="image" autofocus>
 
-                        @error('description')
+                        @error('image')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                         @enderror
                     </div>
+
+                    <div class="images-preview col-md-6 offset-4"></div>
                 </div>
 
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary">
-                            {{ __('Update') }}
+                            {{ __('Add') }}
                         </button>
                     </div>
                 </div>
@@ -70,4 +60,5 @@
 
         });
     </script>
+
 @endpush

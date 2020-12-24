@@ -45,7 +45,7 @@
                                 <div class="card-content">
                                     <div class="item-img text-center">
                                             <img  style="width:100px;height:100px" src=" {{ getImageSrc($product->image) }}" alt="img-placeholder">
-                                    
+
                                     </div>
 
                                     <div class="card-body">
@@ -55,7 +55,7 @@
                                             <p class="stock-status-in">In Stock</p>
                                             <div class="item-quantity">
                                                 <p class="quantity-title">Color: {{ $product->color }}</p>
-                                                
+
                                             </div>
                                         </div>
                                         <div class="item-quantity">
@@ -164,7 +164,7 @@ padding: 10px;border-radius: 5px" href=" {{route('addBilling')}}" class="btn-btn
                                         </div>
                                 </div>
                             </div>
-                            </div>                        
+                            </div>
                         </div>
                         @endif
                     </section>

@@ -50,16 +50,14 @@ class CategoriesController extends Controller
 
         $data = request()->validate([
             'name' => 'required',
-            //'category-id' => 'required',
             'description' => 'required',
         ]);
         $cat=Category::find($id);
         $cat->update([
             'name' => $data['name'],
-            'category_id' => $data['category-id'],
             'description' => $data['description'],
         ]);
-        return redirect('index')->with('success', 'Category has been updated Successfully');;
+        return redirect()->back()->with('success', 'Category has been updated Successfully');
     }
 
     public function all()

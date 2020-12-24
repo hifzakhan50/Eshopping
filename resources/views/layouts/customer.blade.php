@@ -107,7 +107,8 @@
             <li class="nav-item mr-auto"><a class="navbar-brand"
                                             href="{{ url('index') }}">
 
-                    <h2 class="brand-text mb-0">Mega Shoppy</h2>
+                   <img class="brand-logo"  src="{{ URL::to('/app-assets/images/logo.png') }}">
+                    <h2 class=" brand-text mb-0">Mega Shoppy</h2>
                 </a></li>
 
         </ul>
@@ -117,12 +118,17 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
 
-            <!--Side Bar: options UMAR-->
+            <!--Side Bar: options -->
 
+            <li class=" nav-item"><a href="{{ url('/home') }}"><i class="feather icon-home"></i><span class="menu-title"
+                                                                                                                 data-i18n="Dashboard">Shop</span>
+                    <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+            <li class=" nav-item"><a href='/customer'><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">My Orders</span>
+                    <span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
-            <li class=" nav-item"><i class="feather icon-home"></i><span class="menu-title"
-                                                                                              data-i18n="Dashboard">My Orders</span>
-                    <span class="badge badge badge-warning badge-pill float-right mr-2"></span>
+{{--            <li class=" nav-item"><i class="feather icon-home"></i><span class="menu-title"--}}
+{{--                                                                                              data-i18n="Dashboard">My Orders</span>--}}
+{{--                    <span class="badge badge badge-warning badge-pill float-right mr-2"></span>--}}
         </ul>
 
 
