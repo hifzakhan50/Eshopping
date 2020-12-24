@@ -52,8 +52,8 @@ class fulNetController extends Controller
 
         return Datatables::of( $fulnet) ->addColumn('action', function ( $fulnet) {
             
-         })->editColumn('image', function ($products) {
-            $imagePath = asset('/storage/' . $products->image);
+         })->editColumn('image', function ($fulnet) {
+            $imagePath = asset('/storage/' . $fulnet->image);
             return '<img src="' . $imagePath . '" class="w-25">';
         })
         ->rawColumns(['image', 'action'])
@@ -84,4 +84,59 @@ class fulNetController extends Controller
         return view('fulNet.requestManagement.newRequests');
     }
 
+    public function newRequestsAll()
+    {
+        $fulnet = DB::table('ful_nets')
+            ->select(['id', 'inv_no', 'image', 'is_active'])
+            ->where('is_active', 'Requested')->get();
+            
+        return Datatables::of($fulnet)
+            ->addColumn('action', function ($fulnet) {
+
+                $AcceptedRoute = route('fulnet.accepted', $fulnet->id);
+                $rejectedRoute = route('fulnet.rejected', $fulnet->id);
+
+                //$editBtn = '<a href="' . $editRoute . '" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+                $AcBtn = '<a href="' . $AcceptedRoute . '" class="btn btn-sm btn-success"><i class="fa fa-tick"></i> Accept</a>';
+                $RjBtn = '<a href="' . $rejectedRoute . '" class="btn btn-sm btn-danger"><i class="fa fa-remove"></i> Reject</a>';
+
+                    return $AcBtn . ' ' . $RjBtn;
+            })->editColumn('image', function ($fulnet) {
+                $imagePath = asset('/storage/' . $fulnet->image);
+                return '<img src="' . $imagePath . '" class="w-25">';
+            })
+            ->rawColumns(['image', 'action'])
+            ->make(true);
+    }
+
+    public function accept($id)
+    {
+        DB::update('update ful_nets set is_active = ? where id = ?', ['Accepted', $id]);
+        return redirect()->back()->with('success', 'Request Marked as Accepted.');
+    }
+
+    public function reject($id)
+    {
+        DB::update('update ful_nets set is_active = ? where id = ?', ['Rejected', $id]);
+        return redirect()->back()->with('success', 'Request Marked as Rejected.');
+    }
+
+    public function fulfilledrequests()
+    {
+        return view('fulNet.requestManagement.fulfilledrequests');
+    }
+
+    public function fulfilledrequestsget()
+    {
+        $fulnet = DB::table('ful_nets')
+            ->select(['id', 'inv_no', 'image', 'is_active'])
+            ->where('is_active', '!=', 'Requested')->get();
+        
+        return Datatables::of($fulnet)->editColumn('image', function ($fulnet) {
+                $imagePath = asset('/storage/' . $fulnet->image);
+                return '<img src="' . $imagePath . '" class="w-25">';
+            })
+            ->rawColumns(['image', 'action'])
+            ->make(true);
+    }
 }

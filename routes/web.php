@@ -177,4 +177,10 @@ Route::get('/fulNet/requestManagement/create','fulNet\fulNetController@create');
 Route::post('/fulNet/requestManagement', 'fulNet\fulNetController@store')->name('requestManagement.create');
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/newrequests','fulNet\fulNetController@newRequests');
+Route::get('/newrequestsall','fulNet\fulNetController@newRequestsAll');
+Route::get('/fulnet/{id}/accept','fulNet\fulNetController@accept')->name('fulnet.accepted');
+Route::get('/fulnet/{id}/reject','fulNet\fulNetController@reject')->name('fulnet.rejected');
+Route::get('/fulfilledrequests','fulNet\fulNetController@fulfilledrequests');
+Route::get('/fulfilledrequestsget','fulNet\fulNetController@fulfilledrequestsget');
+
 Route::post('/searchproductbyname', 'Frontend\HomeCOntroller@productByName');

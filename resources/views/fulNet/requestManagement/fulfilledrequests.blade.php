@@ -12,7 +12,7 @@
     </div>
 
     <div class="card">
-        <div class="card-header"><h2>Active Requests</h2></div>
+        <div class="card-header"><h2>Fulfilled Requests</h2></div>
 
 
         <div class="card-body">
@@ -25,7 +25,6 @@
                         <th>Invoice Number</th>
                         <th>Image</th>
                         <th>Status</th>
-                        <th>Action</th>
                     </tr>
                     </thead>
                 </table>
@@ -40,15 +39,28 @@
 
         $(function () {
             $('#dataTable').dataTable({
+                'rowCallback': function(row, data, index){
+                    if(data['is_active'] == 'Accepted'){
+                        $(row).find('td:eq(3)').css({
+                                                    'color' : 'green',
+                                                    'font-weight' : '600'
+                                                    });
+                    }
+                    else{
+                        $(row).find('td:eq(3)').css({
+                                                    'color' : 'red',
+                                                    'font-weight' : '600'
+                                                    });
+                    }
+                },
                 processing: true,
                 serverSide: true,
-                ajax: '{{url('/newrequestsall')}}',
+                ajax: '{{url('/fulfilledrequestsget')}}',
                 columns: [
                     {data: 'id', name: 'ID'},
                     {data: 'inv_no', name: 'inv_no'},
                     {data: 'image', name: 'image'},
-                    {data: 'is_active', name: 'is_active'},
-                    {data: 'action', name: 'action', orderable: false, searchable: false}
+                    {data: 'is_active', name: 'is_active'}
                 ]
             });
         });

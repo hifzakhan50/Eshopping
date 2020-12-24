@@ -96,20 +96,45 @@
 
 
                 </div>
+                @php
+                    $fulnet = DB::table('ful_nets')
+                    ->select(['id', 'inv_no', 'image', 'is_active'])
+                    ->where('is_active', 'Requested')->get();
+                @endphp
+                
                 <ul class="nav navbar-nav float-right">
-
+                    @if(!$fulnet->isEmpty())
+                        <div style="margin-right: -17px; margin-top: -17px;" class="blinkanim">
+                            <span style='font-size:50px; color: #7367f2'>&#8226;</span>
+                        </div>
+                    @endif
                     <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
-                                                                           data-toggle="dropdown"><i
-                                class="ficon feather icon-bell"></i><span
+                   data-toggle="dropdown">
+                    @if(!$fulnet->isEmpty())
+                        <i style="color: #7367f2" class="ficon feather icon-bell"></i>
+                    @else
+                        <i class="ficon feather icon-bell"></i>
+                    @endif
+                            <span
                                 class="badge badge-pill badge-primary badge-up"></span></a>
                         <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            @if(!$fulnet->isEmpty())
+                            @foreach ($fulnet as $single)
                             <li class="dropdown-menu-header">
                                 <div class="dropdown-header m-0 p-2">
-{{--                                    <h3 class="white">5 New</h3>--}}
-                                    <span
-                                        class="notification-title">App Notifications</span>
+                                    <h3 class="white"></h3><span
+                                        class="notification-title">FulFill Requset: {{$single->inv_no}}</span>
                                 </div>
                             </li>
+                            @endforeach
+                            @else
+                            <li class="dropdown-menu-header">
+                                <div class="dropdown-header m-0 p-2">
+                                    <h3 class="white"></h3><span
+                                        class="notification-title">No Active orders</span>
+                                </div>
+                            </li>
+                            @endif
 {{--                            <li class="scrollable-container media-list"><a class="d-flex justify-content-between"--}}
 {{--                                                                           href="javascript:void(0)">--}}
 {{--                                    <div class="media d-flex align-items-start">--}}
@@ -415,29 +440,29 @@
                                     <span class="menu-item" data-i18n="Analytics">All Suspended Orders</span></a>
                             </li>
                         </ul>
+
+                        <li class=" nav-item"><a href="index.html"><i class="feather icon-home" style="color: 
+                            #7367f0;"></i><span class="menu-title" data-i18n="Dashboard">Fulfillment Management</span>
+                                                        <span class="badge badge badge-warning badge-pill float-right mr-2"></span>
+                                                    </a>
+                                                    <ul>
+                                                        <li class=""><a href="{{url('/newrequests')}}"><i class="feather icon-circle" style="color: 
+                                                        #7367f0;"></i>
+                                                             <span class="menu-item" data-i18n="Analytics">New Requests</span></a>
+                                                        </li>
+                            
+                                                        <li class=""><a href="{{url('/fulfilledrequests')}}"><i class="feather icon-circle" style="color: 
+                                                        #7367f0;"></i>
+                                                                <span class="menu-item" data-i18n="Analytics">Fulfilled Requests</span></a>
+                                                        </li>
+                                                    </ul>
                 </ul>
 {{--            </li>--}}
 
 
 <!--############################FULLFILLMENNNTTT  RREEEQQQUEASSSTTT###########################-->
-<li class=" nav-item"><a href="index.html"><i class="feather icon-home" style="color: 
-#7367f0;"></i><span class="menu-title" data-i18n="Dashboard">Fulfillment Management</span>
-                            <span class="badge badge badge-warning badge-pill float-right mr-2"></span>
-                        </a>
-                        <ul>
-                            <li class=""><a href="{{url('/newrequests')}}"><i class="feather icon-circle" style="color: 
-#7367f0;"></i>
-                                 <span class="menu-item" data-i18n="Analytics">New Requests</span></a>
-                            </li>
 
-                            <li class=""><a href="{{url('/fulfilledrequests')}}"><i class="feather icon-circle" style="color: 
-#7367f0;"></i>
-                                    <span class="menu-item" data-i18n="Analytics">Fulfilled Requests</span></a>
-                            </li>
-                        </ul>
                 </ul>
-
-        </ul>
     </div>
 </div>
 <!-- END: Main Menu-->
@@ -455,7 +480,16 @@
 
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
-
+<style>
+        .blinkanim{	
+    animation: blink 1s linear infinite;
+    }
+        @keyframes blink{
+        0%{opacity: 0;}
+        50%{opacity: .5;}
+        100%{opacity: 1;}
+        }
+</style>
 <!-- BEGIN: Footer-->
 <footer class="footer footer-static footer-light navbar-shadow">
     <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020
